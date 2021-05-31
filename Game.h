@@ -22,6 +22,10 @@ private:
 	SDL_Renderer* m_pRenderer;
 	SDL_Window* m_pWindow;
 
+	SDL_Texture* m_pTexture;
+	SDL_Rect m_sourceRect;
+	SDL_Rect m_destinationRect;
+
 };
 
 
