@@ -1,7 +1,11 @@
 #include"Game.h"
 
-bool Game::init(const char* title, int xpos, int ypos, int width, int height, int flags)
+bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
+	int flags = 0;
+	if (fullscreen)
+		flags = SDL_WINDOW_FULLSCREEN;
+
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
 	{
 		m_pWindow = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
@@ -49,6 +53,7 @@ void Game::handleEvents()
 		case SDL_QUIT:
 			m_bRunning = false;
 			break;
+
 		default:
 			break;
 		}
