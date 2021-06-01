@@ -18,7 +18,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 				return false;
 			else
 			{
-				SDL_SetRenderDrawColor(m_pRenderer, 255, 255, 255, 255);
+				SDL_SetRenderDrawColor(m_pRenderer, 255, 0, 0, 255);
 			}
 		}
 	}
@@ -28,7 +28,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	}
 	m_bRunning = true;
 
-	SDL_Surface* pSurface = SDL_LoadBMP("assets/animate.bmp");
+	SDL_Surface* pSurface = IMG_Load("assets/animate-alpha.png");
 	if (pSurface == NULL)
 		return false;
 	m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pSurface);
@@ -50,7 +50,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 void Game::render()
 {
 	SDL_RenderClear(m_pRenderer);
-	SDL_RenderCopy(m_pRenderer, m_pTexture, &m_sourceRectangle, &m_destinationRectangle);
+	SDL_RenderCopyEx(m_pRenderer, m_pTexture, &m_sourceRectangle, &m_destinationRectangle, 0, 0, SDL_FLIP_HORIZONTAL);
 	SDL_RenderPresent(m_pRenderer);
 }
 
@@ -85,5 +85,5 @@ void Game::update()
 	i++;
 	if (i == 6)
 		i = 0;
-	SDL_Delay(200);
+	SDL_Delay(150);
 }
