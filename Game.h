@@ -4,10 +4,11 @@
 #include<SDL.h>
 #include<SDL_image.h>
 
+#include"TextureManager.h"
 class Game
 {
 public:
-	Game() { i = 0;  }
+	Game() {}
 	~Game() {}
 
 	bool init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
@@ -22,11 +23,13 @@ private:
 	bool m_bRunning;
 	SDL_Renderer* m_pRenderer;
 	SDL_Window* m_pWindow;
-
+	/*
 	SDL_Texture* m_pTexture;
 	SDL_Rect m_sourceRectangle;
 	SDL_Rect m_destinationRectangle;
-	int i;
+	*/
+	int m_currentFrame;
+	TextureManager m_TextureManager;
 
 };
 
