@@ -25,7 +25,7 @@ private:
 	SDL_Window* m_pWindow;
 
 	int m_currentFrame;
-	TextureManager m_TextureManager;
+	//TextureManager m_TextureManager;
 
 };
 
