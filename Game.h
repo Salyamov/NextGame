@@ -23,11 +23,7 @@ private:
 	bool m_bRunning;
 	SDL_Renderer* m_pRenderer;
 	SDL_Window* m_pWindow;
-	/*
-	SDL_Texture* m_pTexture;
-	SDL_Rect m_sourceRectangle;
-	SDL_Rect m_destinationRectangle;
-	*/
+
 	int m_currentFrame;
 	TextureManager m_TextureManager;
 
