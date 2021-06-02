@@ -1,10 +1,12 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include<SDL.h>
-#include<SDL_image.h>
+#include <SDL.h>
+#include <SDL_image.h>
+#include "TextureManager.h"
+#include "GameObject.h"
+#include "Player.h"
 
-#include"TextureManager.h"
 class Game
 {
 public:
@@ -25,7 +27,9 @@ private:
 	SDL_Window* m_pWindow;
 
 	int m_currentFrame;
-	//TextureManager m_TextureManager;
+
+	GameObject m_go;
+	Player m_player;
 
 };
 

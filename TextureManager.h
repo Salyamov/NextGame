@@ -1,9 +1,9 @@
 #ifndef TEXTUREMANAGER_H
 #define TEXTUREMANAGER_H
-#include<SDL.h>
-#include<SDL_image.h>
-#include<string>
-#include<map>
+#include <SDL.h>
+#include <SDL_image.h>
+#include <iostream>
+#include <map>
 
 class TextureManager
 {

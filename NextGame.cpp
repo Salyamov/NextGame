@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include"Game.h"
-#include<Windows.h>
-#include<iostream>
+#include "Game.h"
+#include <Windows.h>
+#include <iostream>
 
 
 Game* g_game = NULL;
@@ -22,6 +22,8 @@ int main(int argc, char* args[])
 		g_game->handleEvents();
 		g_game->update();
 		g_game->render();
+
+		SDL_Delay(20);
 	}
 
 	g_game->clean();
