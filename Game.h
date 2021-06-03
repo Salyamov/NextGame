@@ -7,6 +7,7 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "Player.h"
+#include "Enemy.h"
 
 class Game
 {
@@ -30,16 +31,10 @@ private:
 	int m_currentFrame;
 	
 	std::vector<GameObject*> m_gameObjects;
-
+	GameObject* m_go;
 	GameObject* m_player;
-	GameObject* m_enemy1;
-	GameObject* m_enemy2;
-	GameObject* m_enemy3;
+	GameObject* m_enemy;
 
-	/*
-	GameObject m_go;
-	Player m_player;
-	*/
 };
 
 
