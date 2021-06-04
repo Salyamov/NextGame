@@ -1,5 +1,7 @@
 #include "Game.h"
 
+Game* Game::s_pInstance = NULL;
+
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
 	int flags = 0;
@@ -30,6 +32,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", m_pRenderer);
 
+	m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate")));
+	m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate")));
+
+	/*
 	m_go = new GameObject();
 	m_player = new Player();
 	m_enemy = new Enemy();
@@ -41,6 +47,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	m_gameObjects.push_back(m_go);
 	m_gameObjects.push_back(m_player);
 	m_gameObjects.push_back(m_enemy);
+	*/
 
 	/*
 	m_player = new Player();
@@ -68,7 +75,7 @@ void Game::render()
 
 	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 	{
-		m_gameObjects[i]->draw(m_pRenderer);
+		m_gameObjects[i]->draw();
 	}
 
 	/*

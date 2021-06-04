@@ -13,20 +13,25 @@ int main(int argc, char* args[])
 	FILE* file;
 	file = freopen("CON", "w", stdout);
 
-	g_game = new Game();
-
-	g_game->init("NextGame", 100, 100, 640, 480, false);
-
-	while (g_game->running())
+	if (TheGame::Instance()->init("NextGame", 100, 100, 640, 480, false))
 	{
-		g_game->handleEvents();
-		g_game->update();
-		g_game->render();
+		std::cout << "game init complete\n";
+		while (TheGame::Instance()->running())
+		{
+			TheGame::Instance()->handleEvents();
+			TheGame::Instance()->update();
+			TheGame::Instance()->render();
 
-		SDL_Delay(20);
+			SDL_Delay(20);
+		}
 	}
-
-	g_game->clean();
+	else
+	{
+		std::cout << "game init failed\n" << SDL_GetError() << "\n";
+		return -1;
+	}
+	std::cout << "game closing\n";
+	TheGame::Instance()->clean();
 
 	return 0;
 }
