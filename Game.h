@@ -4,10 +4,11 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <vector>
-#include "TextureManager.h"
 #include "GameObject.h"
 #include "Player.h"
 #include "Enemy.h"
+
+
 
 class Game
 {
@@ -18,6 +19,7 @@ public:
 	void update();
 	void handleEvents();
 	void clean();
+	void quit();
 
 	bool running() { return m_bRunning; }
 

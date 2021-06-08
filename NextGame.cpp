@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "Game.h"
 #include <Windows.h>
 #include <iostream>
+#include "Game.h"
 
 const int FPS = 60;
 const int DELAY_TIME = 1000.f / FPS;

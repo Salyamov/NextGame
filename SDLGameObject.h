@@ -3,6 +3,9 @@
 #include "GameObject.h"
 #include "LoaderParams.h"
 #include "Vector2D.h"
+//#include "Game.h"
+//#include "TextureManager.h"
+
 
 class SDLGameObject : public GameObject
 {
