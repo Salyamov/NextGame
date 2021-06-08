@@ -2,7 +2,8 @@
 #include "TextureManager.h"
 #include "Game.h"
 
-SDLGameObject::SDLGameObject(const LoaderParams* pParams) : GameObject(pParams), m_position(pParams->getX(), pParams->getY()), m_velocity(0, 0)
+SDLGameObject::SDLGameObject(const LoaderParams* pParams) : GameObject(pParams), 
+m_position(pParams->getX(), pParams->getY()), m_velocity(0, 0), m_acceleration(0, 0)
 {
 	m_height = pParams->getHeight();
 	m_width = pParams->getWidth();
@@ -19,6 +20,7 @@ void SDLGameObject::draw()
 
 void SDLGameObject::update()
 {
+	m_velocity += m_acceleration;
 	m_position += m_velocity;
 }
 
