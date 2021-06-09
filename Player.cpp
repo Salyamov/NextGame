@@ -32,6 +32,8 @@ void Player::handleInput()
 {
 	if (TheInputHandler::Instance()->joystickInitialized())
 	{
+		//1 stick
+		
 		if (TheInputHandler::Instance()->xvalue(0, 1) > 0 || TheInputHandler::Instance()->xvalue(0, 1) < 0)
 		{
 			m_velocity.setX(1 * TheInputHandler::Instance()->xvalue(0, 1));
@@ -40,6 +42,9 @@ void Player::handleInput()
 		{
 			m_velocity.setY(1 * TheInputHandler::Instance()->yvalue(0, 1));
 		}
+		
+		//2 stick
+		/*
 		if (TheInputHandler::Instance()->xvalue(0, 2) > 0 || TheInputHandler::Instance()->xvalue(0, 2) < 0)
 		{
 			m_velocity.setX(1 * TheInputHandler::Instance()->xvalue(0, 2));
@@ -48,7 +53,7 @@ void Player::handleInput()
 		{
 			m_velocity.setY(1 * TheInputHandler::Instance()->yvalue(0, 2));
 		}
-
+		*/
 	}
 }
 

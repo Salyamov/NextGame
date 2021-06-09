@@ -1,8 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <iostream>
 #include "SDLGameObject.h"
-
 
 class Player : public SDLGameObject
 {
