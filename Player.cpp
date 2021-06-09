@@ -43,6 +43,7 @@ void Player::handleInput()
 			m_velocity.setY(1 * TheInputHandler::Instance()->yvalue(0, 1));
 		}
 		
+		
 		//2 stick
 		/*
 		if (TheInputHandler::Instance()->xvalue(0, 2) > 0 || TheInputHandler::Instance()->xvalue(0, 2) < 0)
