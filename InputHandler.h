@@ -30,6 +30,11 @@ public:
 	int xvalue(int joy, int stick);
 	int yvalue(int joy, int stick);
 
+	bool getButtonState(int joy, int buttonNumber)
+	{
+		return m_buttonStates[joy][buttonNumber];
+	}
+
 	void update();
 	void clean();
 private:
@@ -39,6 +44,7 @@ private:
 	bool m_bJoysticksInitialised;
 	std::vector<SDL_Joystick*> m_joysticks;
 	std::vector< std::pair<Vector2D*, Vector2D*> > m_joysticksValues; //направление движения каждого стика
+	std::vector< std::vector<bool>  > m_buttonStates; //массив кнопок для каждого устройства
 
 	const int m_joystickDeadZone = 5000;
 	static InputHandler* s_pInstance;
