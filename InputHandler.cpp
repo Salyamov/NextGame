@@ -38,6 +38,10 @@ void InputHandler::initializeJoysticks()
 		m_bJoysticksInitialised = true;
 		std::cout << "Initialized " << m_joysticks.size() << " joysticks\n";
 
+		for (int i = 0; i < 3; i++)
+		{
+			m_mouseButtonStates.push_back(false);
+		}
 
 
 	}
