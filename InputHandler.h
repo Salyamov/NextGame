@@ -40,8 +40,14 @@ public:
 		return m_buttonStates[joy][buttonNumber];
 	}
 
+	bool getMouseButtonState(int buttonNumber)
+	{
+		return m_mouseButtonStates[buttonNumber];
+	}
+
 	void update();
 	void clean();
+
 private:
 	InputHandler() {}
 	~InputHandler() {}

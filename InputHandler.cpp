@@ -38,10 +38,7 @@ void InputHandler::initializeJoysticks()
 		m_bJoysticksInitialised = true;
 		std::cout << "Initialized " << m_joysticks.size() << " joysticks\n";
 
-		for (int i = 0; i < 3; i++)
-		{
-			m_mouseButtonStates.push_back(false);
-		}
+
 
 
 	}
@@ -49,6 +46,12 @@ void InputHandler::initializeJoysticks()
 	{
 		m_bJoysticksInitialised = false;
 		std::cout << "No joysticks\n";
+	}
+
+	//mouse states init
+	for (int i = 0; i < 3; i++)
+	{
+		m_mouseButtonStates.push_back(false);
 	}
 
 }
@@ -182,6 +185,37 @@ void InputHandler::update()
 			m_buttonStates[whichOne][event.jbutton.button] = false;
 		}
 
+
+		if (event.type == SDL_MOUSEBUTTONDOWN)
+		{
+			if (event.button.button == SDL_BUTTON_LEFT)
+			{
+				m_mouseButtonStates[LEFT] = true;
+			}
+			if (event.button.button == SDL_BUTTON_MIDDLE)
+			{
+				m_mouseButtonStates[MIDDLE] = true;
+			}
+			if (event.button.button == SDL_BUTTON_RIGHT)
+			{
+				m_mouseButtonStates[RIGHT] = true;
+			}
+		}
+		if (event.type == SDL_MOUSEBUTTONUP)
+		{
+			if (event.button.button == SDL_BUTTON_LEFT)
+			{
+				m_mouseButtonStates[LEFT] = false;
+			}
+			if (event.button.button == SDL_BUTTON_MIDDLE)
+			{
+				m_mouseButtonStates[MIDDLE] = false;
+			}
+			if (event.button.button == SDL_BUTTON_RIGHT)
+			{
+				m_mouseButtonStates[RIGHT] = false;
+			}
+		}
 	}
 
 }
