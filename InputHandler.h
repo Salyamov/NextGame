@@ -45,11 +45,16 @@ public:
 		return m_mouseButtonStates[buttonNumber];
 	}
 
+	Vector2D* getMousePosition()
+	{
+		return m_mousePosition;
+	}
+
 	void update();
 	void clean();
 
 private:
-	InputHandler() {}
+	InputHandler();
 	~InputHandler() {}
 
 	bool m_bJoysticksInitialised;
@@ -57,6 +62,7 @@ private:
 	std::vector< std::pair<Vector2D*, Vector2D*> > m_joysticksValues; //направление движения каждого стика
 	std::vector< std::vector<bool>  > m_buttonStates; //массив кнопок для каждого устройства
 	std::vector<bool> m_mouseButtonStates;
+	Vector2D* m_mousePosition;
 
 	const int m_joystickDeadZone = 5000;
 	static InputHandler* s_pInstance;

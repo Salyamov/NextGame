@@ -3,6 +3,16 @@
 
 InputHandler* InputHandler::s_pInstance = NULL;
 
+InputHandler::InputHandler()
+{
+	//mouse states init
+	for (int i = 0; i < 3; i++)
+	{
+		m_mouseButtonStates.push_back(false);
+	}
+	m_mousePosition = new Vector2D(0, 0);
+}
+
 void InputHandler::initializeJoysticks()
 {
 	if (SDL_WasInit(SDL_INIT_JOYSTICK) == 0)
@@ -46,12 +56,6 @@ void InputHandler::initializeJoysticks()
 	{
 		m_bJoysticksInitialised = false;
 		std::cout << "No joysticks\n";
-	}
-
-	//mouse states init
-	for (int i = 0; i < 3; i++)
-	{
-		m_mouseButtonStates.push_back(false);
 	}
 
 }
@@ -99,6 +103,12 @@ void InputHandler::update()
 			TheGame::Instance()->quit();
 		}
 		
+		if (event.type == SDL_MOUSEMOTION)
+		{
+			m_mousePosition->setX(event.motion.x);
+			m_mousePosition->setY(event.motion.y);
+		}
+
 		//устанавливаются значения стиков в массив m_joystickValues[]
 		if (event.type == SDL_JOYAXISMOTION)
 		{
