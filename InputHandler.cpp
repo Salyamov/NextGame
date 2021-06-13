@@ -95,6 +95,7 @@ int InputHandler::yvalue(int joy, int stick)
 
 void InputHandler::update()
 {
+	m_keyStates = SDL_GetKeyboardState(0);
 	SDL_Event event;
 	while (SDL_PollEvent(&event))
 	{

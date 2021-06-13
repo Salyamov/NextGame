@@ -30,6 +30,22 @@ void Player::clean()
 
 void Player::handleInput()
 {
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
+	{
+		m_velocity.setX(2);
+	}
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT))
+	{
+		m_velocity.setX(-2);
+	}
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP))
+	{
+		m_velocity.setY(-2);
+	}
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN))
+	{
+		m_velocity.setY(2);
+	}
 	if (TheInputHandler::Instance()->joystickInitialized())
 	{
 		//1 stick
@@ -66,8 +82,8 @@ void Player::handleInput()
 		m_velocity.setX(1);
 	}
 	*/
-	Vector2D* vec = TheInputHandler::Instance()->getMousePosition();
-	m_velocity = (*vec - m_position) / 100;
+	//Vector2D* vec = TheInputHandler::Instance()->getMousePosition();
+	//m_velocity = (*vec - m_position) / 100;
 	
 
 

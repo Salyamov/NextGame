@@ -50,6 +50,22 @@ public:
 		return m_mousePosition;
 	}
 
+	bool isKeyDown(SDL_Scancode key)
+	{
+		if (m_keyStates != 0)
+		{
+			if (m_keyStates[key] == 1)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		return false;
+	}
+
 	void update();
 	void clean();
 
@@ -63,6 +79,7 @@ private:
 	std::vector< std::vector<bool>  > m_buttonStates; //массив кнопок для каждого устройства
 	std::vector<bool> m_mouseButtonStates;
 	Vector2D* m_mousePosition;
+	const Uint8* m_keyStates;
 
 	const int m_joystickDeadZone = 5000;
 	static InputHandler* s_pInstance;
