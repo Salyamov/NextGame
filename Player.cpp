@@ -76,6 +76,7 @@ void Player::handleInput()
 
 
 	}
+
 	/*
 	if (TheInputHandler::Instance()->getMouseButtonState(LEFT))
 	{

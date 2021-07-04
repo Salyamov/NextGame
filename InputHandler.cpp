@@ -93,6 +93,22 @@ int InputHandler::yvalue(int joy, int stick)
 	return 0;
 }
 
+bool InputHandler::isKeyDown(SDL_Scancode key)
+{
+	if (m_keyStates != 0)
+	{
+		if (m_keyStates[key] == 1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	return false;
+}
+
 void InputHandler::update()
 {
 	SDL_Event event;

@@ -31,7 +31,7 @@ int main(int argc, char* args[])
 
 			if (frameTime < DELAY_TIME)
 			{
-				SDL_Delay((int)DELAY_TIME - frameTime);
+				SDL_Delay((int)DELAY_TIME - frameTime); //ждем оставшееся время
 			}
 		}
 	}

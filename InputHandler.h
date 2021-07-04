@@ -1,8 +1,8 @@
 #ifndef INPUTHANDLER_H
 #define INPUTHANDLER_H
+#include <SDL.h>
 #include <iostream>
 #include <vector>
-#include "SDL.h"
 #include "Game.h"
 
 enum mouse_buttons
@@ -50,21 +50,7 @@ public:
 		return m_mousePosition;
 	}
 
-	bool isKeyDown(SDL_Scancode key)
-	{
-		if (m_keyStates != 0)
-		{
-			if (m_keyStates[key] == 1)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		return false;
-	}
+	bool isKeyDown(SDL_Scancode key);
 
 	void update();
 	void clean();
