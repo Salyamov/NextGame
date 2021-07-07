@@ -52,6 +52,8 @@ public:
 
 	bool isKeyDown(SDL_Scancode key);
 
+	void reset();
+
 	void update();
 	void clean();
 

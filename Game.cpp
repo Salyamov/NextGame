@@ -24,7 +24,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 				return false;
 			else
 			{
-				SDL_SetRenderDrawColor(m_pRenderer, 255, 0, 0, 255);
+				SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
 			}
 		}
 	}

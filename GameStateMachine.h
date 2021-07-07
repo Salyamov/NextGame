@@ -1,8 +1,6 @@
 #ifndef GAMESTATEMACHINE_H
 #define GAMESTATEMACHINE_H
 #include "GameState.h"
-//#include "PlayState.h"
-//#include "MenuState.h"
 #include <vector>
 
 class GameStateMachine
