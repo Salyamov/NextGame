@@ -21,6 +21,6 @@ bool MenuState::onEnter()
 
 bool MenuState::onExit()
 {
-	std::cout << "exiting MenuState\n";
+	std::cout << "Exiting MenuState\n";
 	return true;
 }

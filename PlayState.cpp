@@ -15,12 +15,12 @@ void PlayState::render()
 
 bool PlayState::onEnter()
 {
-	std::cout << "Entering playState\n";
+	std::cout << "Entering PlayState\n";
 	return true;
 }
 
 bool PlayState::onExit()
 {
-	std::cout << "Exiting playState\n";
+	std::cout << "Exiting PlayState\n";
 	return true;
 }

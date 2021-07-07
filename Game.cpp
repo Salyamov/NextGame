@@ -72,10 +72,14 @@ void Game::handleEvents()
 
 void Game::update()
 {
+	m_pGameStateMachine->update();
+
+	/*
 	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->update();
 	}
+	*/
 
 }
 
@@ -83,10 +87,14 @@ void Game::render()
 {
 	SDL_RenderClear(m_pRenderer);
 
+	m_pGameStateMachine->render();
+
+	/*
 	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->draw();
 	}
+	*/
 
 	SDL_RenderPresent(m_pRenderer);
 }

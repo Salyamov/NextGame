@@ -36,3 +36,20 @@ void GameStateMachine::popState()
 		}
 	}
 }
+
+void GameStateMachine::render()
+{
+	if (!m_gameStates.empty())
+	{
+		m_gameStates.back()->render();
+	}
+	
+}
+
+void GameStateMachine::update()
+{
+	if (!m_gameStates.empty())
+	{
+		m_gameStates.back()->update();
+	}
+}

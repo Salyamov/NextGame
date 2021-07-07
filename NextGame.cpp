@@ -18,7 +18,7 @@ int main(int argc, char* args[])
 
 	if (TheGame::Instance()->init("NextGame", 100, 100, 640, 480, false))
 	{
-		std::cout << "game init complete\n";
+		//std::cout << "game init complete\n";
 		while (TheGame::Instance()->running())
 		{
 			frameStart = SDL_GetTicks();

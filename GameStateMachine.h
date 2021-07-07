@@ -11,6 +11,8 @@ public:
 	void pushState(GameState* pState); //добавляет новое состояние
 	void changeState(GameState* pState); //удаляет старое и добавляет новое состояние
 	void popState(); //удаляет старое состояние
+	void render();
+	void update();
 private:
 	std::vector<GameState*> m_gameStates;
 };
