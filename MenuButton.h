@@ -1,14 +1,17 @@
 #ifndef MENUBUTTON_H
 #define MENUBUTTON_H
 #include "SDLGameObject.h"
+#include "GameObjectFactory.h"
 
 class MenuButton : public SDLGameObject
 {
 public:
-	MenuButton(const LoaderParams* pParams, void (*callback)());
+	MenuButton(void (*callback)());
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
+	virtual void load(const LoaderParams* pParams);
+
 private:
 	enum button_state
 	{
