@@ -162,6 +162,7 @@
     <ClCompile Include="tinyxml.cpp" />
     <ClCompile Include="tinyxmlerror.cpp" />
     <ClCompile Include="tinyxmlparser.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedGraphic.h" />

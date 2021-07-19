@@ -1,8 +1,9 @@
 #ifndef GAMEOBJECTFACTORY_H
-#define GAMEOBJECFACTORYT_H
+#define GAMEOBJECTFACTORY_H
+#include "GameObject.h"
 #include <string>
 #include <map>
-#include "GameObject.h"
+
 
 class BaseCreator {
 public:
@@ -14,9 +15,11 @@ public:
 class GameObjectFactory
 {
 public:
+
 	bool registerType(std::string typeID, BaseCreator* pCreator);
 	GameObject* create(std::string typeID);
-	GameObjectFactory* Instance()
+
+	static GameObjectFactory* Instance()
 	{
 		if (s_pInstance == NULL)
 		{
@@ -27,11 +30,14 @@ public:
 	}
 private:
 	GameObjectFactory() {}
-	std::map<std::string, BaseCreator*> m_creators;
+	~GameObjectFactory() {}
 	static GameObjectFactory* s_pInstance;
+
+	std::map<std::string, BaseCreator*> m_creators;
+	
 };
 
-
+typedef GameObjectFactory TheGameObjectFactory;
 
 
 

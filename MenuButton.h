@@ -6,7 +6,7 @@
 class MenuButton : public SDLGameObject
 {
 public:
-	MenuButton(void (*callback)());
+	MenuButton();
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
@@ -23,7 +23,13 @@ private:
 	bool m_bReleased;
 };
 
-
+class MenuButtonCreator : public BaseCreator
+{
+	GameObject* createGameObject() const
+	{
+		return new MenuButton();
+	}
+};
 
 
 

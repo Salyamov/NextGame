@@ -1,6 +1,6 @@
 #include "AnimatedGraphic.h"
 
-AnimatedGraphic::AnimatedGraphic(int animSpeed) : SDLGameObject(), m_animSpeed(animSpeed)
+AnimatedGraphic::AnimatedGraphic() : m_animSpeed(0)
 {
 
 }
