@@ -7,7 +7,7 @@ AnimatedGraphic::AnimatedGraphic() : m_animSpeed(0)
 
 void AnimatedGraphic::update()
 {
-	m_currentFrame = int((SDL_GetTicks() / 100 / m_animSpeed) % 2);
+	m_currentFrame = int((SDL_GetTicks() / 100 / m_animSpeed) % 2); //numFrames
 }
 
 

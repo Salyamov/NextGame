@@ -18,6 +18,8 @@ public:
 	int getHeight() const { return m_height; }
 	int getNumFrames() const { return m_numFrames; }
 	std::string getTextureID() const { return m_textureID; }
+	int getCallbackID() const { return m_callbackID; }
+	int getAnimSpeed() const { return m_animSpeed; }
 private:
 	int m_x;
 	int m_y;
