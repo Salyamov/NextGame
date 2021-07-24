@@ -1,13 +1,14 @@
-#include "MenuState.h"
+#include "MainMenuState.h"
 #include "TextureManager.h"
 #include "Game.h"
 #include "MenuButton.h"
 #include "PlayState.h"
+#include "StateParser.h"
 #include <iostream>
 
-const std::string MenuState::s_menuID = "MENU";
+const std::string MainMenuState::s_menuID = "MENU";
 
-void MenuState::update()
+void MainMenuState::update()
 {
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
@@ -15,7 +16,7 @@ void MenuState::update()
 	}
 }
 
-void MenuState::render()
+void MainMenuState::render()
 {
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
@@ -23,8 +24,19 @@ void MenuState::render()
 	}
 }
 
-bool MenuState::onEnter()
+bool MainMenuState::onEnter()
 {
+	StateParser stateParser;
+
+	stateParser.parseState("test.xml", s_menuID, &m_gameObjects, &m_textureIDList);
+
+	m_callbacks.push_back(0);
+	m_callbacks.push_back(s_menuToPlay);
+	m_callbacks.push_back(s_exitFromMenu);
+
+	setCallbacks(m_callbacks);
+
+	/*
 	if (!TheTextureManager::Instance()->load("assets/play.png", "playbutton", TheGame::Instance()->getRenderer()))
 	{
 		return false;
@@ -39,13 +51,21 @@ bool MenuState::onEnter()
 
 	m_gameObjects.push_back(button1);
 	m_gameObjects.push_back(button2);
+	*/
 
 	std::cout << "Entering MenuState\n";
 	return true;
 }
 
-bool MenuState::onExit()
+bool MainMenuState::onExit()
 {
+	for (int i = 0; i < m_textureIDList.size(); i++)
+	{
+		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDList[i]);
+	}
+
+
+	/*
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->clean();
@@ -53,17 +73,31 @@ bool MenuState::onExit()
 	m_gameObjects.clear();
 	TheTextureManager::Instance()->clearFromTextureMap("playbutton");
 	TheTextureManager::Instance()->clearFromTextureMap("exitbutton");
+	*/
 
 	std::cout << "Exiting MenuState\n";
 	return true;
 }
 
-void MenuState::s_menuToPlay()
+void MainMenuState::setCallbacks(const std::vector<Callback>& callbacks)
+{
+	for (int i = 0; i < callbacks.size(); i++)
+	{
+		//if MenuButton type
+		if (dynamic_cast<MenuButton*>(m_gameObjects[i]))
+		{
+			MenuButton* pButton = dynamic_cast<MenuButton*>(m_gameObjects[i]);
+			pButton->setCallback(callbacks[pButton->getCallbackID()]);
+		}
+	}
+}
+
+void MainMenuState::s_menuToPlay()
 {
 	TheGame::Instance()->getStateMachine()->changeState(new PlayState());
 }
 
-void MenuState::s_exitFromMenu()
+void MainMenuState::s_exitFromMenu()
 {
 	TheGame::Instance()->quit();
 }

@@ -4,6 +4,7 @@
 #include "TextureManager.h"
 #include "MenuButton.h"
 #include "InputHandler.h"
+#include "MainMenuState.h"
 
 const std::string PauseState::s_pauseID = "PAUSE";
 
@@ -34,8 +35,8 @@ bool PauseState::onEnter()
 		return false;
 	}
 
-	GameObject* button1 = new MenuButton(new LoaderParams(200, 100, 200, 80, "mainbutton"), s_pauseToMain);
-	GameObject* button2 = new MenuButton(new LoaderParams(200, 300, 200, 80, "resumebutton"), s_resumePlay);
+	GameObject* button1 = new MenuButton();
+	GameObject* button2 = new MenuButton();
 
 	m_gameObjects.push_back(button1);
 	m_gameObjects.push_back(button2);
@@ -63,7 +64,7 @@ bool PauseState::onExit()
 
 void PauseState::s_pauseToMain()
 {
-	TheGame::Instance()->getStateMachine()->changeState(new MenuState());
+	TheGame::Instance()->getStateMachine()->changeState(new MainMenuState());
 }
 
 void PauseState::s_resumePlay()

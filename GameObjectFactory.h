@@ -1,9 +1,8 @@
 #ifndef GAMEOBJECTFACTORY_H
 #define GAMEOBJECTFACTORY_H
-#include "GameObject.h"
 #include <string>
 #include <map>
-
+#include "GameObject.h"
 
 class BaseCreator {
 public:

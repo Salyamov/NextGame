@@ -2,7 +2,6 @@
 #define PLAYER_H
 #include "SDLGameObject.h"
 #include "GameObjectFactory.h"
-#include "GameObjectFactory.h"
 
 class Player : public SDLGameObject
 {
@@ -24,6 +23,7 @@ class PlayerCreator : public BaseCreator
 	{
 		return new Player();
 	}
+
 };
 
 

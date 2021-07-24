@@ -3,6 +3,12 @@
 #include "TextureManager.h"
 #include "MenuState.h"
 #include "PlayState.h"
+#include "MainMenuState.h"
+#include "MenuButton.h"
+#include "AnimatedGraphic.h"
+#include "Player.h"
+#include "Enemy.h"
+
 
 Game* Game::s_pInstance = NULL;
 
@@ -32,16 +38,26 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	{
 		return false;
 	}
-	m_bRunning = true;
+	
 
+	
 	TheInputHandler::Instance()->initializeJoysticks();
+	/*
 	TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", m_pRenderer);
 	
-	m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate"))); 
-	m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate"))); 
+	m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate", 5))); 
+	m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate", 5))); 
+	*/
+
+	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
+	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
+	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
+	TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
 
 	m_pGameStateMachine = new GameStateMachine();
-	m_pGameStateMachine->changeState(new MenuState());
+	m_pGameStateMachine->changeState(new MainMenuState());
+
+	m_bRunning = true;
 
 	return true;
 }
@@ -73,14 +89,6 @@ void Game::handleEvents()
 void Game::update()
 {
 	m_pGameStateMachine->update();
-
-	/*
-	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->update();
-	}
-	*/
-
 }
 
 void Game::render()
@@ -88,13 +96,6 @@ void Game::render()
 	SDL_RenderClear(m_pRenderer);
 
 	m_pGameStateMachine->render();
-
-	/*
-	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->draw();
-	}
-	*/
 
 	SDL_RenderPresent(m_pRenderer);
 }
