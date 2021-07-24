@@ -81,7 +81,7 @@ bool MainMenuState::onExit()
 
 void MainMenuState::setCallbacks(const std::vector<Callback>& callbacks)
 {
-	for (int i = 0; i < callbacks.size(); i++)
+	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
 		//if MenuButton type
 		if (dynamic_cast<MenuButton*>(m_gameObjects[i]))

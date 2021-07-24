@@ -46,9 +46,9 @@ private:
 	SDL_Renderer* m_pRenderer;
 	SDL_Window* m_pWindow;
 
-	int m_currentFrame;
+	//int m_currentFrame;
 
-	std::vector<GameObject*> m_gameObjects;
+	//std::vector<GameObject*> m_gameObjects;
 	//GameObject* m_go;
 	//GameObject* m_player;
 	//GameObject* m_enemy;
