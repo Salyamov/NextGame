@@ -36,9 +36,9 @@
 
 <GAMEOVER>
 <TEXTURES>
-	<texture firstname="gameover.png" ID="gameovertext" />
-	<texture firstname="main.png" ID="mainbutton" />
-	<texture firstname="restart.png" ID="restartbutton" />
+	<texture filename="assets/gameover.png" ID="gameovertext" />
+	<texture filename="assets/main.png" ID="mainbutton" />
+	<texture filename="assets/restart.png" ID="restartbutton" />
 </TEXTURES>
 <OBJECTS>
 	<object type="AnimatedGraphic" x="200" y="100" width="190" height="30" textureID="gameovertext" numFrames="2" animSpeed="2" />

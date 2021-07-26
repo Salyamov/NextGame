@@ -36,29 +36,6 @@ bool GameOverState::onEnter()
 
 	setCallbacks(m_callbacks);
 
-	/*
-	if (!TheTextureManager::Instance()->load("assets/gameover.png", "gameovertext", TheGame::Instance()->getRenderer()))
-	{
-		return false;
-	}
-	if (!TheTextureManager::Instance()->load("assets/main.png", "mainbutton", TheGame::Instance()->getRenderer()))
-	{
-		return false;
-	}
-	if (!TheTextureManager::Instance()->load("assets/restart.png", "restartbutton", TheGame::Instance()->getRenderer()))
-	{
-		return false;
-	}
-
-	GameObject* gameOverText = new AnimatedGraphic();
-	GameObject* button1 = new MenuButton();
-	GameObject* button2 = new MenuButton();
-
-	m_gameObjects.push_back(gameOverText);
-	m_gameObjects.push_back(button1);
-	m_gameObjects.push_back(button2);
-	*/
-
 	std::cout << "Entering GameOverState\n";
 
 	return true;

@@ -43,11 +43,6 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	/*
 	TheInputHandler::Instance()->initializeJoysticks();
-	
-	TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", m_pRenderer);
-	
-	m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate", 5))); 
-	m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate", 5))); 
 	*/
 	
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
