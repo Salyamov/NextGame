@@ -30,16 +30,18 @@ void MenuButton::update()
 		if (TheInputHandler::Instance()->getMouseButtonState(LEFT))
 		{
 			m_currentFrame = CLICKED;
-
-			//call our callback functions
-			m_callback();
-			m_bReleased = false;
+			if (m_bReleased)
+			{
+				//call our callback functions
+				m_callback();
+				m_bReleased = false;
+			}
 
 		}
 		else if(!TheInputHandler::Instance()->getMouseButtonState(LEFT))
 		{
 			m_bReleased = true;
-			m_currentFrame = MOUSE_OVER;
+			//m_currentFrame = MOUSE_OVER;
 		}
 	}
 	else

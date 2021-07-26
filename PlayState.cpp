@@ -1,10 +1,11 @@
+#include <iostream>
 #include "PlayState.h"
 #include "Game.h"
 #include "TextureManager.h"
 #include "InputHandler.h"
 #include "PauseState.h"
 #include "GameOverState.h"
-#include <iostream>
+#include "StateParser.h"
 
 const std::string PlayState::s_playID = "PLAY";
 
@@ -40,21 +41,8 @@ void PlayState::render()
 
 bool PlayState::onEnter()
 {
-	if (!TheTextureManager::Instance()->load("assets/helicopter.png", "helicopter", TheGame::Instance()->getRenderer()))
-	{
-		return false;
-	}
-
-	if (!TheTextureManager::Instance()->load("assets/helicopter2.png", "helicopter2", TheGame::Instance()->getRenderer()))
-	{
-		return false;
-	}
-
-	GameObject* player = new Player();
-	GameObject* enemy = new Enemy();
-
-	m_gameObjects.push_back(player);
-	m_gameObjects.push_back(enemy);
+	StateParser stateParser;
+	stateParser.parseState("test.xml", s_playID, &m_gameObjects, &m_textureIDList);
 
 	std::cout << "Entering PlayState\n";
 	return true;
@@ -62,12 +50,16 @@ bool PlayState::onEnter()
 
 bool PlayState::onExit()
 {
-	for(int i = 0; i < m_gameObjects.size(); i++)
+	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->clean();
 	}
 	m_gameObjects.clear();
-	TheTextureManager::Instance()->clearFromTextureMap("helicopter");
+
+	for(int i = 0; i < m_textureIDList.size(); i++)
+	{
+		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDList[i]);
+	}
 
 	std::cout << "Exiting PlayState\n";
 	return true;
