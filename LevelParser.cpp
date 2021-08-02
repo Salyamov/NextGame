@@ -1,6 +1,11 @@
 #include "LevelParser.h"
+#include "base64.h"
 #include "TextureManager.h"
 #include "Game.h"
+#include "TileLayer.h"
+#include "zlib.h"
+#include "zconf.h"
+
 
 Level* LevelParser::parseLevel(const char* levelFile)
 {
@@ -11,23 +16,24 @@ Level* LevelParser::parseLevel(const char* levelFile)
 
 	TiXmlElement* pRoot = levelDocument.RootElement();
 
-	pRoot->Attribute("tilewidth", &m_tileSize);
-	pRoot->Attribute("width", &m_width);
-	pRoot->Attribute("height", &m_height);
+	//берутся из корневого тега <map> xml файла
+	pRoot->Attribute("tilewidth", &m_tileSize); //размер квадрата
+	pRoot->Attribute("width", &m_width);	//сколько на сколько квадратов
+	pRoot->Attribute("height", &m_height);  
 
 	//parse the tilesets
-	for (TiXmlElement* e = pRoot->FirstChildElement(); pRoot != NULL; e = pRoot->NextSiblingElement())
+	for (TiXmlElement* e = pRoot->FirstChildElement(); pRoot != NULL; e = e->NextSiblingElement())
 	{
-		if (e->Value() == "tileset")
+		if (e->Value() == std::string("tileset"))
 		{
 			parseTilesets(e, pLevel->getTilesets());
 		}
 	}
 
 	//parse any object layers
-	for (TiXmlElement* e = pRoot->FirstChildElement(); pRoot != NULL; e = pRoot->NextSiblingElement())
+	for (TiXmlElement* e = pRoot->FirstChildElement(); pRoot != NULL; e = e->NextSiblingElement())
 	{
-		if (e->Value() == "layer")
+		if (e->Value() == std::string("layer"))
 		{
 			parseTileLayer(e, pLevel->getLayers(), pLevel->getTilesets());
 		}
@@ -59,5 +65,30 @@ void LevelParser::parseTilesets(TiXmlElement* pTilesetRoot, std::vector<Tileset>
 
 void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>* pLayers, const std::vector<Tileset>* pTilesets)
 {
+	TileLayer* pTileLayer = new TileLayer(m_tileSize, *pTilesets);
+
+	std::vector< std::vector<int> > data;
+	
+	std::string decodedIDs;
+	TiXmlElement* pDataNode;
+
+	for (TiXmlElement* e = pTileElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
+	{
+		if (e->Value() == std::string("data"))
+		{
+			pDataNode = e;
+		}
+	}
+
+	for (TiXmlNode* e = pDataNode->FirstChild(); e != NULL; e = e->NextSibling())
+	{
+		TiXmlText* text = e->ToText();
+		std::string t = text->Value();
+		decodedIDs = base64_decode(t);
+	}
+
+
+
+
 
 }

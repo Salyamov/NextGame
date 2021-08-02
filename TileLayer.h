@@ -8,7 +8,7 @@
 class TileLayer : public Layer
 {
 public:
-	TileLayer(int tileSize, std::vector<Tileset> &tilesets);
+	TileLayer(int tileSize, const std::vector<Tileset> &tilesets);
 	virtual void update();
 	virtual void render();
 
