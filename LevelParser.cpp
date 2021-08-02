@@ -1,8 +1,9 @@
 #include "LevelParser.h"
 #include "base64.h"
+#include "TileLayer.h"
 #include "TextureManager.h"
 #include "Game.h"
-#include "TileLayer.h"
+
 #include "zlib.h"
 #include "zconf.h"
 
