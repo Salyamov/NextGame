@@ -88,8 +88,26 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 		decodedIDs = base64_decode(t);
 	}
 
+	//uncompress zlib compression
+	uLongf sizeofids = m_width * m_height * sizeof(int);
+	std::vector<int> ids(m_width * m_height);
+	uncompress((Bytef*)&ids[0], &sizeofids, (const Bytef*)decodedIDs.c_str(), decodedIDs.size()); //назначение, размер назначения, источник, размер источника
 
+	std::vector<int> layerRow(m_width);
+	for (int j = 0; j < m_height; j++)
+	{
+		data.push_back(layerRow);
+	}
 
+	for (int rows = 0; rows < m_height; rows++)
+	{
+		for (int cols = 0; cols < m_width; cols++)
+		{
+			data[rows][cols] = ids[rows * m_width + cols];
+		}
+	}
 
+	pTileLayer->setTileIDs(data);
+	pLayers->push_back(pTileLayer);
 
 }
