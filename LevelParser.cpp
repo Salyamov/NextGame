@@ -19,7 +19,7 @@ Level* LevelParser::parseLevel(const char* levelFile)
 
 	//берутся из корневого тега <map> xml файла
 	pRoot->Attribute("tilewidth", &m_tileSize); //размер квадрата
-	pRoot->Attribute("width", &m_width);	//сколько на сколько квадратов
+	pRoot->Attribute("width", &m_width);	//сколько на сколько квадратов двумерный массив
 	pRoot->Attribute("height", &m_height);  
 
 	//parse the tilesets

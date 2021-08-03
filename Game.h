@@ -9,8 +9,6 @@
 #include "Player.h"
 #include "GameStateMachine.h"
 
-
-
 class Game
 {
 public:
@@ -26,6 +24,9 @@ public:
 
 	SDL_Renderer* getRenderer() const { return m_pRenderer; }
 	GameStateMachine* getStateMachine() { return m_pGameStateMachine; }
+
+	int getGameWidth() const { return m_width; }
+	int getGameHeight() const { return m_height; }
 
 	static Game* Instance()
 	{
@@ -45,14 +46,10 @@ private:
 	bool m_bRunning;
 	SDL_Renderer* m_pRenderer;
 	SDL_Window* m_pWindow;
-
-	//int m_currentFrame;
-
-	//std::vector<GameObject*> m_gameObjects;
-	//GameObject* m_go;
-	//GameObject* m_player;
-	//GameObject* m_enemy;
 	GameStateMachine* m_pGameStateMachine;
+
+	int m_width;
+	int m_height;
 
 };
 

@@ -40,7 +40,7 @@ public:
 
 private:
 
-	std::vector<Tileset> m_tilesets;
+	std::vector<Tileset> m_tilesets; 
 	std::vector<Layer*> m_layers;
 
 	Level();

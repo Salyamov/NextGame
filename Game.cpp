@@ -39,11 +39,12 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false;
 	}
 	
-
-
 	/*
 	TheInputHandler::Instance()->initializeJoysticks();
 	*/
+
+	m_width = width;
+	m_height = height;
 	
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
