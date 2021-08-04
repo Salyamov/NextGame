@@ -1,5 +1,6 @@
 #include "TileLayer.h"
 #include "Game.h"
+#include "TextureManager.h"
 
 TileLayer::TileLayer(int tileSize, const std::vector<Tileset>& tilesets) :
 	m_tileSize(tileSize), m_tilesets(tilesets), m_position(0, 0), m_velocity(0, 0)
@@ -36,13 +37,11 @@ void TileLayer::render()
 
 			Tileset tileset = getTilesetByID(id); //получаем тайлсет по идентификатору
 
-
-
-
+			TheTextureManager::Instance()->drawTile(tileset.name, 2, 2, (j * m_tileSize) - x2, (i * m_tileSize) - y2,
+				m_tileSize, m_tileSize, (id - (tileset.firstGridId - 1)) / tileset.numColumns,
+				(id - (tileset.firstGridId - 1)) % tileset.numColumns, TheGame::Instance()->getRenderer());
 		}
 	}
-
-
 }
 
 Tileset TileLayer::getTilesetByID(int tileID)
