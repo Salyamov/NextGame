@@ -2,6 +2,7 @@
 #define PLAYSTATE_H
 
 #include "GameState.h"
+#include "Level.h"
 //#include "SDLGameObject.h"
 //#include "GameObject.h"
 #include <string>
@@ -26,6 +27,7 @@ private:
 	bool checkCollision(SDLGameObject* p1, SDLGameObject* p2);
 	static const std::string s_playID;
 	std::vector<GameObject*> m_gameObjects;
+	Level* pLevel;
 };
 
 

@@ -71,7 +71,7 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 	std::vector< std::vector<int> > data;
 	
 	std::string decodedIDs;
-	TiXmlElement* pDataNode;
+	TiXmlElement* pDataNode = NULL;
 
 	for (TiXmlElement* e = pTileElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{

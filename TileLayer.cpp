@@ -37,6 +37,8 @@ void TileLayer::render()
 
 			Tileset tileset = getTilesetByID(id); //получаем тайлсет по идентификатору
 
+			id--;
+
 			TheTextureManager::Instance()->drawTile(tileset.name, 2, 2, (j * m_tileSize) - x2, (i * m_tileSize) - y2,
 				m_tileSize, m_tileSize, (id - (tileset.firstGridId - 1)) / tileset.numColumns,
 				(id - (tileset.firstGridId - 1)) % tileset.numColumns, TheGame::Instance()->getRenderer());
@@ -48,7 +50,7 @@ Tileset TileLayer::getTilesetByID(int tileID)
 {
 	for (int i = 0; i < m_tilesets.size(); i++)
 	{
-		//если не последний тайлсет
+		//если больше одного тайлсета
 		if (i + 1 <= m_tilesets.size() - 1)
 		{
 			if (tileID >= m_tilesets[i].firstGridId && tileID < m_tilesets[i + 1].firstGridId)
@@ -56,13 +58,13 @@ Tileset TileLayer::getTilesetByID(int tileID)
 				return m_tilesets[i];
 			}
 		}
-		//если последний тайлсет (нигде больше id не найден)
+		//если только один тайлсет (нигде больше id не найден)
 		else
 		{
 			return m_tilesets[i];
 		}
 	}
-	//не найден даже в последнем тайлсете
+	//нет тайлсетов
 	std::cout << "did not find tileset, returning empty tileset\n";
 	Tileset t;
 	return t;
