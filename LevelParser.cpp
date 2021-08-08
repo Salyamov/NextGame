@@ -23,7 +23,7 @@ Level* LevelParser::parseLevel(const char* levelFile)
 	pRoot->Attribute("height", &m_height);  
 
 	//parse the tilesets
-	for (TiXmlElement* e = pRoot->FirstChildElement(); pRoot != NULL; e = e->NextSiblingElement())
+	for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{
 		if (e->Value() == std::string("tileset"))
 		{
@@ -32,7 +32,7 @@ Level* LevelParser::parseLevel(const char* levelFile)
 	}
 
 	//parse any object layers
-	for (TiXmlElement* e = pRoot->FirstChildElement(); pRoot != NULL; e = e->NextSiblingElement())
+	for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{
 		if (e->Value() == std::string("layer"))
 		{
@@ -45,7 +45,7 @@ Level* LevelParser::parseLevel(const char* levelFile)
 
 void LevelParser::parseTilesets(TiXmlElement* pTilesetRoot, std::vector<Tileset>* pTilesets)
 {
-	TheTextureManager::Instance()->load(pTilesetRoot->FirstChildElement()->Attribute("source"),
+	TheTextureManager::Instance()->load(std::string("assets/") + std::string(pTilesetRoot->FirstChildElement()->Attribute("source")),
 		pTilesetRoot->Attribute("name"), TheGame::Instance()->getRenderer()); //сохраняем имя тайлсета и его адрес в TextureManger'е
 
 	//сохраняем параметры тайлсета

@@ -47,6 +47,7 @@ bool MainMenuState::onExit()
 		m_gameObjects[i]->clean();
 	}
 	m_gameObjects.clear();
+	
 
 	for (int i = 0; i < m_textureIDList.size(); i++)
 	{

@@ -17,18 +17,21 @@ void PlayState::update()
 	{
 		TheGame::Instance()->getStateMachine()->pushState(new PauseState());
 	}
-
+	
+	
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->update();
 	}
-
+	
+	/*
 	if (checkCollision(dynamic_cast<SDLGameObject*>(m_gameObjects[0]), 
 		dynamic_cast<SDLGameObject*>(m_gameObjects[1]))
 		)
 	{
 		TheGame::Instance()->getStateMachine()->changeState(new GameOverState());
-	}
+	*/
+	
 
 }
 
@@ -48,11 +51,13 @@ bool PlayState::onEnter()
 
 bool PlayState::onExit()
 {
+
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->clean();
 	}
 	m_gameObjects.clear();
+	
 
 	for(int i = 0; i < m_textureIDList.size(); i++)
 	{
