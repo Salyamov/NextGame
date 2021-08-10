@@ -17,14 +17,16 @@ void PlayState::update()
 	{
 		TheGame::Instance()->getStateMachine()->pushState(new PauseState());
 	}
+
+	pLevel->update();
 	
-	
+	/*
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->update();
 	}
 	
-	/*
+	
 	if (checkCollision(dynamic_cast<SDLGameObject*>(m_gameObjects[0]), 
 		dynamic_cast<SDLGameObject*>(m_gameObjects[1]))
 		)

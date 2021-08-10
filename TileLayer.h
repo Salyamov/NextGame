@@ -30,7 +30,7 @@ private:
 	int m_numColumns; //кол-во отображаемых столбцов
 	int m_numRows; //кол-вл отображаемых строк
 
-	Vector2D m_position;
+	Vector2D m_position; //с какой позиции мы начинаем отрисовывать уровень (внутри массива tile_IDs)
 	Vector2D m_velocity;
 
 	const std::vector<Tileset>& m_tilesets;
