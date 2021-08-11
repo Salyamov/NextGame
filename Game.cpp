@@ -10,6 +10,7 @@
 #include "Enemy.h"
 
 
+
 Game* Game::s_pInstance = NULL;
 
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
