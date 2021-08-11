@@ -150,11 +150,14 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, std::vector<Lay
 {
 	ObjectLayer* pObjectLayer = new ObjectLayer();
 
-	for (TiXmlElement* e = pObjectElement; e != NULL; e->NextSiblingElement())
+	std::cout << pObjectElement->FirstChildElement()->Value();
+
+	for (TiXmlElement* e = pObjectElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{
+		std::cout << e->Value();
 		if (e->Value() == std::string("object"))
 		{
-			int x, y, width, height, numFrames, callbackID, animSpeed;
+			int x, y, width, height, numFrames, callbackID = 0, animSpeed = 0;
 			std::string textureID;
 
 			e->Attribute("x", &x);
@@ -168,34 +171,34 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, std::vector<Lay
 			{
 				if (properties->Value() == std::string("properties"))
 				{
-					for (TiXmlElement* property = properties->FirstChildElement(); property != NULL;
-						property = property->NextSiblingElement())
+					for (TiXmlElement* prop = properties->FirstChildElement(); prop != NULL;
+						prop = prop->NextSiblingElement())
 					{
-						if (property->Value() == std::string("property"))
+						if (prop->Value() == std::string("property"))
 						{
-							if (property->Attribute("name") == std::string("numFrames"))
+							if (prop->Attribute("name") == std::string("numFrames"))
 							{
-								property->Attribute("value", &numFrames);
+								prop->Attribute("value", &numFrames);
 							}
-							else if (property->Value() == std::string("textureWidth"))
+							else if (prop->Attribute("name") == std::string("textureWidth"))
 							{
-								property->Attribute("value", &width);
+								prop->Attribute("value", &width);
 							}
-							else if (property->Value() == std::string("textureHeight"))
+							else if (prop->Attribute("name") == std::string("textureHeight"))
 							{
-								property->Attribute("value", &height);
+								prop->Attribute("value", &height);
 							}
-							else if (property->Value() == std::string("textureID"))
+							else if (prop->Attribute("name") == std::string("textureID"))
 							{
-								textureID = property->Attribute("value");
+								textureID = prop->Attribute("value");
 							}
-							else if (property->Value() == std::string("callbackID"))
+							else if (prop->Attribute("name") == std::string("callbackID"))
 							{
-								property->Attribute("value", &callbackID);
+								prop->Attribute("value", &callbackID);
 							}
-							else if (property->Value() == std::string("animSpeed"))
+							else if (prop->Attribute("name") == std::string("animSpeed"))
 							{
-								property->Attribute("value", &animSpeed);
+								prop->Attribute("value", &animSpeed);
 							}
 						}
 					}

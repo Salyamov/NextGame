@@ -15,7 +15,7 @@
   </data>
  </layer>
  <objectgroup id="3" name="Object Layer 1">
-  <object id="2" name="Helicopter1" type="Player" x="32" y="32" width="32" height="32">
+  <object id="2" name="Helicopter1" type="Player" x="32" y="32" width="1" height="1">
    <properties>
     <property name="numFrames" value="4"/>
 	<property name="textureWidth" value="128"/>
