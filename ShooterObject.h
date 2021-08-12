@@ -26,8 +26,7 @@ protected:
 
 	ShooterObject(); // we won't directly create Shooter object
 
-	//draw the animation
-	void doDyingAnimation();
+	void doDyingAnimation();//обновляет анимацию и ставит флаг dead, чтобы можно было удалить объект из игры
 
 	int m_bulletFiringSpeed;
 	int m_bulletCounter;

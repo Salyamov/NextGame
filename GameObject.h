@@ -48,7 +48,7 @@ protected:
 	//animation variables
 	int m_currentRow;
 	int m_currentFrame;
-	int numFrames;
+	int m_numFrames;
 	std::string m_textureID;
 
 	double m_angle;
