@@ -1,13 +1,13 @@
-#include "SDLGameObject.h"
+#include "ShooterObject.h"
 #include "TextureManager.h"
 #include "Game.h"
 
-SDLGameObject::SDLGameObject() : GameObject()
+ShooterObject::ShooterObject() : GameObject()
 {
 
 }
 
-void SDLGameObject::load(const LoaderParams* pParams)
+void ShooterObject::load(std::unique_ptr<LoaderParams>const& pParams)
 {
 	m_position = Vector2D(pParams->getX(), pParams->getY());
 	m_velocity = Vector2D(0, 0);
@@ -20,7 +20,7 @@ void SDLGameObject::load(const LoaderParams* pParams)
 	m_numFrames = pParams->getNumFrames();
 }
 
-void SDLGameObject::draw()
+void ShooterObject::draw()
 {
 	if (m_velocity.getX() > 0)
 	{
@@ -35,12 +35,12 @@ void SDLGameObject::draw()
 
 }
 
-void SDLGameObject::update()
+void ShooterObject::update()
 {
 	m_velocity += m_acceleration;
 	m_position += m_velocity;
 }
 
-void SDLGameObject::clean()
+void ShooterObject::clean()
 {
 }
