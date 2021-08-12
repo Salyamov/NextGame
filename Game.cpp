@@ -74,6 +74,43 @@ void Game::quit()
 	m_bRunning = false;
 }
 
+void Game::setCurrentLevel(int currentLevel)
+{
+	m_currentLevel = currentLevel;
+	m_pGameStateMachine->changeState(new BetweenLevelState());
+	m_bLevelComplete = false;
+}
+
+int Game::getCurrentLevel()
+{
+	return m_currentLevel;
+}
+
+float Game::getScrollSpeed()
+{
+	return m_scrollSpeed;
+}
+
+void Game::setPlayerLives(int playerLives)
+{
+	m_playerLives = playerLives;
+}
+
+int Game::getPlayerLives()
+{
+	return m_playerLives;
+}
+
+void Game::setLevelComplete(bool levelComplete)
+{
+	m_bLevelComplete = levelComplete;
+}
+
+bool Game::getLevelComplete()
+{
+	return m_bLevelComplete;
+}
+
 void Game::handleEvents()
 {
 	TheInputHandler::Instance()->update();

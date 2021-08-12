@@ -29,6 +29,15 @@ public:
 	int getGameWidth() const { return m_width; }
 	int getGameHeight() const { return m_height; }
 
+	void setCurrentLevel(int currentLevel);
+	int getCurrentLevel();
+	float getScrollSpeed();
+	void setPlayerLives(int playerLives);
+	int getPlayerLives();
+	void setLevelComplete(bool levelComplete);
+	bool getLevelComplete();
+
+
 	static Game* Instance()
 	{
 		if (s_pInstance == NULL)
@@ -52,6 +61,10 @@ private:
 	int m_width;
 	int m_height;
 
+	int m_currentLevel;
+	float m_scrollSpeed;
+	int m_playerLives;
+	bool m_bLevelComplete;
 };
 
 typedef Game TheGame;

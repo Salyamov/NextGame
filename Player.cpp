@@ -22,14 +22,50 @@ void Player::draw()
 
 void Player::update()
 {
-	//reset velocity
-	m_velocity.setX(0);
-	m_velocity.setY(0);
+	if (TheGame::Instance()->getLevelComplete())
+	{
+		//долетает до края экрана и начинается новый уровень
+		if (m_position.getX() >= TheGame::Instance()->getGameWidth())
+		{
+			TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
+		}
+		//долетает до экрана без управления
+		else
+		{
+			m_velocity.setY(0);
+			m_velocity.setX(3);
+			ShooterObject::update();
+			handleAnimation;
+		}
+	}
+	else
+	{
+		if (!m_bDying)
+		{
+			//reset velocity
+			m_velocity.setX(0);
+			m_velocity.setY(0);
 
-	handleInput();
-	
-	ShooterObject::update();
-	m_currentFrame = int((SDL_GetTicks() / 100) % m_numFrames); //num frames
+			//get input
+			handleInput();
+			ShooterObject::update();
+			handleAnimation();
+
+		}
+		//if player doing the death animation
+		else
+		{
+			m_currentFrame = int((SDL_GetTicks() / 100) % m_numFrames);
+			//if death animation is completed
+			if (m_dyingCounter == m_dyingTime)
+			{
+				//ressurect the player
+				ressurect();
+			}
+			m_dyingCounter++;
+		}
+	}
+
 }
 
 void Player::clean()
@@ -92,6 +128,7 @@ void Player::ressurect()
 
 void Player::handleAnimation()
 {
+	//если вертолет неуязвимый, то он мигает
 	if (m_invulnerable)
 	{
 		//если неуязвимость закончилась
@@ -115,7 +152,25 @@ void Player::handleAnimation()
 		m_invulnerableCounter++;
 	}
 
+	//наклон вертолета во время движения
+	if (!m_bDead)
+	{
+		if (m_velocity.getX() < 0)
+		{
+			m_angle = -10.0;
+		}
+		else if (m_velocity.getX() > 0)
+		{
+			m_angle = 10.0;
+		}
+		else
+		{
+			m_angle = 0.0;
+		}
+	}
 
+	//анимация пропеллеров
+	m_currentFrame = int((SDL_GetTicks() / 100) % m_numFrames);
 
 }
 
