@@ -18,10 +18,6 @@ private:
 	int m_minHeight;
 	int m_gap;
 
-	int m_dyingTime;
-	int m_health;
-	int m_moveSpeed;
-
 };
 
 class GliderCreator : public BaseCreator

@@ -148,6 +148,7 @@
     <ClCompile Include="AnimatedGraphic.cpp" />
     <ClCompile Include="base64.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Eskeletor.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectFactory.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="AnimatedGraphic.h" />
     <ClInclude Include="base64.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Eskeletor.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectFactory.h" />

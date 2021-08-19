@@ -1,8 +1,9 @@
 #include "ShotGlider.h"
 
-ShotGlider::ShotGlider() : m_bulletFiringSpeed(25), m_moveSpeed(3)
+ShotGlider::ShotGlider() : Glider()
 {
-
+	m_bulletFiringSpeed = 25;
+	m_moveSpeed = 3;
 }
 
 ShotGlider::~ShotGlider()

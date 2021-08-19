@@ -1,8 +1,11 @@
 #include "Glider.h"
 
-Glider::Glider() : m_dyingTime(25), m_health(1), m_moveSpeed(3), m_gap(60)
+Glider::Glider() : Enemy()
 {
-
+	m_dyingTime = 25;
+	m_health = 1;
+	m_moveSpeed = 3;
+	m_gap = 60;
 }
 
 Glider::~Glider()

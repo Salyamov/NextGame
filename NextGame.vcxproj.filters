@@ -105,6 +105,9 @@
     <ClCompile Include="ShotGlider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Eskeletor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -198,6 +201,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ShotGlider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Eskeletor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

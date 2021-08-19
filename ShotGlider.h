@@ -11,10 +11,8 @@ public:
 	virtual void load(std::unique_ptr<LoaderParams> const& pParams);
 	virtual void update();
 
-
 private:
-	int m_bulletFiringSpeed;
-	int m_moveSpeed;
+
 
 };
 
@@ -22,7 +20,7 @@ class ShotGliderCreator : public BaseCreator
 {
 	virtual GameObject* createGameObject() const
 	{
-		return new ShotGlider;
+		return new ShotGlider();
 	}
 };
 
