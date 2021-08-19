@@ -13,6 +13,9 @@ public:
 	virtual void clean();
 	virtual void load(std::unique_ptr<LoaderParams>const& pParams);
 
+	virtual std::string type() { return "Player"; }
+
+
 private:
 	//возращает игрока в центр экрана и делает неу€звимым, 
 	//так же сбрасывает настройки текстуры(которые были во врем€ анимации смерти)

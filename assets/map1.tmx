@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="60" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="3">
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="150" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="5">
  <properties>
-  <property name="helicopter" value="assets/helicopter.png" />
+  <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
+  <property name="glider" value="assets/enemies/glider.png"/>
+  <property name="helicopter" value="assets/enemies/helicopter.png"/>
+  <property name="shotglider" value="assets/enemies/shotglider.png"/>
+  <property name="turret" value="assets/enemies/turret.png"/>
  </properties>
  <tileset firstgid="1" name="blocks1" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
   <image source="blocks1.png" width="640" height="400"/>
@@ -11,16 +15,40 @@
  </tileset>
  <layer id="1" name="Tile Layer 1" width="60" height="15">
   <data encoding="base64" compression="zlib">
-   eJztlDtOAzEQhu0OCUgoCRA4AmngInABXhXpoIWOxwGCFAmQ6HhzDUA0VEANKSACKgISSsG/ki1NJvZmLOdV8Euf7LVnx/OvR6vUv2K1BJbBSsDenFZqXsvyS2N9caHrofXFqptnUQ3izCEwbM5+Bi+gInhXUnNaX6RpBnlnO/A98sg5CaZM7i9QA9/tPypIG6hnk/jdwXy3Tf4LLE+uB33Gxf1uYb4trGsNceuO2GNwAk7BGTgHF+ASXEXWG6prcANuzdw+05HH2DnXArwuer7NAThkHEXW/gAePXtpfflkxlXsf2K8V81jUTfHc6X1QhnsM8qePIl+CImmHXlfwRt5/hXWUjWj9euC+q2y90dBDoyBcTAB8iwmxO+dAFfPSXuyHui3rho1AgYY2Qi/JbDnGe2cKqm7qFuvWWV0o98P4vPd4TfD8nTDL1+j4v9Y3xqX9H65Ou3Xdde87pD7pTH95tfX2628hfqlPd3r++2Xfv4D9v+9vA==
+   eJztkruOQUEch890kiWUWNYj8Eq2paOlszwAiQSJbm94jV3R0y8F/SJR+TZIxmTGJecct/UlX+aamf8vM5Z1587/5EFYlhd9YjX+wSGOzlmUi0TJ+YSxdd5fnOLsnEW5TEJsj0NCv+9ayFB/VpPhFd/wHT/wE1vYxs4J63OaJFmfDW9Wx4Zi0+Z9fRwY1orUUXL5/xQ4/8VwRxVritUdZ80l/4hrzh3jRBovDqzFLkEMYRgfMYJRZc8xeXsH+IXf2JX6cqtb79oNuiaAHkW/sueYvGWsGNpNXybFO6bF/jmnOEVedU4mR6682D/nFG7n1b21zC29r+lvy9xS3kv6z0u4qGwT
   </data>
  </layer>
- <objectgroup id="3" name="Object Layer 1">
-  <object id="2" name="Helicopter1" type="Player" x="32" y="32" width="1" height="1">
+ <objectgroup id="1" name="Object Layer 1">
+  <object id="1" name="Helicopter1" type="Player" x="32" y="32" width="32" height="32">
    <properties>
     <property name="numFrames" value="4"/>
-	<property name="textureWidth" value="128"/>
     <property name="textureHeight" value="55"/>
     <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="128"/>
+   </properties>
+  </object>
+  <object id="2" name="Glider1" type="Glider" x="439" y="47" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="34"/>
+    <property name="textureID" value="glider"/>
+    <property name="textureWidth" value="38"/>
+   </properties>
+  </object>
+  <object id="3" name="Glider2" type="Glider" x="820" y="157" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="34"/>
+    <property name="textureID" value="glider"/>
+    <property name="textureWidth" value="38"/>
+   </properties>
+  </object>
+  <object id="4" name="ShotGlider1" type="ShotGlider" x="1172" y="88" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="shotglider"/>
+    <property name="textureWidth" value="38"/>
    </properties>
   </object>
  </objectgroup>

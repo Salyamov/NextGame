@@ -1,11 +1,12 @@
 #include "Enemy.h"
 #include "InputHandler.h"
 
-Enemy::Enemy() : SDLGameObject()
+Enemy::Enemy() : ShooterObject(), m_health(0)
 {
 
 }
 
+/*
 void Enemy::draw()
 {
 	SDLGameObject::draw();
@@ -71,4 +72,10 @@ void Enemy::handleInput()
 		}
 		
 	}
+}
+*/
+
+Enemy::~Enemy()
+{
+
 }

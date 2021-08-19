@@ -30,14 +30,13 @@ protected:
 
 	int m_bulletFiringSpeed;
 	int m_bulletCounter;
-
 	int m_moveSpeed;
 
 	//animation time
 	int m_dyingTime;
 	int m_dyingCounter;
 
-	bool m_bPlayedDeathSound; //explosion sound played?
+	bool m_bPlayedDeathSound; //has the explosion sound played?
 
 	/*
 	Vector2D m_position;

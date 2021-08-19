@@ -153,6 +153,7 @@
     <ClCompile Include="GameObjectFactory.cpp" />
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="GameStateMachine.cpp" />
+    <ClCompile Include="Glider.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="LevelParser.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="ShooterObject.cpp" />
+    <ClCompile Include="ShotGlider.cpp" />
     <ClCompile Include="SoundManger.cpp" />
     <ClCompile Include="StateParser.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -184,6 +186,7 @@
     <ClInclude Include="GameOverState.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameStateMachine.h" />
+    <ClInclude Include="Glider.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="Level.h" />
@@ -197,6 +200,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="ShooterObject.h" />
+    <ClInclude Include="ShotGlider.h" />
     <ClInclude Include="SoundManger.h" />
     <ClInclude Include="StateParser.h" />
     <ClInclude Include="TextureManager.h" />

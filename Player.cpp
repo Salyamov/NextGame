@@ -2,7 +2,7 @@
 #include "InputHandler.h"
 #include "Game.h"
 
-Player::Player() : ShooterObject()
+Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(200), m_invulnerableCounter(0)
 {
 
 }
