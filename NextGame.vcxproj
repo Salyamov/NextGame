@@ -165,6 +165,7 @@
     <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayState.cpp" />
+    <ClCompile Include="RoofTurret.cpp" />
     <ClCompile Include="ShooterObject.cpp" />
     <ClCompile Include="ShotGlider.cpp" />
     <ClCompile Include="SoundManger.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="tinyxml.cpp" />
     <ClCompile Include="tinyxmlerror.cpp" />
     <ClCompile Include="tinyxmlparser.cpp" />
+    <ClCompile Include="Turret.cpp" />
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +203,7 @@
     <ClInclude Include="PauseState.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayState.h" />
+    <ClInclude Include="RoofTurret.h" />
     <ClInclude Include="ShooterObject.h" />
     <ClInclude Include="ShotGlider.h" />
     <ClInclude Include="SoundManger.h" />
@@ -209,6 +212,7 @@
     <ClInclude Include="TileLayer.h" />
     <ClInclude Include="tinystr.h" />
     <ClInclude Include="tinyxml.h" />
+    <ClInclude Include="Turret.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
