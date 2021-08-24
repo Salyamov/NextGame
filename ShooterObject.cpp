@@ -30,14 +30,11 @@ void ShooterObject::doDyingAnimation()
 void ShooterObject::load(std::unique_ptr<LoaderParams>const& pParams)
 {
 	m_position = Vector2D(pParams->getX(), pParams->getY());
-	//m_velocity = Vector2D(0, 0);
-	//m_acceleration = Vector2D(0, 0);
-	m_height = pParams->getHeight();
+
 	m_width = pParams->getWidth();
+	m_height = pParams->getHeight();
 	m_textureID = pParams->getTextureID();
 	m_numFrames = pParams->getNumFrames();
-	//m_currentFrame = 1;
-	//m_currentRow = 1;
 }
 
 void ShooterObject::draw()

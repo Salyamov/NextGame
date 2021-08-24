@@ -15,13 +15,6 @@ public:
 	virtual void collision() {} //not implemented in this class
 	virtual std::string type() { return "SDLGameObject"; }
 
-	/*
-	virtual void load(const LoaderParams* pParams);
-	Vector2D& getPosition() { return m_position; }
-	int getWidth() { return m_width; }
-	int getHeight() { return m_height; }
-	*/
-
 protected:
 
 	ShooterObject(); // we won't directly create Shooter object
@@ -38,20 +31,6 @@ protected:
 
 	bool m_bPlayedDeathSound; //has the explosion sound played?
 
-	/*
-	Vector2D m_position;
-	Vector2D m_velocity;
-	Vector2D m_acceleration;
-
-	int m_width;
-	int m_height;
-
-	int m_currentFrame;
-	int m_currentRow;
-	int m_numFrames;
-
-	std::string m_textureID;
-	*/
 };
 
 
