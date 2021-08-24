@@ -27,6 +27,8 @@ public:
 		return s_pInstance;
 	}
 
+	std::map<std::string, SDL_Texture*> getTextureMap() { return m_textureMap; }
+
 private:
 	TextureManager() {}
 	static TextureManager* s_pInstance;
