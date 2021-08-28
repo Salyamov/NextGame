@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "Layer.h"
+#include "Player.h"
 
 struct Tileset
 {
@@ -28,21 +29,21 @@ public:
 	void update();
 	void render();
 
-	std::vector<Tileset>* getTilesets()
-	{
-		return &m_tilesets;
-	}
+	std::vector<Tileset>* getTilesets()	{ return &m_tilesets; }
+	std::vector<Layer*>* getLayers() { return &m_layers; }
+	std::vector<TileLayer*>* getCollisionLayers() { return &m_collisionLayers; }
 
-	std::vector<Layer*>* getLayers()
-	{
-		return &m_layers;
-	}
+	Player* getPlayer() { return m_pPlayer; }
+	void setPlayer(Player* pPlayer) { m_pPlayer = pPlayer; }
 
 private:
 	Level();
 
+	Player* m_pPlayer;
+
 	std::vector<Tileset> m_tilesets; 
 	std::vector<Layer*> m_layers;
+	std::vector<TileLayer*> m_collisionLayers;
 
 };
 
