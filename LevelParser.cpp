@@ -4,6 +4,7 @@
 #include "ObjectLayer.h"
 #include "TextureManager.h"
 #include "Game.h"
+#include "Level.h"
 
 #include "zlib.h"
 #include "zconf.h"
@@ -146,7 +147,7 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 
 	if (collidable)
 	{
-		pCollisionLayers->push_back(collidable);
+		pCollisionLayers->push_back(pTileLayer);
 	}
 
 	pLayers->push_back(pTileLayer);

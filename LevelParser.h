@@ -1,8 +1,8 @@
 #ifndef LEVELPARSER_H
 #define LEVELPARSER_H
-#include "Level.h"
 #include "tinyxml.h"
 #include <vector>
+#include <iostream>
 
 class Level;
 struct Tileset;
