@@ -1,6 +1,7 @@
 #include "RoofTurret.h"
 #include "TextureManager.h"
 #include "Game.h"
+#include "BulletHandler.h"
 
 RoofTurret::~RoofTurret()
 {

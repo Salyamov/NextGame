@@ -11,6 +11,7 @@ public:
 	TileLayer(int tileSize, const std::vector<Tileset> &tilesets);
 	virtual void update();
 	virtual void render();
+	virtual void collision();
 
 	void setTileIDs(const std::vector< std::vector<int> >& data)
 	{

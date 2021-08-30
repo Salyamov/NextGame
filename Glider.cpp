@@ -46,3 +46,7 @@ void Glider::update()
 	ShooterObject::update();
 }
 
+void Glider::collision()
+{
+}
+

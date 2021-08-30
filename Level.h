@@ -5,6 +5,8 @@
 #include "Layer.h"
 #include "Player.h"
 
+class TileLayer;
+
 struct Tileset
 {
 	int firstGridId;

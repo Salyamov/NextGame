@@ -11,6 +11,7 @@ public:
 
 	virtual void load(std::unique_ptr<LoaderParams> const& pParams);
 	virtual void update();
+	virtual void collision();
 
 private:
 

@@ -72,6 +72,11 @@ void Player::clean()
 {
 }
 
+void Player::collision()
+{
+
+}
+
 void Player::handleInput()
 {
 	

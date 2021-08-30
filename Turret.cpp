@@ -1,5 +1,6 @@
 #include "Turret.h"
 #include "Game.h"
+#include "BulletHandler.h"
 
 Turret::Turret()
 {

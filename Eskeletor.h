@@ -9,6 +9,7 @@ public:
 	Eskeletor();
 	virtual ~Eskeletor();
 	virtual void update();
+	virtual void collision();
 
 private:
 

@@ -54,6 +54,10 @@ void TileLayer::render()
 	}
 }
 
+void TileLayer::collision()
+{
+}
+
 Tileset TileLayer::getTilesetByID(int tileID)
 {
 	for (int i = 0; i < m_tilesets.size(); i++)

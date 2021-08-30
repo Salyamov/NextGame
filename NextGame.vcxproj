@@ -148,6 +148,7 @@
     <ClCompile Include="AnimatedGraphic.cpp" />
     <ClCompile Include="base64.cpp" />
     <ClCompile Include="BulletHandler.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Eskeletor.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletHandler.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Eskeletor.h" />
     <ClInclude Include="Game.h" />

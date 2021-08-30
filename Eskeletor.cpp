@@ -34,3 +34,7 @@ void Eskeletor::update()
 	}
 	ShooterObject::update();
 }
+
+void Eskeletor::collision()
+{
+}

@@ -19,7 +19,7 @@
    <property name="collidable" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAPwbIygAAQ==
+   eJzt1UsKwjAYReFk5kyHPleoW9BVKBRUcObbbWhxU96JEEJDLdrGlPPBoSHtIIWf1hgAAAAAAML26qCO6qTO6qKu6hbxXEjfRm29djEPhFbI1Nori3oi/Lu+GqihGqmxmnjPVJmr5wfd1UPlztq9Ft3Pv31RNKqnOl5d75kqc7VUq8D1vXZNrTEzW76HtDQxV/6ea675WdjyPaSl7rkq+na5+F61U51zFfonupirduI/iF96AQe4WVY=
   </data>
  </layer>
  <layer id="1" name="Tile Layer 1" width="60" height="15">
