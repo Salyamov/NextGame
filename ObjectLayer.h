@@ -8,8 +8,11 @@
 class ObjectLayer : public Layer
 {
 public:
-	virtual void update();
+
+	virtual void update(Level* pLevel);
 	virtual void render();
+	
+	virtual ~ObjectLayer();
 
 	std::vector<GameObject*>* getGameObjects()
 	{

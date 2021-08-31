@@ -33,7 +33,9 @@ public:
 
 	std::vector<Tileset>* getTilesets()	{ return &m_tilesets; }
 	std::vector<Layer*>* getLayers() { return &m_layers; }
-	std::vector<TileLayer*>* getCollisionLayers() { return &m_collisionLayers; }
+	std::vector<TileLayer*>* getCollisionLayers() { return &m_collisionLayers; } //отдаем ссылку на вектор указателей на —лои“айлов
+
+	const std::vector<TileLayer*>& getCollidableLayers() { return m_collisionLayers; } //отдаем экземпл€р(копию)
 
 	Player* getPlayer() { return m_pPlayer; }
 	void setPlayer(Player* pPlayer) { m_pPlayer = pPlayer; }

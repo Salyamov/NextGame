@@ -9,7 +9,7 @@ class TileLayer : public Layer
 {
 public:
 	TileLayer(int tileSize, const std::vector<Tileset> &tilesets);
-	virtual void update();
+	virtual void update(Level* pLevel);
 	virtual void render();
 	virtual void collision();
 
