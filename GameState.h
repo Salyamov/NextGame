@@ -16,6 +16,11 @@ public:
 protected:
 
 	std::vector<std::string> m_textureIDList;
+	
+	bool m_loadingComplete;
+	bool m_exiting;
+
+	GameState() : m_loadingComplete(false), m_exiting(false) { }
 
 };
 

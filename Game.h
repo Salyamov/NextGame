@@ -37,6 +37,7 @@ public:
 	void setLevelComplete(bool levelComplete);
 	bool getLevelComplete();
 
+	std::vector<std::string> getLevelFiles() { return m_levelFiles; }
 
 	static Game* Instance()
 	{
@@ -49,7 +50,7 @@ public:
 	}
 
 private:
-	Game() {}
+	Game();
 	static Game* s_pInstance;
 	
 
@@ -65,6 +66,9 @@ private:
 	float m_scrollSpeed;
 	int m_playerLives;
 	bool m_bLevelComplete;
+
+	std::vector<std::string> m_levelFiles;
+
 };
 
 typedef Game TheGame;

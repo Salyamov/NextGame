@@ -1,13 +1,13 @@
 #include "AnimatedGraphic.h"
 
-AnimatedGraphic::AnimatedGraphic() : SDLGameObject()
+AnimatedGraphic::AnimatedGraphic() : ShooterObject()
 {
 
 }
 
-void AnimatedGraphic::load(const LoaderParams* pParams)
+void AnimatedGraphic::load(std::unique_ptr<LoaderParams> const& pParams)
 {
-	SDLGameObject::load(pParams);
+	ShooterObject::load(pParams);
 	m_animSpeed = pParams->getAnimSpeed();
 }
 
@@ -19,7 +19,7 @@ void AnimatedGraphic::update()
 
 void AnimatedGraphic::draw()
 {
-	SDLGameObject::draw();
+	ShooterObject::draw();
 }
 
 void AnimatedGraphic::clean()

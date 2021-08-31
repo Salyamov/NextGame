@@ -3,13 +3,12 @@
 
 #include "GameState.h"
 #include "Level.h"
-//#include "SDLGameObject.h"
-//#include "GameObject.h"
+#include "CollisionManager.h"
 #include <string>
 #include <vector>
 
 class GameObject;
-class SDLGameObject;
+class ShooterObject;
 
 class PlayState : public GameState
 {
@@ -24,10 +23,11 @@ public:
 
 private:
 
-	bool checkCollision(SDLGameObject* p1, SDLGameObject* p2);
+	//bool checkCollision(ShooterObject* p1, ShooterObject* p2);
 	static const std::string s_playID;
 	std::vector<GameObject*> m_gameObjects;
 	Level* pLevel;
+	CollisionManager m_collisionManager;
 };
 
 

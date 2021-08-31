@@ -8,10 +8,22 @@
 #include "AnimatedGraphic.h"
 #include "Player.h"
 #include "Enemy.h"
-
+#include "Glider.h"
+#include "ShotGlider.h"
+#include "Eskeletor.h"
+#include "Turret.h"
+#include "RoofTurret.h"
+#include "GameOverState.h"
 
 
 Game* Game::s_pInstance = NULL;
+
+Game::Game()
+{
+	m_levelFiles.push_back("assets/map1.tmx");
+
+	m_currentLevel = 1;
+}
 
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
@@ -50,7 +62,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
 	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
-	TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
+	TheGameObjectFactory::Instance()->registerType("Glider", new GliderCreator());
+	TheGameObjectFactory::Instance()->registerType("ShotGlider", new ShotGliderCreator());
+	TheGameObjectFactory::Instance()->registerType("Eskeletor", new EskeletorCreator());
+	TheGameObjectFactory::Instance()->registerType("Turret", new TurretCreator());
+	TheGameObjectFactory::Instance()->registerType("RoofTurret", new RoofTurretCreator());
 	
 
 	m_pGameStateMachine = new GameStateMachine();
@@ -77,7 +93,7 @@ void Game::quit()
 void Game::setCurrentLevel(int currentLevel)
 {
 	m_currentLevel = currentLevel;
-	m_pGameStateMachine->changeState(new BetweenLevelState());
+	m_pGameStateMachine->changeState(new GameOverState()); //тут можно поставить состояние между уровнями
 	m_bLevelComplete = false;
 }
 

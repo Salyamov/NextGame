@@ -2,6 +2,7 @@
 #define OBJECTLAYER_H
 #include "Layer.h"
 #include "GameObject.h"
+#include "CollisionManager.h"
 #include <vector>
 
 class ObjectLayer : public Layer
@@ -17,6 +18,7 @@ public:
 
 private:
 	std::vector<GameObject*> m_gameObjects;
+	CollisionManager m_collisionManager;
 };
 
 

@@ -19,7 +19,7 @@ void TileLayer::render()
 {
 	int x, y, x2, y2;
 
-	//получаем смещение
+	//получаем смещение в тайлах
 	x = m_position.getX() / m_tileSize;
 	y = m_position.getY() / m_tileSize;
 
