@@ -35,7 +35,7 @@ void Player::update()
 			m_velocity.setY(0);
 			m_velocity.setX(3);
 			ShooterObject::update();
-			handleAnimation;
+			handleAnimation();
 		}
 	}
 	else

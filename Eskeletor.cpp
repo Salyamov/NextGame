@@ -1,5 +1,6 @@
 #include "Eskeletor.h"
 #include "Game.h"
+#include "BulletHandler.h"
 
 Eskeletor::Eskeletor() : Enemy()
 {
@@ -22,8 +23,9 @@ void Eskeletor::update()
 		
 		if (m_bulletCounter == m_bulletFiringSpeed)
 		{
-			TheBulletHandler::Instance()->addEnemyBullet();
-			TheBulletHandler::Instance()->addEnemyBullet();
+			TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY(), 16, 16, "bullet1", 1, Vector2D(-3, 0));
+			TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY(), 16, 16, "bullet1", 1, Vector2D(3, 0));
+			m_bulletCounter = 0;
 		}
 		m_bulletCounter++;
 	}

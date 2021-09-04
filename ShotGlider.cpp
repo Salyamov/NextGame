@@ -1,4 +1,5 @@
 #include "ShotGlider.h"
+#include "BulletHandler.h"
 
 ShotGlider::ShotGlider() : Glider()
 {
@@ -23,7 +24,7 @@ void ShotGlider::update()
 	{
 		if (m_bulletCounter == m_bulletFiringSpeed)
 		{
-			TheBulletHandler::Instance()->addEnemyBullet();
+			TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 15, 16, 16, "bullet2", 1, Vector2D(-10, 0));
 			m_bulletCounter = 0;
 		}
 		m_bulletCounter++;

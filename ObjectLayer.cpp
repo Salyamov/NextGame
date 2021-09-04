@@ -22,14 +22,43 @@ void ObjectLayer::update(Level* pLevel)
 		m_collisionManager.checkPlayerTileCollision(pLevel->getPlayer(), pLevel->getCollidableLayers());
 	}
 
-
-
-
-
-
-	for (int i = 0; i < m_gameObjects.size(); i++)
+	if (!m_gameObjects.empty())
 	{
-		m_gameObjects[i]->update();
+		for (std::vector<GameObject*>::iterator it = m_gameObjects.begin(); it != m_gameObjects.end(); it++)
+		{
+			if ((*it)->getPosition().getX() <= TheGame::Instance()->getGameWidth())
+			{
+				(*it)->setUpdating(true);
+				(*it)->update();
+			}
+			else
+			{
+				if ((*it)->type() != std::string("Player"))
+				{
+					(*it)->setUpdating(false);
+					(*it)->scroll(TheGame::Instance()->getScrollSpeed());
+				}
+				else
+				{
+					(*it)->update();
+				}
+			}
+
+			//check if dead or off screen
+			//(*it)->getPosition().getX() > TheGame::Instance()->getGameWidth() || (*it)->getPosition().getY() < (0 - (*it)->getHeight())
+			//если противник залетает за левую сторону или падает ниже нижней части экрана, то он уничтожается (больше не появляется в игре) 
+			if ( (*it)->getPosition().getX() < ( 0 - (*it)->getWidth() ) || 
+				(*it)->getPosition().getY() > TheGame::Instance()->getGameHeight() ||
+				(*it)->dead() )
+			{
+				delete* it;
+				it = m_gameObjects.erase(it);
+			}
+			else
+			{
+				it++;
+			}
+		}
 	}
 }
 
@@ -37,7 +66,11 @@ void ObjectLayer::render()
 {
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
-		m_gameObjects[i]->draw();
+		//если объект находится в границах экрана
+		if (m_gameObjects[i]->getPosition().getX() <= TheGame::Instance()->getGameWidth())
+		{
+			m_gameObjects[i]->draw();
+		}	
 	}
 }
 

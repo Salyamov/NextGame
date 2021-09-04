@@ -50,6 +50,3 @@ void ShooterObject::update()
 	m_position += m_velocity;
 }
 
-void ShooterObject::clean()
-{
-}

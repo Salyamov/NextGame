@@ -51,6 +51,7 @@ public:
 
 private:
 	Game();
+	~Game();
 	static Game* s_pInstance;
 	
 
@@ -66,6 +67,7 @@ private:
 	float m_scrollSpeed;
 	int m_playerLives;
 	bool m_bLevelComplete;
+	bool m_bChangingState;
 
 	std::vector<std::string> m_levelFiles;
 

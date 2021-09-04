@@ -18,11 +18,26 @@
 
 Game* Game::s_pInstance = NULL;
 
-Game::Game()
+Game::Game() : m_pWindow(0), 
+			   m_pRenderer(0),
+			   m_bRunning(false),
+			   m_pGameStateMachine(0),
+			   m_playerLives(3),
+			   m_bLevelComplete(false),
+			   m_bChangingState(false),		   		   
+			   m_scrollSpeed(0.8),
+			   m_width(0),
+			   m_height(0)
 {
 	m_levelFiles.push_back("assets/map1.tmx");
 
 	m_currentLevel = 1;
+}
+
+Game::~Game()
+{
+	m_pRenderer = 0;
+	m_pWindow = 0;
 }
 
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
@@ -79,9 +94,12 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 void Game::clean()
 {
+	TheInputHandler::Instance()->clean();
+
+
+
 	SDL_DestroyRenderer(m_pRenderer);
 	SDL_DestroyWindow(m_pWindow);
-	TheInputHandler::Instance()->clean();
 	SDL_Quit();
 }
 
