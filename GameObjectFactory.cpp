@@ -8,7 +8,7 @@ bool GameObjectFactory::registerType(std::string typeID, BaseCreator* pCreator)
 	if (it != m_creators.end())
 	{
 		delete pCreator;
-		return false;
+		//return false;
 	}
 	m_creators[typeID] = pCreator;
 	return true;

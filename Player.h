@@ -11,7 +11,7 @@ public:
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
-	virtual void load(std::unique_ptr<LoaderParams>const& pParams);
+	virtual void load(std::unique_ptr<LoaderParams> const &pParams);
 	virtual void collision();
 
 	virtual std::string type() { return "Player"; }

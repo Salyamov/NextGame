@@ -173,11 +173,14 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, std::vector<Lay
 		{
 			int x, y, width, height, numFrames, callbackID = 0, animSpeed = 0;
 			std::string textureID;
+			std::string type;
 
 			e->Attribute("x", &x);
 			e->Attribute("y", &y);
 
-			GameObject* pGameObject = TheGameObjectFactory::Instance()->create(e->Attribute("type"));
+			type = e->Attribute("type");
+
+			GameObject* pGameObject = TheGameObjectFactory::Instance()->create(type);
 
 			//property values
 			for (TiXmlElement* properties = e->FirstChildElement(); properties != NULL;
@@ -221,7 +224,7 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, std::vector<Lay
 
 			pGameObject->load(std::unique_ptr<LoaderParams>(new LoaderParams(x, y, width, height, textureID, numFrames, callbackID, animSpeed)));
 			
-			if (pGameObject->type() == "Player")
+			if (type == "Player")
 			{
 				pLevel->setPlayer(dynamic_cast<Player*>(pGameObject));
 			}

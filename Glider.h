@@ -9,7 +9,7 @@ public:
 	Glider();
 	virtual ~Glider();
 
-	virtual void load(std::unique_ptr<LoaderParams> const& pParams);
+	virtual void load(std::unique_ptr<LoaderParams> const &pParams);
 	virtual void update();
 	virtual void collision();
 

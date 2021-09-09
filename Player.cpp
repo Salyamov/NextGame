@@ -7,9 +7,17 @@ Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(20
 
 }
 
-void Player::load(std::unique_ptr<LoaderParams>const& pParams)
+void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 {
-	ShooterObject::load(pParams);
+	ShooterObject::load(std::move(pParams));
+
+	m_bulletFiringSpeed = 13;
+	m_moveSpeed = 3;
+
+	m_bulletCounter = m_bulletFiringSpeed;
+
+	m_dyingTime = 100;
+
 }
 
 

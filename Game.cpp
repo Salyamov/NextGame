@@ -14,6 +14,7 @@
 #include "Turret.h"
 #include "RoofTurret.h"
 #include "GameOverState.h"
+#include "ScrollingBackground.h"
 
 
 Game* Game::s_pInstance = NULL;
@@ -82,6 +83,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("Eskeletor", new EskeletorCreator());
 	TheGameObjectFactory::Instance()->registerType("Turret", new TurretCreator());
 	TheGameObjectFactory::Instance()->registerType("RoofTurret", new RoofTurretCreator());
+	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
 	
 
 	m_pGameStateMachine = new GameStateMachine();

@@ -8,7 +8,7 @@ public:
 	ShotGlider();
 	virtual ~ShotGlider();
 
-	virtual void load(std::unique_ptr<LoaderParams> const& pParams);
+	virtual void load(std::unique_ptr<LoaderParams> const &pParams);
 	virtual void update();
 
 private:

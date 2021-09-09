@@ -10,7 +10,7 @@ public:
 	ScrollingBackground();
 	virtual ~ScrollingBackground();
 
-	virtual void load(std::unique_ptr<LoaderParams>const& pParams);
+	virtual void load(std::unique_ptr<LoaderParams>const &pParams);
 	virtual void draw();
 	virtual void update();
 	virtual void clean();

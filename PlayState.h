@@ -23,7 +23,6 @@ public:
 
 private:
 
-	//bool checkCollision(ShooterObject* p1, ShooterObject* p2);
 	static const std::string s_playID;
 	std::vector<GameObject*> m_gameObjects;
 	Level* pLevel;

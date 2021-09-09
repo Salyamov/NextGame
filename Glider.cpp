@@ -12,7 +12,7 @@ Glider::~Glider()
 {
 }
 
-void Glider::load(std::unique_ptr<LoaderParams> const& pParams)
+void Glider::load(std::unique_ptr<LoaderParams> const &pParams)
 {
 	ShooterObject::load(std::move(pParams));
 

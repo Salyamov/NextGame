@@ -12,7 +12,7 @@ ShotGlider::~ShotGlider()
 
 }
 
-void ShotGlider::load(std::unique_ptr<LoaderParams> const& pParams)
+void ShotGlider::load(std::unique_ptr<LoaderParams> const &pParams)
 {
 	ShooterObject::load(std::move(pParams));
 	m_velocity.setX(-m_moveSpeed);

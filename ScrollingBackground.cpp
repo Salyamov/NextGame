@@ -12,7 +12,7 @@ ScrollingBackground::~ScrollingBackground()
 {
 }
 
-void ScrollingBackground::load(std::unique_ptr<LoaderParams> const& pParams)
+void ScrollingBackground::load(std::unique_ptr<LoaderParams> const &pParams)
 {
 	ShooterObject::load(std::move(pParams));
 	m_scrollSpeed = pParams->getAnimSpeed();

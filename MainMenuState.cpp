@@ -4,6 +4,7 @@
 #include "MenuButton.h"
 #include "PlayState.h"
 #include "StateParser.h"
+#include "InputHandler.h"
 #include <iostream>
 
 const std::string MainMenuState::s_menuID = "MENU";
@@ -37,23 +38,34 @@ bool MainMenuState::onEnter()
 
 	setCallbacks(m_callbacks);
 
+	m_loadingComplete = true;
+
 	std::cout << "Entering MenuState\n";
 	return true;
 }
 
 bool MainMenuState::onExit()
 {
-	for (int i = 0; i < m_gameObjects.size(); i++)
+	m_exiting = true;
+
+	if (m_loadingComplete && !m_gameObjects.empty())
 	{
-		m_gameObjects[i]->clean();
+		for (int i = 0; i < m_gameObjects.size(); i++)
+		{
+			m_gameObjects[i]->clean();
+			m_gameObjects.pop_back();
+		}
 	}
 	m_gameObjects.clear();
 	
-
+	/*
 	for (int i = 0; i < m_textureIDList.size(); i++)
 	{
 		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDList[i]);
 	}
+	*/
+
+	TheInputHandler::Instance()->reset();
 
 	std::cout << "Exiting MenuState\n";
 	return true;
