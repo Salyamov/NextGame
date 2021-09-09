@@ -14,8 +14,8 @@ ObjectLayer::~ObjectLayer()
 void ObjectLayer::update(Level* pLevel)
 {
 	m_collisionManager.checkPlayerEnemyBulletCollision(pLevel->getPlayer());
-	m_collisionManager.checkEnemyPlayerBulletCollision((std::vector<GameObject*>&)m_gameObjects);
-	m_collisionManager.checkPlayerEnemyCollision(pLevel->getPlayer(), (std::vector<GameObject*>&)m_gameObjects);
+	m_collisionManager.checkEnemyPlayerBulletCollision((const std::vector<GameObject*>&)m_gameObjects);
+	m_collisionManager.checkPlayerEnemyCollision(pLevel->getPlayer(), (const std::vector<GameObject*>&)m_gameObjects);
 
 	if (pLevel->getPlayer()->getPosition().getX() + pLevel->getPlayer()->getWidth() < TheGame::Instance()->getGameWidth())
 	{
@@ -24,7 +24,7 @@ void ObjectLayer::update(Level* pLevel)
 
 	if (!m_gameObjects.empty())
 	{
-		for (std::vector<GameObject*>::iterator it = m_gameObjects.begin(); it != m_gameObjects.end(); it++)
+		for (std::vector<GameObject*>::iterator it = m_gameObjects.begin(); it != m_gameObjects.end(); )
 		{
 			if ((*it)->getPosition().getX() <= TheGame::Instance()->getGameWidth())
 			{
