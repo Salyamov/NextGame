@@ -144,6 +144,7 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 	}
 
 	pTileLayer->setTileIDs(data);
+	pTileLayer->setMapWidth(m_width);
 
 	if (collidable)
 	{

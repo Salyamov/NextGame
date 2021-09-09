@@ -23,6 +23,11 @@ public:
 		m_tileSize = tileSize;
 	}
 
+	void setMapWidth(int mapWidth)
+	{
+		m_mapWidth = mapWidth;
+	}
+
 	Tileset getTilesetByID(int tileID);
 
 	const std::vector< std::vector<int> >& getTileIDs() { return m_tileIDs; }
@@ -34,6 +39,8 @@ private:
 	int m_tileSize;
 	int m_numColumns; //кол-во отображаемых столбцов
 	int m_numRows; //кол-вл отображаемых строк
+
+	int m_mapWidth;
 
 	Vector2D m_position; //с какой позиции мы начинаем отрисовывать уровень
 	Vector2D m_velocity;

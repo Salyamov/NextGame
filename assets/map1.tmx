@@ -4,7 +4,7 @@
   <property name="clouds" value="assets/clouds.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
   <property name="glider" value="assets/enemies/glider.png"/>
-  <property name="helicopter" value="assets/enemies/helicopter.png"/>
+  <property name="helicopter" value="assets/helicopter.png"/>
   <property name="shotglider" value="assets/enemies/shotglider.png"/>
   <property name="turret" value="assets/enemies/turret.png"/>
  </properties>

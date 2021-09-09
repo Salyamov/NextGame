@@ -5,14 +5,22 @@
 TileLayer::TileLayer(int tileSize, const std::vector<Tileset>& tilesets) :
 	m_tileSize(tileSize), m_tilesets(tilesets), m_position(0, 0), m_velocity(0, 0)
 {
-	m_numColumns = (TheGame::Instance()->getGameWidth() / m_tileSize); //кол-во тайлов экрана
+	m_numColumns = (TheGame::Instance()->getGameWidth() / m_tileSize) + 1; //кол-во тайлов экрана
 	m_numRows = (TheGame::Instance()->getGameHeight() / m_tileSize);
 }
 
 void TileLayer::update(Level* pLevel)
 {
-	m_position += m_velocity;
-	m_velocity.setX(0.5);
+	if (m_position.getX() < (m_mapWidth * m_tileSize) - TheGame::Instance()->getGameWidth() - m_tileSize)
+	{
+		m_velocity.setX(TheGame::Instance()->getScrollSpeed());
+		m_position += m_velocity;
+	}
+	else
+	{
+		m_velocity.setX(0);
+	}
+
 }
 
 void TileLayer::render()
