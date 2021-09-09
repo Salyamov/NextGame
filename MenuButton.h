@@ -7,6 +7,7 @@ class MenuButton : public ShooterObject
 {
 public:
 	MenuButton();
+	~MenuButton() {}
 	virtual void draw();
 	virtual void update();
 	virtual void clean();

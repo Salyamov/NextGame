@@ -148,11 +148,6 @@ bool Game::getLevelComplete()
 void Game::handleEvents()
 {
 	TheInputHandler::Instance()->update();
-
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
-	{
-		m_pGameStateMachine->changeState(new PlayState());
-	}
 	
 }
 

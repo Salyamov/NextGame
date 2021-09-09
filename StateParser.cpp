@@ -53,8 +53,10 @@ void StateParser::parseTextures(TiXmlElement* pStateRoot, std::vector<std::strin
     {
         std::string filenameAttribute = e->Attribute("filename");
         std::string idAttribute = e->Attribute("ID");
-        pTexturesIDs->push_back(idAttribute);
+        pTexturesIDs->push_back(idAttribute);    
         TheTextureManager::Instance()->load(filenameAttribute, idAttribute, TheGame::Instance()->getRenderer());
+        
+        std::cout << "loaded texture " << idAttribute << " " << filenameAttribute << "\n";
     }
 }
 
@@ -78,7 +80,8 @@ void StateParser::parseObjects(TiXmlElement* pStateRoot, std::vector<GameObject*
         GameObject* pGameObject = TheGameObjectFactory::Instance()->create(e->Attribute("type"));
         pGameObject->load(std::unique_ptr<LoaderParams>(new LoaderParams(x, y, width, height, textureID, numFrames, callbackID, animSpeed)));
         pObjects->push_back(pGameObject);
-
+       
+        std::cout << "loaded object " << textureID << "\n";
     }
 }
 

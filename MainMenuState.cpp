@@ -21,6 +21,7 @@ void MainMenuState::render()
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->draw();
+		//std::cout << "drawing object " << m_gameObjects[i]->type() << "\n";
 	}
 }
 

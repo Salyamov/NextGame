@@ -22,13 +22,18 @@ public:
 	int getWidth() { return m_width; }
 	int getHeight() { return m_height; }
 
-	void scroll(float scrollSpeed) { m_position.setX(m_position.getX() - scrollSpeed); }
+	void scroll(float scrollSpeed) 
+	{ 
+		if (type() != std::string("Player"))
+		{
+			m_position.setX(m_position.getX() - scrollSpeed);
+		}	
+	}
+
 	bool updating() { return m_bUpdating; }
 	bool dead() { return m_bDead; }
-	bool dying() { return m_bDying; } //is object doing death animation?
+	bool dying() { return m_bDying; } //is object doing a death animation?
 	void setUpdating(bool updating) { m_bUpdating = updating; }
-
-	//virtual void load(const LoaderParams* pParams) = 0;
 
 protected:
 	GameObject() : m_position(0, 0), 
@@ -44,7 +49,6 @@ protected:
 				   m_angle(0), 
 				   m_alpha(255)
 	{
-
 	}
 	
 	//movement variables

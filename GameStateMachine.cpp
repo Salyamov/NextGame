@@ -14,14 +14,14 @@ void GameStateMachine::changeState(GameState* pState)
 		{
 			return;
 		}
-		if (m_gameStates.back()->onExit())
+		if (m_gameStates.back()->onExit()) //выходит из прошлого состояния
 		{
 			delete m_gameStates.back();
 			m_gameStates.pop_back();
 		}
 	}
 	m_gameStates.push_back(pState);
-	m_gameStates.back()->onEnter();
+	m_gameStates.back()->onEnter(); //входит в новое состояние
 			
 }
 
