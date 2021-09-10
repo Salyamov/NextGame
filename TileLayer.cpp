@@ -7,11 +7,25 @@ TileLayer::TileLayer(int tileSize, const std::vector<Tileset>& tilesets) :
 {
 	m_numColumns = (TheGame::Instance()->getGameWidth() / m_tileSize) + 1; //кол-во тайлов экрана
 	m_numRows = (TheGame::Instance()->getGameHeight() / m_tileSize);
+
+	
+	std::cout << "cols: " << m_numColumns << "\n";
+	std::cout << "rows: " << m_numRows << "\n";
+	std::cout << "tileIDs size: "<< m_tileIDs.size() << "\n";
+	
+	for (int i = 0; i < m_tileIDs.size(); i++)
+	{
+		for (int j = 0; j < m_tileIDs[i].size(); j++)
+		{
+			std::cout << m_tileIDs[i][j];
+		}
+	}
+	
 }
 
 void TileLayer::update(Level* pLevel)
 {
-	if (m_position.getX() < (m_mapWidth * m_tileSize) - TheGame::Instance()->getGameWidth() - m_tileSize)
+	if (m_position.getX() < ((m_mapWidth * m_tileSize) - TheGame::Instance()->getGameWidth()) - m_tileSize)
 	{
 		m_velocity.setX(TheGame::Instance()->getScrollSpeed());
 		m_position += m_velocity;
@@ -51,7 +65,7 @@ void TileLayer::render()
 			id--;
 
 			//отрисовывает тайл, только когда он полностью помещается на экран
-			TheTextureManager::Instance()->drawTile(tileset.name, 2, 2,
+			TheTextureManager::Instance()->drawTile(tileset.name, tileset.margin, tileset.spacing,
 				(j * m_tileSize) - x2, //пиксельная координата по x
 				(i * m_tileSize) - y2, //пиксельная координата по y
 				m_tileSize, m_tileSize, 

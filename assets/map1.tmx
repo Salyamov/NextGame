@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="150" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="7">
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="150" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="7">
  <properties>
   <property name="clouds" value="assets/clouds.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
@@ -19,15 +19,10 @@
    <property name="collidable" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1UsKwjAYReFk5kyHPleoW9BVKBRUcObbbWhxU96JEEJDLdrGlPPBoSHtIIWf1hgAAAAAAML26qCO6qTO6qKu6hbxXEjfRm29djEPhFbI1Nori3oi/Lu+GqihGqmxmnjPVJmr5wfd1UPlztq9Ft3Pv31RNKqnOl5d75kqc7VUq8D1vXZNrTEzW76HtDQxV/6ea675WdjyPaSl7rkq+na5+F61U51zFfonupirduI/iF96AQe4WVY=
+   eJztlUsKwjAURZOZMx36XY31sxfdgq5CoaCCM/9uQ4ub8k6E8Ghta2hjwj1wyLfltVwSpQghhBBCCCGEkGwO8AhP8Awv8Apv8O6wLuI/W7gT7l0WRIIghhth7LQi8u+0YQd2YQ/24UDsKZOrVwEf8AkTo2+2aeuJ7YeSWmnBhrAp9pTJ1QquM9pP32SmlZrr/DniF3XkSs6ZLJCfpc6fI35Rda7Szi4TnldhUmWusu5EE+YqTEK/B4cwgiM4hpOcsVwr8kzZ8S97I9G3fbdNvdMv//sNC4Jwog==
   </data>
  </layer>
- <layer id="1" name="Tile Layer 1" width="60" height="15">
-  <data encoding="base64" compression="zlib">
-   eJztkruOQUEch890kiWUWNYj8Eq2paOlszwAiQSJbm94jV3R0y8F/SJR+TZIxmTGJecct/UlX+aamf8vM5Z1587/5EFYlhd9YjX+wSGOzlmUi0TJ+YSxdd5fnOLsnEW5TEJsj0NCv+9ayFB/VpPhFd/wHT/wE1vYxs4J63OaJFmfDW9Wx4Zi0+Z9fRwY1orUUXL5/xQ4/8VwRxVritUdZ80l/4hrzh3jRBovDqzFLkEMYRgfMYJRZc8xeXsH+IXf2JX6cqtb79oNuiaAHkW/sueYvGWsGNpNXybFO6bF/jmnOEVedU4mR6682D/nFG7n1b21zC29r+lvy9xS3kv6z0u4qGwT
-  </data>
- </layer>
- <objectgroup id="2" name="Object Layer 2">
+ <objectgroup id="2" name="Object Layer 2" visible="0">
   <object id="6" name="Background" type="ScrollingBackground" x="0" y="0" width="32" height="32">
    <properties>
     <property name="animSpeed" value="0.2"/>
@@ -38,7 +33,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="1" name="Object Layer 1">
+ <objectgroup id="1" name="Object Layer 1" visible="0">
   <object id="1" name="Helicopter1" type="Player" x="32" y="32" width="32" height="32">
    <properties>
     <property name="numFrames" value="5"/>
@@ -80,4 +75,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer id="4" name="Tile Layer 2" width="150" height="15" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztlz1OwzAYhpsJJEB0pEDhCPQOlJ9rwApbWWHj5wAgVQIkNv65BiBuAfQGLQMTz4JkfWqaOIEmdd9HehTbcWzLfpUolYoQQoTLO37gZ9ELEUHRxR5+Fb0QERwTUdErECFSU67EH3CNN3iLd3iPD/iITxnGmyKX0zijfI4Fx5zzScxZX+Cl8SrjPHXmWMJl5WosOOScj2LOuo3nxrbH2Ctm3IZT/x7wXMdjDlEu5rCG87iAi1g3fXxy9ZbCZ3zBV6fsXvvdF6NFFSeNs6aPT65O8Szm+lt22eHdtRslt4nRYhi5sm0u++TnIEpuE8Olxf7v5TiD/85Vv3eXi95X5WSL/d8uaa7ivokuylU5GfQfl4aQv4Or2MQ1XMeNhLq9l+YZ33qWvk1Tzjt2nvVuJuz5D0S5fSA=
+  </data>
+ </layer>
 </map>

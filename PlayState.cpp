@@ -45,7 +45,6 @@ void PlayState::render()
 		if (pLevel != 0)
 		{
 			pLevel->render();
-
 		}
 
 		for (int i = 0; i < TheGame::Instance()->getPlayerLives(); i++)

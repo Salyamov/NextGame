@@ -18,12 +18,17 @@ Level* LevelParser::parseLevel(const char* levelFile)
 	Level* pLevel = new Level();
 
 	TiXmlElement* pRoot = levelDocument.RootElement();
-	TiXmlElement* pProperties = pRoot->FirstChildElement();
+
+	std::cout << "Loading level:\n" << "Version: " << pRoot->Attribute("version") << "\n";
+	std::cout << "Width:" << pRoot->Attribute("width") << " - Height:" << pRoot->Attribute("height") << "\n";
+	std::cout << "Tile Width:" << pRoot->Attribute("tilewidth") << " - Tile Height:" << pRoot->Attribute("tileheight") << "\n";
 
 	//берутся из корневого тега <map> xml файла
 	pRoot->Attribute("tilewidth", &m_tileSize); //размер квадрата
 	pRoot->Attribute("width", &m_width);	//сколько на сколько квадратов двумерный массив
 	pRoot->Attribute("height", &m_height);  
+
+	TiXmlElement* pProperties = pRoot->FirstChildElement();
 
 	//parse textures
 	for (TiXmlElement* e = pProperties->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
@@ -65,8 +70,16 @@ Level* LevelParser::parseLevel(const char* levelFile)
 
 void LevelParser::parseTilesets(TiXmlElement* pTilesetRoot, std::vector<Tileset>* pTilesets)
 {
-	TheTextureManager::Instance()->load(std::string("assets/") + std::string(pTilesetRoot->FirstChildElement()->Attribute("source")),
+	std::string assetsTag = "assets/";
+	// first add the tileset to texture manager
+	std::cout << "adding texture " << pTilesetRoot->FirstChildElement()->Attribute("source") << " with ID " << pTilesetRoot->Attribute("name") << std::endl;
+	TheTextureManager::Instance()->load(assetsTag.append(pTilesetRoot->FirstChildElement()->Attribute("source")), pTilesetRoot->Attribute("name"), TheGame::Instance()->getRenderer());
+
+	/*
+	TheTextureManager::Instance()->load(std::string(pTilesetRoot->FirstChildElement()->Attribute("source")),
 		pTilesetRoot->Attribute("name"), TheGame::Instance()->getRenderer()); //сохраняем имя тайлсета и его адрес в TextureManger'е
+	*/
+	//std::cout << "loading tileset: " << pTilesetRoot->FirstChildElement()->Attribute("source") << " " << pTilesetRoot->Attribute("name") << "\n";
 
 	//сохраняем параметры тайлсета
 	Tileset tileset;
@@ -82,6 +95,7 @@ void LevelParser::parseTilesets(TiXmlElement* pTilesetRoot, std::vector<Tileset>
 	tileset.numColumns = tileset.width / (tileset.tileWidth + tileset.spacing);
 
 	pTilesets->push_back(tileset);
+
 }
 
 void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>* pLayers, const std::vector<Tileset>* pTilesets, std::vector<TileLayer*>* pCollisionLayers)
@@ -93,7 +107,7 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 	std::vector< std::vector<int> > data;
 	
 	std::string decodedIDs;
-	TiXmlElement* pDataNode = NULL;
+	TiXmlElement* pDataNode = 0;
 
 	for (TiXmlElement* e = pTileElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{
@@ -130,6 +144,7 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 	uncompress((Bytef*)&ids[0], &sizeofids, (const Bytef*)decodedIDs.c_str(), decodedIDs.size()); //назначение, размер назначения, источник, размер источника
 
 	std::vector<int> layerRow(m_width);
+
 	for (int j = 0; j < m_height; j++)
 	{
 		data.push_back(layerRow);
@@ -157,6 +172,8 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 
 void LevelParser::parseTextures(TiXmlElement* pTextureRoot)
 {
+	std::cout << "adding texture " << pTextureRoot->Attribute("value") << " with ID " << pTextureRoot->Attribute("name") << std::endl;
+
 	TheTextureManager::Instance()->load(pTextureRoot->Attribute("value"), pTextureRoot->Attribute("name"),
 		TheGame::Instance()->getRenderer());
 }
