@@ -48,5 +48,17 @@ void Glider::update()
 
 void Glider::collision()
 {
+	m_health -= 1;
+
+	if (m_health == 0)
+	{
+		m_textureID = "explosion";
+		m_currentFrame = 0;
+		m_numFrames = 9;
+		m_width = 40;
+		m_height = 40;
+		m_bDying = true;
+	}
+
 }
 

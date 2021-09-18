@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "InputHandler.h"
+#include "BulletHandler.h"
 #include "Game.h"
 
 Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(200), m_invulnerableCounter(0)
@@ -82,7 +83,15 @@ void Player::clean()
 
 void Player::collision()
 {
-
+	if (!m_invulnerable && !TheGame::Instance()->getLevelComplete())
+	{
+		m_textureID = "largeexplosion";
+		m_currentFrame = 0;
+		m_numFrames = 9;
+		m_width = 60;
+		m_height = 60;
+		m_bDying = true;
+	}
 }
 
 void Player::handleInput()
@@ -91,6 +100,20 @@ void Player::handleInput()
 	Vector2D* target = TheInputHandler::Instance()->getMousePosition();
 	m_velocity = *target - m_position;
 	m_velocity /= 50;
+
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
+	{
+		if (m_bulletCounter == m_bulletFiringSpeed)
+		{
+			TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + 12, 11, 11, "bullet1", 1, Vector2D(10, 0));
+			m_bulletCounter = 0;
+		}
+		m_bulletCounter++;
+	}
+	else
+	{
+		m_bulletCounter = m_bulletFiringSpeed;
+	}
 
 
 	/*
@@ -128,7 +151,7 @@ void Player::ressurect()
 	m_position.setY(200);
 	m_bDying = false;
 
-	m_textureID = "player";
+	m_textureID = "helicopter";
 
 	m_currentFrame = 0;
 	m_numFrames = 5;

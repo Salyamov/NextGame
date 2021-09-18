@@ -113,11 +113,11 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 	{
 		if (e->Value() == std::string("properties"))
 		{
-			for (TiXmlElement* prop = e->FirstChildElement(); prop != NULL; prop = prop->NextSiblingElement())
+			for (TiXmlElement* property = e->FirstChildElement(); property != NULL; property = property->NextSiblingElement())
 			{
-				if (prop->Value() == std::string("property"))
+				if (property->Value() == std::string("property"))
 				{
-					if (prop->Attribute("name") == std::string("collidable"))
+					if (property->Attribute("name") == std::string("collidable"))
 					{
 						collidable = true;
 					}

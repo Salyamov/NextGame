@@ -114,7 +114,7 @@ void CollisionManager::checkPlayerTileCollision(Player* pPlayer, const std::vect
 {
 	for (std::vector<TileLayer*>::const_iterator it = collisionLayers.begin(); it != collisionLayers.end(); it++)
 	{
-		TileLayer* pTileLayer = *it;
+		TileLayer* pTileLayer = (*it);
 		std::vector<std::vector<int> > tiles = pTileLayer->getTileIDs();
 
 		Vector2D layerPos = pTileLayer->getPosition();
