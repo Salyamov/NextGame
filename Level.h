@@ -40,10 +40,14 @@ public:
 	Player* getPlayer() { return m_pPlayer; }
 	void setPlayer(Player* pPlayer) { m_pPlayer = pPlayer; }
 
+	bool getEnded() { return m_bEnded; }
+	void setEnded(bool ended) { m_bEnded = ended; }
+
 private:
 	Level();
 
 	Player* m_pPlayer;
+	bool m_bEnded;
 
 	std::vector<Tileset> m_tilesets; 
 	std::vector<Layer*> m_layers;

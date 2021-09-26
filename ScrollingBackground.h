@@ -15,12 +15,14 @@ public:
 	virtual void update();
 	virtual void clean();
 
+	virtual std::string type() { return "ScrollingBackground"; }
+
 private:
 
 	int m_scrollSpeed;
 
-	int count;
-	int maxcount;
+	int m_count;
+	int m_maxcount;
 
 	SDL_Rect m_srcRect1;
 	SDL_Rect m_srcRect2;

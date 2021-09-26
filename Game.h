@@ -31,11 +31,13 @@ public:
 
 	void setCurrentLevel(int currentLevel);
 	int getCurrentLevel();
-	float getScrollSpeed();
 	void setPlayerLives(int playerLives);
 	int getPlayerLives();
 	void setLevelComplete(bool levelComplete);
 	bool getLevelComplete();
+
+	void setScrollSpeed(float speed) { m_scrollSpeed = speed; }
+	float getScrollSpeed() { return m_scrollSpeed; }
 
 	std::vector<std::string> getLevelFiles() { return m_levelFiles; }
 

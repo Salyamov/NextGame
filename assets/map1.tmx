@@ -3,13 +3,13 @@
  <properties>
   <property name="clouds" value="assets/clouds.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
+  <property name="explosion" value="assets/explosion.png"/>
   <property name="glider" value="assets/enemies/glider.png"/>
   <property name="helicopter" value="assets/helicopter.png"/>
-  <property name="shotglider" value="assets/enemies/shotglider.png"/>
-  <property name="turret" value="assets/enemies/turret.png"/>
-  <property name="explosion" value="assets/explosion.png"/>
   <property name="largeexplosion" value="assets/largeexplosion.png"/>
+  <property name="shotglider" value="assets/enemies/shotglider.png"/>
   <property name="smallexplosion" value="assets/smallexplosion.png"/>
+  <property name="turret" value="assets/enemies/turret.png"/>
  </properties>
  <tileset firstgid="1" name="blocks1" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
   <image source="blocks1.png" width="640" height="400"/>
@@ -17,18 +17,10 @@
  <tileset firstgid="199" name="blocks2" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
   <image source="blocks2.png" width="614" height="376"/>
  </tileset>
- <layer id="3" name="Collision" width="150" height="15">
-  <properties>
-   <property name="collidable" value=""/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJztlUsKwjAURZOZMx36XY31sxfdgq5CoaCCM/9uQ4ub8k6E8Ghta2hjwj1wyLfltVwSpQghhBBCCCGEkGwO8AhP8Awv8Apv8O6wLuI/W7gT7l0WRIIghhth7LQi8u+0YQd2YQ/24UDsKZOrVwEf8AkTo2+2aeuJ7YeSWmnBhrAp9pTJ1QquM9pP32SmlZrr/DniF3XkSs6ZLJCfpc6fI35Rda7Szi4TnldhUmWusu5EE+YqTEK/B4cwgiM4hpOcsVwr8kzZ8S97I9G3fbdNvdMv//sNC4Jwog==
-  </data>
- </layer>
- <objectgroup id="2" name="Object Layer 2" visible="0">
+ <objectgroup id="2" name="Background">
   <object id="6" name="Background" type="ScrollingBackground" x="0" y="0" width="32" height="32">
    <properties>
-    <property name="animSpeed" value="0.2"/>
+    <property name="animSpeed" value="2"/>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="480"/>
     <property name="textureID" value="clouds"/>
@@ -36,8 +28,8 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="1" name="Object Layer 1" visible="0">
-  <object id="1" name="Helicopter1" type="Player" x="32" y="32" width="32" height="32">
+ <objectgroup id="1" name="Object Layer 1">
+  <object id="1" name="Helicopter1" type="Player" x="64" y="64" width="32" height="32">
    <properties>
     <property name="numFrames" value="5"/>
     <property name="textureHeight" value="46"/>
@@ -45,7 +37,7 @@
     <property name="textureWidth" value="101"/>
    </properties>
   </object>
-  <object id="2" name="Glider1" type="Glider" x="439" y="47" width="32" height="32">
+  <object id="2" name="Glider1" type="Glider" x="735" y="255" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="34"/>
@@ -53,7 +45,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="3" name="Glider2" type="Glider" x="820" y="157" width="32" height="32">
+  <object id="3" name="Glider2" type="Glider" x="1217.33" y="193" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="34"/>
@@ -61,7 +53,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="4" name="ShotGlider1" type="ShotGlider" x="1091" y="92" width="32" height="32">
+  <object id="4" name="ShotGlider1" type="ShotGlider" x="2336.33" y="128" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -69,7 +61,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="5" name="ShotGlider2" type="ShotGlider" x="1342" y="129" width="32" height="32">
+  <object id="5" name="ShotGlider2" type="ShotGlider" x="3262" y="191.667" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -78,9 +70,17 @@
    </properties>
   </object>
  </objectgroup>
- <layer id="4" name="Tile Layer 2" width="150" height="15" visible="0">
+ <layer id="3" name="Collision" width="150" height="15">
+  <properties>
+   <property name="collidable" value=""/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJztlz1OwzAYhpsJJEB0pEDhCPQOlJ9rwApbWWHj5wAgVQIkNv65BiBuAfQGLQMTz4JkfWqaOIEmdd9HehTbcWzLfpUolYoQQoTLO37gZ9ELEUHRxR5+Fb0QERwTUdErECFSU67EH3CNN3iLd3iPD/iITxnGmyKX0zijfI4Fx5zzScxZX+Cl8SrjPHXmWMJl5WosOOScj2LOuo3nxrbH2Ctm3IZT/x7wXMdjDlEu5rCG87iAi1g3fXxy9ZbCZ3zBV6fsXvvdF6NFFSeNs6aPT65O8Szm+lt22eHdtRslt4nRYhi5sm0u++TnIEpuE8Olxf7v5TiD/85Vv3eXi95X5WSL/d8uaa7ivokuylU5GfQfl4aQv4Or2MQ1XMeNhLq9l+YZ33qWvk1Tzjt2nvVuJuz5D0S5fSA=
+   eJztlUkKwjAUhhNw4U6XdQCHO7h24bjyInoFPYWeSYuX8s+i8AiZqERq+3/wkeRlaEIfiVKEEEIIIYQQQgghhBBC2sg7wSd8wVLUZenqL395CNI47vDhKau65KyVuuh4jHSbUD658uqK/LnpeIx0GzuHXHeX5N/vqw3cwT08wK2n7Yu72nbfsca+CjiCYziB04R1ii/3mTKnzlkMoXuqjXk1hKfMDgLfX3lcwr7lIjDeOIc9uM6kWXsW2YPPlHdQjq/evFisqZr/lzuvQvnwAVwnaV8=
+  </data>
+ </layer>
+ <layer id="4" name="Tile Layer 1" width="150" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzt0sEKgkAUheG5m1pUOyNaVI+Q7/84GfUCmtuOuJlCRwKnLvF/cFBmHLwDJwQAAAAAAAAAYy5KpVwz/6ewEHYZsrXMg//YSvdbKxuH90x1p1Ya5fHViZASd+mgHJWT+evYVHf2TuZEL+5Sp7ThdQ9S3Vk6mvOf3aPEbgPfljb9Pscsnzjb67Pz3qvUXqssrE87cgYAgDk8AYxaGBk=
   </data>
  </layer>
 </map>

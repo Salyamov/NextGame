@@ -12,7 +12,7 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 {
 	ShooterObject::load(std::move(pParams));
 
-	m_bulletFiringSpeed = 13;
+	m_bulletFiringSpeed = 6;
 	m_moveSpeed = 3;
 
 	m_bulletCounter = m_bulletFiringSpeed;
@@ -97,15 +97,41 @@ void Player::collision()
 void Player::handleInput()
 {
 	
-	Vector2D* target = TheInputHandler::Instance()->getMousePosition();
-	m_velocity = *target - m_position;
-	m_velocity /= 50;
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP) && m_position.getY() > 0)
+	{
+		m_velocity.setY(-m_moveSpeed);
+	}
+	else if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN) && m_position.getY() < TheGame::Instance()->getGameHeight() - m_height)
+	{
+		m_velocity.setY(m_moveSpeed);
+	}
+
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT) && m_position.getX() > 0)
+	{
+		m_velocity.setX(-m_moveSpeed);
+	}
+	else if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT) && m_position.getX() < TheGame::Instance()->getGameWidth() - m_width)
+	{
+		m_velocity.setX(m_moveSpeed);
+	}
+
+	/*
+	//ускорение для теста
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LSHIFT))
+	{
+		TheGame::Instance()->setScrollSpeed(8);
+	}
+	else 
+	{
+		TheGame::Instance()->setScrollSpeed(2);
+	}
+	*/
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
 	{
 		if (m_bulletCounter == m_bulletFiringSpeed)
 		{
-			TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + 12, 11, 11, "bullet1", 1, Vector2D(10, 0));
+			TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + 30, 11, 11, "bullet1", 1, Vector2D(10, 0));
 			m_bulletCounter = 0;
 		}
 		m_bulletCounter++;
@@ -188,21 +214,10 @@ void Player::handleAnimation()
 		m_invulnerableCounter++;
 	}
 
-	//наклон вертолета во время движения
+	
 	if (!m_bDead)
 	{
-		if (m_velocity.getX() < 0)
-		{
-			m_angle = -10.0;
-		}
-		else if (m_velocity.getX() > 0)
-		{
-			m_angle = 10.0;
-		}
-		else
-		{
-			m_angle = 0.0;
-		}
+		//
 	}
 
 	//анимация пропеллеров

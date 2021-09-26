@@ -24,7 +24,7 @@ public:
 private:
 
 	static const std::string s_playID;
-	std::vector<GameObject*> m_gameObjects;
+	//std::vector<GameObject*> m_gameObjects;
 	Level* pLevel;
 	CollisionManager m_collisionManager;
 };

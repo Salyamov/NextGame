@@ -26,7 +26,14 @@ void ObjectLayer::update(Level* pLevel)
 	{
 		for (std::vector<GameObject*>::iterator it = m_gameObjects.begin(); it != m_gameObjects.end(); )
 		{
-			if ((*it)->getPosition().getX() <= TheGame::Instance()->getGameWidth())
+			if ((*it)->type() == std::string("ScrollingBackground"))
+			{
+				if (!pLevel->getEnded())
+				{
+					(*it)->update();
+				}
+			}
+			else if ((*it)->getPosition().getX() <= TheGame::Instance()->getGameWidth())
 			{
 				(*it)->setUpdating(true);
 				(*it)->update();
@@ -46,6 +53,7 @@ void ObjectLayer::update(Level* pLevel)
 
 			//check if dead or off screen
 			//(*it)->getPosition().getX() > TheGame::Instance()->getGameWidth() || (*it)->getPosition().getY() < (0 - (*it)->getHeight())
+			
 			//если противник залетает за левую сторону или падает ниже нижней части экрана, то он уничтожается (больше не появляется в игре) 
 			if ( (*it)->getPosition().getX() < ( 0 - (*it)->getWidth() ) || 
 				(*it)->getPosition().getY() > TheGame::Instance()->getGameHeight() ||

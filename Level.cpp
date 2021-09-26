@@ -1,6 +1,6 @@
 #include "Level.h"
 
-Level::Level()
+Level::Level() : m_bEnded(false)
 {
 }
 

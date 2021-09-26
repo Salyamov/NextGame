@@ -26,11 +26,12 @@ Game::Game() : m_pWindow(0),
 			   m_playerLives(3),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
-			   m_scrollSpeed(0.8),
+			   m_scrollSpeed(2),
 			   m_width(0),
 			   m_height(0)
 {
 	m_levelFiles.push_back("assets/map1.tmx");
+	m_levelFiles.push_back("assets/map2.tmx");
 
 	m_currentLevel = 1;
 }
@@ -120,11 +121,6 @@ void Game::setCurrentLevel(int currentLevel)
 int Game::getCurrentLevel()
 {
 	return m_currentLevel;
-}
-
-float Game::getScrollSpeed()
-{
-	return m_scrollSpeed;
 }
 
 void Game::setPlayerLives(int playerLives)

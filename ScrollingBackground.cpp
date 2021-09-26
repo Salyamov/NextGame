@@ -4,8 +4,8 @@
 
 ScrollingBackground::ScrollingBackground() : ShooterObject()
 {
-	count = 0;
-	maxcount = 0;
+	m_count = 0;
+	m_maxcount = 1;
 }
 
 ScrollingBackground::~ScrollingBackground()
@@ -15,7 +15,7 @@ ScrollingBackground::~ScrollingBackground()
 void ScrollingBackground::load(std::unique_ptr<LoaderParams> const &pParams)
 {
 	ShooterObject::load(std::move(pParams));
-	m_scrollSpeed = pParams->getAnimSpeed();
+	m_maxcount = pParams->getAnimSpeed();
 
 	m_scrollSpeed = 1;
 
@@ -55,7 +55,7 @@ void ScrollingBackground::draw()
 
 void ScrollingBackground::update()
 {
-	if (count == maxcount)
+	if (m_count >= m_maxcount)
 	{
 		//make first rectangle smaller(src1 dst1)
 		m_srcRect1.x += m_scrollSpeed;
@@ -89,9 +89,10 @@ void ScrollingBackground::update()
 			m_destRect2.y = m_position.getY();
 
 		}
-		count = 0;
+		m_count = 0;
 	}
-	count++;
+
+	m_count++;
 
 }
 

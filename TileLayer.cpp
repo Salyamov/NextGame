@@ -30,11 +30,12 @@ void TileLayer::update(Level* pLevel)
 	if (m_position.getX() < ((m_mapWidth * m_tileSize) - TheGame::Instance()->getGameWidth()) - m_tileSize)
 	{
 		m_velocity.setX(TheGame::Instance()->getScrollSpeed());
-		m_position += m_velocity;
+		m_position += m_velocity;		
 	}
 	else
 	{
 		m_velocity.setX(0);
+		pLevel->setEnded(true);
 	}
 
 }
