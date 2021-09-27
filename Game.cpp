@@ -15,6 +15,7 @@
 #include "RoofTurret.h"
 #include "GameOverState.h"
 #include "ScrollingBackground.h"
+#include "LoadingState.h"
 
 
 Game* Game::s_pInstance = NULL;
@@ -99,8 +100,6 @@ void Game::clean()
 {
 	TheInputHandler::Instance()->clean();
 
-
-
 	SDL_DestroyRenderer(m_pRenderer);
 	SDL_DestroyWindow(m_pWindow);
 	SDL_Quit();
@@ -114,7 +113,7 @@ void Game::quit()
 void Game::setCurrentLevel(int currentLevel)
 {
 	m_currentLevel = currentLevel;
-	m_pGameStateMachine->changeState(new GameOverState()); //тут можно поставить состояние между уровнями
+	m_pGameStateMachine->changeState(new LoadingState()); //тут можно поставить состояние между уровнями
 	m_bLevelComplete = false;
 }
 
