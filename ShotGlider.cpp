@@ -4,7 +4,7 @@
 ShotGlider::ShotGlider() : Glider()
 {
 	m_bulletFiringSpeed = 50;
-	m_moveSpeed = 2;
+	m_moveSpeed = 3;
 }
 
 ShotGlider::~ShotGlider()
