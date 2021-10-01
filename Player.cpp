@@ -13,7 +13,7 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 	ShooterObject::load(std::move(pParams));
 
 	m_bulletFiringSpeed = 6;
-	m_moveSpeed = 3;
+	m_moveSpeed = 5;
 
 	m_bulletCounter = m_bulletFiringSpeed;
 

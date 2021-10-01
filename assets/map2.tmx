@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="300" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="3">
-  <properties>
+ <properties>
   <property name="cave" value="assets/cave.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
   <property name="explosion" value="assets/explosion.png"/>
@@ -17,7 +17,7 @@
  <tileset firstgid="199" name="blocks2" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
   <image source="blocks2.png" width="614" height="376"/>
  </tileset>
- <objectgroup id="3" name="Background">
+ <objectgroup id="3" name="Background" visible="0">
   <object id="2" name="Background" type="ScrollingBackground" x="0" y="0" width="32" height="32">
    <properties>
     <property name="animSpeed" value="2"/>
@@ -28,7 +28,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="4" name="Object Layer 1">
+ <objectgroup id="4" name="Object Layer 1" visible="0">
   <object id="1" name="Helicopter1" type="Player" x="32" y="64" width="32" height="32">
    <properties>
     <property name="numFrames" value="5"/>
@@ -39,11 +39,14 @@
   </object>
  </objectgroup>
  <layer id="2" name="Collision" width="300" height="15">
+  <properties>
+   <property name="collidable" value=""/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt3LkNwkAURdFxCCXQMOVhli5oggAcELCMNP6z+BzppgZL1hMg7DmlNDfeebBuems/5bVbqdz3ofigtuhr9tNe9XQOQB0j7BWwDfYK6IW9AnqR+/v8Wq8HAABASofpGUDrjq8AWmevgAjXAi17VeJYvwK2q8S9dMte3VfM/55gPLmfV+xVPPcPxjh10GWwauxPy3sV8Z3z32o/f0DfewC5EokQ
   </data>
  </layer>
- <layer id="1" name="Tile Layer 1" width="300" height="15">
+ <layer id="1" name="Tile Layer 1" width="300" height="15" visible="0">
   <data encoding="base64" compression="zlib">
    eJzt2rsKwjAUBuB2cXRS9C18/zfRyeskim7iZbBuRZqGBC/Qfh/8kJzTnpZCthYFAPAL88zety0ie6B/9pk9gBynlt4xcu8jo3eorc+R+QCfMizzegAAAAAAANBVt8R6yDWzBwAA9M+oLIpJQ8YZ//FdIvm0acI7hq5tm5Eyv2/q3+Zf32nW8NymWpNFYB2zrLKqso7UXjZVtlV2b/V7YHboLLYl5ZwOyrQ9QJc9AYOMJDI=
   </data>
