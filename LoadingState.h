@@ -1,7 +1,9 @@
 #ifndef LOADINGSTATE_H
 #define LOADINGSTATE_H
 #include "GameState.h"
+#include "GameObject.h"
 #include <string>
+#include <iostream>
 
 class  LoadingState : public GameState
 {
@@ -14,9 +16,13 @@ public:
 
 	virtual std::string getStateID() const { return s_loadingID; }
 
+
 private:
 
+	static void s_loadingToPlay();
+
 	static const std::string s_loadingID;
+	std::vector<GameObject*> m_gameObjects;
 };
 
 

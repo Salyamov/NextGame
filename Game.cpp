@@ -27,7 +27,7 @@ Game::Game() : m_pWindow(0),
 			   m_playerLives(3),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
-			   m_scrollSpeed(2),
+			   m_scrollSpeed(8),
 			   m_width(0),
 			   m_height(0)
 {

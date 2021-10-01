@@ -12,6 +12,7 @@
 </OBJECTS>
 </MENU>
 
+<!--
 <PLAY>
 <TEXTURES>
 	<texture filename="assets/helicopter.png" ID="helicopter" />
@@ -22,6 +23,7 @@
 	<object type="Enemy" x="100" y="100" width="128" height="55" textureID="helicopter2" numFrames="4" />
 </OBJECTS>
 </PLAY>
+-->
 
 <PAUSE>
 <TEXTURES>
@@ -52,7 +54,7 @@
 	<texture filename="assets/loading.png" ID="loadingtext" />
 </TEXTURES>
 <OBJECTS>
-	<object type="AnimatedGraphic" x="100" y="100" width="200" height="50" textureID="loadingtext" numFrames="1" animSpeed="2" />
+	<object type="AnimatedGraphic" x="100" y="100" width="200" height="50" textureID="loadingtext" numFrames="2" animSpeed="2" />
 </OBJECTS>
 </LOADING>
 
