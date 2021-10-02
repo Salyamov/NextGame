@@ -31,7 +31,7 @@ bool LoadingState::onEnter()
 	StateParser stateParser;
 	stateParser.parseState("test.xml", s_loadingID, &m_gameObjects, &m_textureIDList);
 
-	TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
+	//TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
 	std::cout << "Entering LoadingState\n";
 
 	return true;

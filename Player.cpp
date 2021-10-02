@@ -36,10 +36,11 @@ void Player::update()
 		//долетает до края экрана и начинается новый уровень
 		if (m_position.getX() >= TheGame::Instance()->getGameWidth())
 		{
-			//TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
-			TheGame::Instance()->setCurrentLevel(1);
+			
+			TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
+			//TheGame::Instance()->setCurrentLevel(1);
 		}
-		//долетает до экрана без управления
+		//долетает до экрана без управления	
 		else
 		{
 			m_velocity.setY(0);
@@ -47,6 +48,7 @@ void Player::update()
 			ShooterObject::update();
 			handleAnimation();
 		}
+		
 	}
 	else
 	{

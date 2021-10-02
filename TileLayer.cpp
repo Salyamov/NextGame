@@ -32,7 +32,7 @@ void TileLayer::update(Level* pLevel)
 	if (m_position.getX() < ((m_mapWidth * m_tileSize) - TheGame::Instance()->getGameWidth()) - m_tileSize)
 	{
 		m_velocity.setX(TheGame::Instance()->getScrollSpeed());
-		m_position += m_velocity;		
+		m_position += m_velocity;
 	}
 	else
 	{
@@ -42,12 +42,7 @@ void TileLayer::update(Level* pLevel)
 
 		//переход на новый уровень
 		std::cout << "level complete\n";
-		/*
-		if (TheGame::Instance()->getCurrentLevel() == TheGame::Instance()->getFinalLevel() && pLevel->getEnded())
-		{
-			TheGame::Instance()->getStateMachine()->changeState(new FinalState());
-		}
-		*/
+
 	}
 
 }

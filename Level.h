@@ -41,14 +41,14 @@ public:
 	void setPlayer(Player* pPlayer) { m_pPlayer = pPlayer; }
 
 	//закончилась ли прокрутка карты в TileLayer
-	bool getTileLayerEnded() { return m_bEnded; }
-	void setTileLayerEnded(bool ended) { m_bEnded = ended; }
+	bool getTileLayerEnded() { return m_bTileLayerEnded; }
+	void setTileLayerEnded(bool ended) { m_bTileLayerEnded = ended; }
 
 private:
 	Level();
 
 	Player* m_pPlayer;
-	bool m_bEnded;
+	bool m_bTileLayerEnded;
 
 	std::vector<Tileset> m_tilesets; 
 	std::vector<Layer*> m_layers;

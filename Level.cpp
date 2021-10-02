@@ -1,7 +1,9 @@
 #include "Level.h"
+#include "Game.h"
 
-Level::Level() : m_bEnded(false)
+Level::Level() : m_bTileLayerEnded(false)
 {
+	TheGame::Instance()->setLevelComplete(false);
 }
 
 Level::~Level()

@@ -16,6 +16,7 @@
 #include "GameOverState.h"
 #include "ScrollingBackground.h"
 #include "LoadingState.h"
+#include "FinalState.h"
 
 
 Game* Game::s_pInstance = NULL;
@@ -114,8 +115,16 @@ void Game::quit()
 void Game::setCurrentLevel(int currentLevel)
 {
 	m_currentLevel = currentLevel;
-	m_pGameStateMachine->changeState(new LoadingState()); //тут можно поставить состояние между уровнями
-	m_bLevelComplete = false;
+	if (m_currentLevel != m_finalLevel)
+	{
+		m_pGameStateMachine->changeState(new LoadingState()); //тут можно поставить состояние между уровнями
+		m_bLevelComplete = false;
+	}
+	else
+	{
+		m_pGameStateMachine->changeState(new FinalState());
+	}
+
 }
 
 int Game::getCurrentLevel()
