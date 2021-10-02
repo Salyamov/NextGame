@@ -40,8 +40,9 @@ public:
 	Player* getPlayer() { return m_pPlayer; }
 	void setPlayer(Player* pPlayer) { m_pPlayer = pPlayer; }
 
-	bool getEnded() { return m_bEnded; }
-	void setEnded(bool ended) { m_bEnded = ended; }
+	//закончилась ли прокрутка карты в TileLayer
+	bool getTileLayerEnded() { return m_bEnded; }
+	void setTileLayerEnded(bool ended) { m_bEnded = ended; }
 
 private:
 	Level();

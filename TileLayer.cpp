@@ -1,6 +1,8 @@
 #include "TileLayer.h"
 #include "Game.h"
 #include "TextureManager.h"
+#include "FinalState.h"
+#include "LoadingState.h"
 
 TileLayer::TileLayer(int tileSize, const std::vector<Tileset>& tilesets) :
 	m_tileSize(tileSize), m_tilesets(tilesets), m_position(0, 0), m_velocity(0, 0)
@@ -35,11 +37,17 @@ void TileLayer::update(Level* pLevel)
 	else
 	{
 		m_velocity.setX(0);
-		pLevel->setEnded(true);
+		pLevel->setTileLayerEnded(true);
+		TheGame::Instance()->setLevelComplete(true);
 
 		//переход на новый уровень
 		std::cout << "level complete\n";
-		TheGame::Instance()->setCurrentLevel(2);
+		/*
+		if (TheGame::Instance()->getCurrentLevel() == TheGame::Instance()->getFinalLevel() && pLevel->getEnded())
+		{
+			TheGame::Instance()->getStateMachine()->changeState(new FinalState());
+		}
+		*/
 	}
 
 }

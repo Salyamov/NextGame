@@ -123,28 +123,26 @@ void CollisionManager::checkPlayerTileCollision(Player* pPlayer, const std::vect
 		x = layerPos.getX() / pTileLayer->getTileSize();
 		y = layerPos.getY() / pTileLayer->getTileSize();
 
-		std::string msg;
 
 		if (pPlayer->getVelocity().getX() >= 0 || pPlayer->getVelocity().getY() >= 0)
 		{
 			tileColumn = ( pPlayer->getPosition().getX() + pPlayer->getWidth() ) / pTileLayer->getTileSize();
 			tileRow = ( pPlayer->getPosition().getY() + pPlayer->getHeight() ) / pTileLayer->getTileSize();
 			tileid = tiles[tileRow + y][tileColumn + x];
-			msg = "right-bottom collision\n";
+			//msg = "right-bottom collision\n";
 		}
 		if (pPlayer->getVelocity().getX() < 0 || pPlayer->getVelocity().getY() < 0)
 		{
 			tileColumn = pPlayer->getPosition().getX() / pTileLayer->getTileSize();
 			tileRow = pPlayer->getPosition().getY() / pTileLayer->getTileSize();
 			tileid = tiles[tileRow + y][tileColumn + x + 1];
-			msg = "left-top collision\n";
-			std::cout << " negative velocity\n";
+			//msg = "left-top collision\n";
 		}
 
 		if (tileid != 0)
 		{
 			pPlayer->collision();
-			std::cout << msg << std::endl;
+			//std::cout << msg << std::endl;
 		}
 
 	}

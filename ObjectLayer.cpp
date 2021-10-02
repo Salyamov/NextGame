@@ -28,7 +28,7 @@ void ObjectLayer::update(Level* pLevel)
 		{
 			if ((*it)->type() == std::string("ScrollingBackground"))
 			{
-				if (!pLevel->getEnded())
+				if (!pLevel->getTileLayerEnded())
 				{
 					(*it)->update();
 				}

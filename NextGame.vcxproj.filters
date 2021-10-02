@@ -126,6 +126,9 @@
     <ClCompile Include="LoadingState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FinalState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -246,6 +249,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LoadingState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

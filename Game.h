@@ -41,6 +41,8 @@ public:
 
 	std::vector<std::string> getLevelFiles() { return m_levelFiles; }
 
+	int getFinalLevel() { return m_finalLevel; }
+
 	static Game* Instance()
 	{
 		if (s_pInstance == NULL)
@@ -66,6 +68,7 @@ private:
 	int m_height;
 
 	int m_currentLevel;
+	int m_finalLevel;
 	float m_scrollSpeed;
 	int m_playerLives;
 	bool m_bLevelComplete;

@@ -27,7 +27,7 @@ Game::Game() : m_pWindow(0),
 			   m_playerLives(3),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
-			   m_scrollSpeed(1),
+			   m_scrollSpeed(8),
 			   m_width(0),
 			   m_height(0)
 {
@@ -35,6 +35,7 @@ Game::Game() : m_pWindow(0),
 	m_levelFiles.push_back("assets/map2.tmx");
 
 	m_currentLevel = 1;
+	m_finalLevel = 3;
 }
 
 Game::~Game()
