@@ -12,7 +12,7 @@ void LoadingState::update()
 	{
 		m_gameObjects[i]->update();
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
 	{
 		TheGame::Instance()->getStateMachine()->changeState(new PlayState());
 	}

@@ -38,10 +38,9 @@ void TileLayer::update(Level* pLevel)
 	{
 		m_velocity.setX(0);
 		pLevel->setTileLayerEnded(true);
-		TheGame::Instance()->setLevelComplete(true);
+		TheGame::Instance()->setLevelComplete(true); //переход на новый уровень
 
-		//переход на новый уровень
-		std::cout << "level complete\n";
+		//std::cout << "level complete\n";
 
 	}
 

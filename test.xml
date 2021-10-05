@@ -54,7 +54,7 @@
 	<texture filename="assets/loading.png" ID="loadingtext" />
 </TEXTURES>
 <OBJECTS>
-	<object type="AnimatedGraphic" x="100" y="100" width="200" height="50" textureID="loadingtext" numFrames="2" animSpeed="2" />
+	<object type="AnimatedGraphic" x="200" y="200" width="200" height="50" textureID="loadingtext" numFrames="2" animSpeed="2" />
 </OBJECTS>
 </LOADING>
 
