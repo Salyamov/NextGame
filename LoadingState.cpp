@@ -3,6 +3,7 @@
 #include "StateParser.h"
 #include "Game.h"
 #include "InputHandler.h"
+#include "SoundManger.h"
 
 const std::string LoadingState::s_loadingID = "LOADING";
 
@@ -31,6 +32,8 @@ bool LoadingState::onEnter()
 	StateParser stateParser;
 	stateParser.parseState("test.xml", s_loadingID, &m_gameObjects, &m_textureIDList);
 
+	TheSoundManager::Instance()->stopMusic();
+
 	//TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
 	std::cout << "Entering LoadingState\n";
 
@@ -40,6 +43,7 @@ bool LoadingState::onEnter()
 bool LoadingState::onExit()
 {
 
+	TheSoundManager::Instance()->playMusic(std::to_string(TheGame::Instance()->getCurrentLevel()), -1);
 
 	std::cout << "Exiting LoadingState\n";
 

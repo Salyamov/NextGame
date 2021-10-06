@@ -28,6 +28,9 @@ public:
 
 	void playSound(std::string id, int loop);
 	void playMusic(std::string id, int loop);
+	void stopMusic();
+
+	std::map<std::string, Mix_Music*> getMusicFiles() { return m_music; }
 
 private:
 
@@ -41,6 +44,7 @@ private:
 
 };
 
+typedef SoundManager TheSoundManager;
 
 
 

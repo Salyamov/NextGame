@@ -42,10 +42,6 @@ void ShooterObject::draw()
 	TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width,
 		m_height, m_currentRow, m_currentFrame, Game::Instance()->getRenderer(), m_angle, m_alpha);
 
-	/*
-	TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width,
-		m_height, 1, 1, Game::Instance()->getRenderer(), m_angle, m_alpha);
-	*/
 }
 
 void ShooterObject::update()

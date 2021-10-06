@@ -17,6 +17,7 @@
 #include "ScrollingBackground.h"
 #include "LoadingState.h"
 #include "FinalState.h"
+#include "SoundManger.h"
 
 
 Game* Game::s_pInstance = NULL;
@@ -28,7 +29,7 @@ Game::Game() : m_pWindow(0),
 			   m_playerLives(3),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
-			   m_scrollSpeed(1),
+			   m_scrollSpeed(8),
 			   m_width(0),
 			   m_height(0)
 {
@@ -78,6 +79,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	m_width = width;
 	m_height = height;
+
+	TheSoundManager::Instance()->load("assets/electrorock.ogg", "1", SOUND_MUSIC);
+	TheSoundManager::Instance()->load("assets/cave.mp3", "2", SOUND_MUSIC);
+	TheSoundManager::Instance()->load("assets/darkcity.mp3", "3", SOUND_MUSIC);
 	
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
@@ -89,6 +94,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("RoofTurret", new RoofTurretCreator());
 	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
 	
+	TheSoundManager::Instance()->playMusic("1", -1);
 
 	m_pGameStateMachine = new GameStateMachine();
 	m_pGameStateMachine->changeState(new MainMenuState());

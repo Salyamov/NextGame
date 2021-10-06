@@ -1,6 +1,8 @@
 #include "SoundManger.h"
 #include <iostream>
 
+SoundManager* SoundManager::s_pInstance = NULL;
+
 bool SoundManager::load(std::string fileName, std::string id, sound_type type)
 {
 	if (type == SOUND_MUSIC)
@@ -37,6 +39,11 @@ void SoundManager::playSound(std::string id, int loop)
 void SoundManager::playMusic(std::string id, int loop)
 {
 	Mix_PlayMusic(m_music[id], loop);
+}
+
+void SoundManager::stopMusic()
+{
+	Mix_HaltMusic();
 }
 
 SoundManager::SoundManager()

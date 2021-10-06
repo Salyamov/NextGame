@@ -3,7 +3,7 @@
 #include "BulletHandler.h"
 #include "Game.h"
 
-Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(200), m_invulnerableCounter(0)
+Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(50), m_invulnerableCounter(0)
 {
 
 }
@@ -17,7 +17,7 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 
 	m_bulletCounter = m_bulletFiringSpeed;
 
-	m_dyingTime = 100;
+	m_dyingTime = 50;
 
 }
 
@@ -33,10 +33,9 @@ void Player::update()
 {
 	if (TheGame::Instance()->getLevelComplete())
 	{
-		//долетает до края экрана и начинается новый уровень
+		//если долетает до края экрана и начинается новый уровень
 		if (m_position.getX() >= TheGame::Instance()->getGameWidth())
-		{
-			
+		{			
 			TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
 			//TheGame::Instance()->setCurrentLevel(1);
 		}
