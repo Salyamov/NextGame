@@ -1,4 +1,5 @@
 #include "Glider.h"
+#include "SoundManger.h"
 
 Glider::Glider() : Enemy()
 {
@@ -57,6 +58,10 @@ void Glider::collision()
 		m_numFrames = 9;
 		m_width = 40;
 		m_height = 40;
+		if (!m_bDying)
+		{
+			TheSoundManager::Instance()->playSound("enemyexplode", 0);
+		}
 		m_bDying = true;
 	}
 
