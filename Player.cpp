@@ -18,7 +18,7 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 
 	m_bulletCounter = m_bulletFiringSpeed;
 
-	m_dyingTime = 50;
+	m_dyingTime = 100;
 
 }
 
@@ -57,7 +57,7 @@ void Player::update()
 			//reset velocity
 			m_velocity.setX(0);
 			m_velocity.setY(0);
-
+			
 			//get input
 			handleInput();
 			ShooterObject::update();
@@ -93,8 +93,12 @@ void Player::collision()
 		m_numFrames = 9;
 		m_width = 60;
 		m_height = 60;
+		if (!m_bDying)
+		{
+			TheSoundManager::Instance()->playSound("explode", 0);
+		}
 		m_bDying = true;
-	}
+	}		
 }
 
 void Player::handleInput()
@@ -190,6 +194,7 @@ void Player::ressurect()
 
 	m_dyingCounter = 0;
 	m_invulnerable = true;
+
 }
 
 void Player::handleAnimation()
