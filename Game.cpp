@@ -29,7 +29,7 @@ Game::Game() : m_pWindow(0),
 			   m_playerLives(3),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
-			   m_scrollSpeed(8),
+			   m_scrollSpeed(1),
 			   m_width(0),
 			   m_height(0)
 {
@@ -83,6 +83,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheSoundManager::Instance()->load("assets/electrorock.ogg", "1", SOUND_MUSIC);
 	TheSoundManager::Instance()->load("assets/cave.mp3", "2", SOUND_MUSIC);
 	TheSoundManager::Instance()->load("assets/darkcity.mp3", "3", SOUND_MUSIC);
+
+	TheSoundManager::Instance()->load("assets/phaser.wav", "shoot", SOUND_SFX);
+	TheSoundManager::Instance()->load("assets/boom.wav", "explode", SOUND_SFX);
+	TheSoundManager::Instance()->load("assets/laser.wav", "enemyshoot", SOUND_SFX);
 	
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());

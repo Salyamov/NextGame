@@ -2,6 +2,7 @@
 #include "InputHandler.h"
 #include "BulletHandler.h"
 #include "Game.h"
+#include "SoundManger.h"
 
 Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(50), m_invulnerableCounter(0)
 {
@@ -134,6 +135,7 @@ void Player::handleInput()
 		if (m_bulletCounter == m_bulletFiringSpeed)
 		{
 			TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + 30, 11, 11, "bullet1", 1, Vector2D(10, 0));
+			TheSoundManager::Instance()->playSound("shoot", 0);
 			m_bulletCounter = 0;
 		}
 		m_bulletCounter++;
