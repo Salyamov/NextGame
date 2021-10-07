@@ -5,6 +5,7 @@
 #include "PlayState.h"
 #include "StateParser.h"
 #include "InputHandler.h"
+#include "LoadingState.h"
 #include <iostream>
 
 const std::string MainMenuState::s_menuID = "MENU";
@@ -86,7 +87,7 @@ void MainMenuState::setCallbacks(const std::vector<Callback>& callbacks)
 
 void MainMenuState::s_menuToPlay()
 {
-	TheGame::Instance()->getStateMachine()->changeState(new PlayState());
+	TheGame::Instance()->getStateMachine()->changeState(new LoadingState());
 }
 
 void MainMenuState::s_exitFromMenu()

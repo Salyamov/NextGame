@@ -25,6 +25,7 @@ void LoadingState::render()
 	{
 		m_gameObjects[i]->draw();
 	}
+
 }
 
 bool LoadingState::onEnter()
@@ -34,7 +35,8 @@ bool LoadingState::onEnter()
 
 	TheSoundManager::Instance()->stopMusic();
 
-	//TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
+
+
 	std::cout << "Entering LoadingState\n";
 
 	return true;

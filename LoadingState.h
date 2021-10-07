@@ -4,6 +4,7 @@
 #include "GameObject.h"
 #include <string>
 #include <iostream>
+#include <SDL_ttf.h>
 
 class  LoadingState : public GameState
 {
@@ -23,6 +24,7 @@ private:
 
 	static const std::string s_loadingID;
 	std::vector<GameObject*> m_gameObjects;
+
 };
 
 
