@@ -25,6 +25,13 @@ private:
 	static const std::string s_loadingID;
 	std::vector<GameObject*> m_gameObjects;
 
+	//test variables
+	TTF_Font* testFont;
+	SDL_Color testColor;
+	SDL_Texture* message;
+	SDL_Rect messageRect;
+	SDL_Surface* textSurface;
+
 };
 
 

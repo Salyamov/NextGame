@@ -65,6 +65,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			else
 			{
 				SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
+				//ttf
+				if (TTF_Init() == -1)
+				{
+					printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
+				}
 			}
 		}
 	}
