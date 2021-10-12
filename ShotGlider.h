@@ -12,7 +12,9 @@ public:
 	virtual void update();
 
 private:
-
+	int m_maxHeight;
+	int m_minHeight;
+	int m_gap;
 
 };
 

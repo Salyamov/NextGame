@@ -5,8 +5,8 @@ Glider::Glider() : Enemy()
 {
 	m_dyingTime = 25;
 	m_health = 1;
-	m_moveSpeed = 3;
-	m_gap = 60;
+	m_moveSpeed = 2;
+	m_gap = 30;
 }
 
 Glider::~Glider()

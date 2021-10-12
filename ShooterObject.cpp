@@ -15,7 +15,7 @@ ShooterObject::ShooterObject() : GameObject(),
 
 void ShooterObject::doDyingAnimation()
 {
-	scroll(TheGame::Instance()->getScrollSpeed());
+	GameObject::scroll(TheGame::Instance()->getScrollSpeed());
 
 	m_currentFrame = int((SDL_GetTicks() / (1000 / 3)) % m_numFrames);
 

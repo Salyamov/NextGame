@@ -18,7 +18,8 @@ void Eskeletor::update()
 {
 	if (!m_bDying)
 	{
-		scroll(TheGame::Instance()->getScrollSpeed());
+		GameObject::scroll(TheGame::Instance()->getScrollSpeed());
+
 		m_velocity.setY(m_moveSpeed);
 		
 		if (m_bulletCounter == m_bulletFiringSpeed)

@@ -46,7 +46,7 @@ bool LoadingState::onEnter()
 	{
 		std::cout << "font doesn't loaded\n";
 	}
-	testColor = { 150, 150, 150 };
+	testColor = { 150, 150, 255 };
 
 	std::string msg = "Level: ";
 	msg += std::to_string(TheGame::Instance()->getCurrentLevel());
@@ -65,7 +65,7 @@ bool LoadingState::onEnter()
 bool LoadingState::onExit()
 {
 
-	TheSoundManager::Instance()->playMusic(std::to_string(TheGame::Instance()->getCurrentLevel()), -1);
+	//TheSoundManager::Instance()->playMusic(std::to_string(TheGame::Instance()->getCurrentLevel()), -1);
 
 	std::cout << "Exiting LoadingState\n";
 
