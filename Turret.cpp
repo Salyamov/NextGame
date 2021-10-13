@@ -1,12 +1,13 @@
 #include "Turret.h"
 #include "Game.h"
 #include "BulletHandler.h"
+#include "SoundManger.h"
 
 Turret::Turret()
 {
-	m_dyingTime = 1000;
-	m_health = 15;
-	m_bulletFiringSpeed = 50;
+	m_dyingTime = 100;
+	m_health = 10;
+	m_bulletFiringSpeed = 100;
 }
 
 Turret::~Turret()
@@ -30,7 +31,27 @@ void Turret::update()
 	}
 	else
 	{
-		scroll(TheGame::Instance()->getScrollSpeed());
+		//scroll(TheGame::Instance()->getScrollSpeed());
 		doDyingAnimation();
+	}
+}
+
+void Turret::collision()
+{
+	m_health -= 1;
+
+	if (m_health == 0)
+	{
+		if (!m_bPlayedDeathSound)
+		{
+			TheSoundManager::Instance()->playSound("explode", 0);
+			m_textureID = "largeexplosion";
+			m_currentFrame = 0;
+			m_numFrames = 9;
+			m_width = 60;
+			m_height = 60;
+			m_bDying = true;
+
+		}
 	}
 }

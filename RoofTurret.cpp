@@ -30,7 +30,7 @@ void RoofTurret::update()
 	}
 	else
 	{
-		scroll(TheGame::Instance()->getScrollSpeed());
+		//scroll(TheGame::Instance()->getScrollSpeed());
 		doDyingAnimation();
 	}
 }

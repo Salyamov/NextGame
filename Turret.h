@@ -9,6 +9,7 @@ public:
 	Turret();
 	virtual ~Turret();
 	virtual void update();
+	virtual void collision();
 
 private:
 

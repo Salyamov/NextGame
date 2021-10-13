@@ -42,13 +42,13 @@ void ShotGlider::update()
 		*/
 
 		//двигается на одну линию с игроком
-		if (ThePlayer::Instance()->getPosition().getY() > m_position.getY())
+		if (ThePlayer::Instance()->getPosition().getY() - 20 > m_position.getY())
 		{
-			m_velocity.setY(m_moveSpeed);
+			m_velocity.setY(m_moveSpeed / 2);
 		}
-		else if (ThePlayer::Instance()->getPosition().getY() < m_position.getY())
+		else if (ThePlayer::Instance()->getPosition().getY() + 20 < m_position.getY())
 		{
-			m_velocity.setY(-m_moveSpeed);
+			m_velocity.setY(-m_moveSpeed / 2);
 		}
 
 		if (m_bulletCounter == m_bulletFiringSpeed)
