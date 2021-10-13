@@ -1,6 +1,7 @@
 #include "ShotGlider.h"
 #include "BulletHandler.h"
 #include "SoundManger.h"
+#include "Level.h"
 
 ShotGlider::ShotGlider() : Glider()
 {
@@ -29,6 +30,7 @@ void ShotGlider::update()
 {
 	if (!m_bDying)
 	{
+		/*
 		if (m_position.getY() >= m_maxHeight)
 		{
 			m_velocity.setY(-m_moveSpeed / 2);
@@ -36,6 +38,17 @@ void ShotGlider::update()
 		else if (m_position.getY() <= m_minHeight)
 		{
 			m_velocity.setY(m_moveSpeed / 2);
+		}
+		*/
+
+		//двигается на одну линию с игроком
+		if (ThePlayer::Instance()->getPosition().getY() > m_position.getY())
+		{
+			m_velocity.setY(m_moveSpeed);
+		}
+		else if (ThePlayer::Instance()->getPosition().getY() < m_position.getY())
+		{
+			m_velocity.setY(-m_moveSpeed);
 		}
 
 		if (m_bulletCounter == m_bulletFiringSpeed)

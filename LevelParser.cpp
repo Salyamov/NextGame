@@ -245,9 +245,15 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, std::vector<Lay
 			if (type == "Player")
 			{
 				pLevel->setPlayer(dynamic_cast<Player*>(pGameObject));
+				pObjectLayer->getGameObjects()->push_back(pGameObject);
+
+				ThePlayer::Instance()->setInstance(dynamic_cast<Player*>(pGameObject));
+			}
+			else
+			{
+				pObjectLayer->getGameObjects()->push_back(pGameObject);
 			}
 
-			pObjectLayer->getGameObjects()->push_back(pGameObject);
 
 		}
 	}

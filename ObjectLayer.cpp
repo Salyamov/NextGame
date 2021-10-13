@@ -35,8 +35,10 @@ void ObjectLayer::update(Level* pLevel)
 			}
 			else if ((*it)->getPosition().getX() <= TheGame::Instance()->getGameWidth())
 			{
+				//enemies в границах экрана
 				(*it)->setUpdating(true);
 				(*it)->update();
+
 			}
 			else
 			{
@@ -47,6 +49,7 @@ void ObjectLayer::update(Level* pLevel)
 				}
 				else
 				{
+					//игрок
 					(*it)->update();
 				}
 			}

@@ -16,8 +16,19 @@ public:
 
 	virtual std::string type() { return "Player"; }
 
+	static Player* Instance()
+	{
+		return s_pInstance;
+	}
+
+	void setInstance(Player* player)
+	{
+		s_pInstance = player;
+	}
 
 private:
+	static Player* s_pInstance;
+
 	//возращает игрока в центр экрана и делает неу€звимым, 
 	//так же сбрасывает настройки текстуры(которые были во врем€ анимации смерти)
 	void ressurect(); 
@@ -40,7 +51,7 @@ class PlayerCreator : public BaseCreator
 
 };
 
-
+typedef Player ThePlayer;
 
 
 

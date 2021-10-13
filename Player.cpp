@@ -4,6 +4,8 @@
 #include "Game.h"
 #include "SoundManger.h"
 
+Player* Player::s_pInstance = NULL;
+
 Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(50), m_invulnerableCounter(0)
 {
 
