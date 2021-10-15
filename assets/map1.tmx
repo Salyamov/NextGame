@@ -267,12 +267,12 @@
    <property name="collidable" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztlUkKwjAUhhNw4U6XdQCHO7h24bjyInoFPYWeSYuX8s+i8AiZqERq+3/wkeRlaEIfiVKEEEIIIYQQQgghhBBC2sg7wSd8wVLUZenqL395CNI47vDhKau65KyVuuh4jHSbUD658uqK/LnpeIx0GzuHXHeX5N/vqw3cwT08wK2n7Yu72nbfsca+CjiCYziB04R1ii/3mTKnzlkMoXuqjXk1hKfMDgLfX3lcwr7lIjDeOIc9uM6kWXsW2YPPlHdQjq/evFisqZr/lzuvQvnwAVwnaV8=
+   eJztlU9OwkAYxWcSFyRoZFlEQTgBG9csUHTlRfQKcgo5EzbcAj0CuObNosmXOv9SM3Zs3i/5pdOvpTzCy1QpQgghhBBCCCGEEEKIiz38hF9tByFW+lqpc3ih207yE193DvAIvxNn2EW4hR+wFGt5tF0vE+duA9mlGziGE51fx0LdGf5Bzne4cRyrteQFmV51eNZFZJcMc22f54CvO231qj6TvCHTWodnXWWuw+scyK1Xtr1L8t/3qyV8gCv4CO8d56657bx+7alBrgIO4RUcweuI5xS/zBnzmSa/xeDbp7rYqwF8Tuyl5/vvHM5gr+bUc7/xFp7BRSLNsyeBDC5j3oPy/uqdF5rlqvn/UvfK14cTvPN3QQ==
   </data>
  </layer>
  <layer id="4" name="Tile Layer 1" width="150" height="15">
   <data encoding="base64" compression="zlib">
-   eJzt0sEKgkAUheG5m1pUOyNaVI+Q7/84GfUCmtuOuJlCRwKnLvF/cFBmHLwDJwQAAAAAAAAAYy5KpVwz/6ewEHYZsrXMg//YSvdbKxuH90x1p1Ya5fHViZASd+mgHJWT+evYVHf2TuZEL+5Sp7ThdQ9S3Vk6mvOf3aPEbgPfljb9Pscsnzjb67Pz3qvUXqssrE87cgYAgDk8AYxaGBk=
+   eJztz8EJgDAMQNHk4gSKY7j/QjpCrwpeKohUQXp5Dz69JJBGAAAAAAC9jRkx/9CUvX8GALTYqmprx1veWPL6Ps3cKUdDnpXGHQD4YgfLBgpJ
   </data>
  </layer>
 </map>

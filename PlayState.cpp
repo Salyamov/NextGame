@@ -62,7 +62,8 @@ bool PlayState::onEnter()
 	TheGame::Instance()->setPlayerLives(5);
 
 	LevelParser levelParser;
-	pLevel = levelParser.parseLevel(TheGame::Instance()->getLevelFiles()[TheGame::Instance()->getCurrentLevel() - 1].c_str());
+	//pLevel = levelParser.parseLevel(TheGame::Instance()->getLevelFiles()[TheGame::Instance()->getCurrentLevel() - 1].c_str());
+	pLevel = levelParser.parseLevel(TheGame::Instance()->getLevelFiles()[2].c_str());
 
 	TheTextureManager::Instance()->load("assets/bullet1.png", "bullet1", TheGame::Instance()->getRenderer());
 	TheTextureManager::Instance()->load("assets/bullet2.png", "bullet2", TheGame::Instance()->getRenderer());

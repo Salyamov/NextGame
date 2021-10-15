@@ -38,9 +38,6 @@ private:
 	std::vector<PlayerBullet*> m_playerBullets;
 	std::vector<EnemyBullet*> m_enemyBullets;
 
-	//BulletHandler(const BulletHandler&);
-	//BulletHandler& operator=(const BulletHandler&);
-
 
 };
 
