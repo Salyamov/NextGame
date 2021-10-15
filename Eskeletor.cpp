@@ -69,5 +69,7 @@ void Eskeletor::collision()
 
 		}
 	}
+
+	TheGame::Instance()->addToGameScore(400);
 	
 }

@@ -18,6 +18,7 @@
 #include "LoadingState.h"
 #include "FinalState.h"
 #include "SoundManger.h"
+#include "TextManager.h"
 
 
 Game* Game::s_pInstance = NULL;
@@ -29,7 +30,7 @@ Game::Game() : m_pWindow(0),
 			   m_playerLives(3),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
-			   m_scrollSpeed(8), //скорость прокрутки
+			   m_scrollSpeed(4), //скорость прокрутки
 			   m_gameScore(0),
 			   m_width(0),
 			   m_height(0)
@@ -39,7 +40,7 @@ Game::Game() : m_pWindow(0),
 	m_levelFiles.push_back("assets/map3.tmx");
 
 	m_currentLevel = 1;
-	m_finalLevel = 4;
+	m_finalLevel = 2;
 }
 
 Game::~Game()
@@ -105,6 +106,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("Turret", new TurretCreator());
 	TheGameObjectFactory::Instance()->registerType("RoofTurret", new RoofTurretCreator());
 	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
+
+	TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
 	
 	//TheSoundManager::Instance()->playMusic("1", -1);
 

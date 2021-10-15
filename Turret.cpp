@@ -54,4 +54,6 @@ void Turret::collision()
 
 		}
 	}
+
+	TheGame::Instance()->addToGameScore(200);
 }

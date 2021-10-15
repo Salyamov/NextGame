@@ -1,5 +1,6 @@
 #include "Glider.h"
 #include "SoundManger.h"
+#include "Game.h"
 
 Glider::Glider() : Enemy()
 {
@@ -65,5 +66,6 @@ void Glider::collision()
 		m_bDying = true;
 	}
 
+	TheGame::Instance()->addToGameScore(100);
 }
 
