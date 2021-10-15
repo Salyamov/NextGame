@@ -13,7 +13,7 @@ public:
 	virtual void update();
 	virtual void clean() {} //not implemented in this class
 	virtual void collision() {} //not implemented in this class
-	virtual std::string type() { return "SDLGameObject"; }
+	virtual std::string type() { return "ShooterObject"; }
 
 protected:
 

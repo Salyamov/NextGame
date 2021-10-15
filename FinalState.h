@@ -14,7 +14,6 @@ public:
 
 	virtual std::string getStateID() const { return s_finalID; }
 
-
 private:
 
 	static const std::string s_finalID;

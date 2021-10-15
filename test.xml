@@ -58,5 +58,14 @@
 </OBJECTS>
 </LOADING>
 
+<FINAL>
+<TEXTURES>
+	<texture filename="assets/grats.png" ID="gratstext" />
+</TEXTURES>
+<OBJECTS>
+	<object type="AnimatedGraphic" x="100" y="100" width="400" height="200" textureID="gratstext" numFrames="1" />
+</OBJECTS>
+</FINAL>
+
 
 </STATES>
