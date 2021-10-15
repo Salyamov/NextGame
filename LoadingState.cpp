@@ -17,6 +17,11 @@ void LoadingState::update()
 	{
 		TheGame::Instance()->getStateMachine()->changeState(new PlayState());
 	}
+
+	//TheTextManager::Instance()->updateTexture(...);
+	/*
+		(name, msg)
+	*/
 }
 
 void LoadingState::render()
@@ -29,7 +34,10 @@ void LoadingState::render()
 	//test rendering
 	SDL_RenderCopy(TheGame::Instance()->getRenderer(), message, NULL, &messageRect);
 
-
+	//TheTextManager::Instance()->drawTexture(...);
+	/*
+		(name)
+	*/
 
 }
 
@@ -56,6 +64,14 @@ bool LoadingState::onEnter()
 	messageRect.y = 250;
 	messageRect.w = 200;
 	messageRect.h = 50;
+
+	//std::string msg = "Level: ";
+	//msg += std::to_string(TheGame::Instance()->getCurrentLevel());
+	//TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
+	//TheTextManager::Instance()->createTexture(msg, "points", 200, 250, 200, 50, "silver", 150, 150, 255);
+	/*
+		(msg, name, x, y, w, h, font, r, g, b); name - имя по которой можно получить доступ к созданной текстуре
+	*/
 
 	std::cout << "Entering LoadingState\n";
 

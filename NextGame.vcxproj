@@ -175,6 +175,7 @@
     <ClCompile Include="ShotGlider.cpp" />
     <ClCompile Include="SoundManger.cpp" />
     <ClCompile Include="StateParser.cpp" />
+    <ClCompile Include="TextManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TileLayer.cpp" />
     <ClCompile Include="tinystr.cpp" />
@@ -220,6 +221,7 @@
     <ClInclude Include="ShotGlider.h" />
     <ClInclude Include="SoundManger.h" />
     <ClInclude Include="StateParser.h" />
+    <ClInclude Include="TextManager.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TileLayer.h" />
     <ClInclude Include="tinystr.h" />
