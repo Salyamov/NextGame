@@ -1,10 +1,22 @@
 #include "TextManager.h"
 #include "Game.h"
 
+TextManager* TextManager::s_pInstance = NULL;
+
+TextManager::TextManager()
+{
+	m_textColor = { 255, 255, 255 };
+	m_textSurface = NULL;
+}
+
+
 void TextManager::createTexture(std::string msg, std::string name, int x, int y, int w, int h, std::string font, Uint8 r, Uint8 g, Uint8 b)
 {
-	m_textColor = SDL_Color{ r, g, b };
-	m_textSurface = TTF_RenderText_Solid(m_fonts[name], msg.c_str(), m_textColor);
+	m_textColor.r = r;
+	m_textColor.g = g;
+	m_textColor.b = b;
+	//SDL_Color color = { 120, 220, 255 };
+	m_textSurface = TTF_RenderText_Solid(m_fonts[font], msg.c_str(), m_textColor);
 	m_textures[name] = SDL_CreateTextureFromSurface(TheGame::Instance()->getRenderer(), m_textSurface);
 	m_textureParamsList[name] = new TextureParams;
 	m_textureParamsList[name]->x = x;
@@ -41,5 +53,13 @@ void TextManager::updateTexture(std::string msg, std::string name)
 void TextManager::registerFont(std::string file, std::string name, int size)
 {
 	m_fonts[name] = TTF_OpenFont(file.c_str(), size);
-	
+	if (m_fonts[name] == NULL)
+	{
+		std::cout << "Failed to loaded Font" << TTF_GetError() << "\n";
+	}
+	else
+	{
+		std::cout << "font from: " << file << " is registered as: " << name << "\n";
+	}
 }
+

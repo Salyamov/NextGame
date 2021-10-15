@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "InputHandler.h"
 #include "SoundManger.h"
+#include "TextManager.h"
 
 const std::string LoadingState::s_loadingID = "LOADING";
 
@@ -31,10 +32,11 @@ void LoadingState::render()
 		m_gameObjects[i]->draw();
 	}
 
-	//test rendering
+	/*
 	SDL_RenderCopy(TheGame::Instance()->getRenderer(), message, NULL, &messageRect);
+	*/
 
-	//TheTextManager::Instance()->drawTexture(...);
+	TheTextManager::Instance()->drawTexture("level");
 	/*
 		(name)
 	*/
@@ -48,6 +50,7 @@ bool LoadingState::onEnter()
 
 	TheSoundManager::Instance()->stopMusic();
 
+	/*
 	//test initialization
 	testFont = TTF_OpenFont("assets/Quicksilver.ttf", 24);
 	if (testFont == NULL)
@@ -55,7 +58,7 @@ bool LoadingState::onEnter()
 		std::cout << "font doesn't loaded\n";
 	}
 	testColor = { 150, 150, 255 };
-
+	
 	std::string msg = "Level: ";
 	msg += std::to_string(TheGame::Instance()->getCurrentLevel());
 	textSurface = TTF_RenderText_Solid(testFont, msg.c_str(), testColor);
@@ -64,11 +67,12 @@ bool LoadingState::onEnter()
 	messageRect.y = 250;
 	messageRect.w = 200;
 	messageRect.h = 50;
+	*/
 
-	//std::string msg = "Level: ";
-	//msg += std::to_string(TheGame::Instance()->getCurrentLevel());
-	//TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
-	//TheTextManager::Instance()->createTexture(msg, "points", 200, 250, 200, 50, "silver", 150, 150, 255);
+	std::string msg = "Level: ";
+	msg += std::to_string(TheGame::Instance()->getCurrentLevel());
+	TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
+	TheTextManager::Instance()->createTexture(msg, "level", 200, 250, 200, 50, "silver", 150, 150, 255);
 	/*
 		(msg, name, x, y, w, h, font, r, g, b); name - имя по которой можно получить доступ к созданной текстуре
 	*/
@@ -86,9 +90,10 @@ bool LoadingState::onExit()
 	std::cout << "Exiting LoadingState\n";
 
 	//free test surface and texture
+	/*
 	SDL_FreeSurface(textSurface);
 	SDL_DestroyTexture(message);
-
+	*/
 	return true;
 }
 
