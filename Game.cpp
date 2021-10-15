@@ -30,6 +30,7 @@ Game::Game() : m_pWindow(0),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
 			   m_scrollSpeed(8), //скорость прокрутки
+			   m_gameScore(0),
 			   m_width(0),
 			   m_height(0)
 {
@@ -167,6 +168,16 @@ void Game::setLevelComplete(bool levelComplete)
 bool Game::getLevelComplete()
 {
 	return m_bLevelComplete;
+}
+
+void Game::addToGameScore(int points)
+{
+	m_gameScore += points;
+}
+
+int Game::getGameScore()
+{
+	return m_gameScore;
 }
 
 void Game::handleEvents()

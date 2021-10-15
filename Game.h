@@ -35,6 +35,8 @@ public:
 	int getPlayerLives();
 	void setLevelComplete(bool levelComplete);
 	bool getLevelComplete();
+	void addToGameScore(int points);
+	int getGameScore();
 
 	void setScrollSpeed(float speed) { m_scrollSpeed = speed; }
 	float getScrollSpeed() { return m_scrollSpeed; }
@@ -71,6 +73,7 @@ private:
 	int m_finalLevel;
 	float m_scrollSpeed;
 	int m_playerLives;
+	int m_gameScore;
 	bool m_bLevelComplete;
 	bool m_bChangingState;
 
