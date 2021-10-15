@@ -40,7 +40,7 @@ Game::Game() : m_pWindow(0),
 	m_levelFiles.push_back("assets/map3.tmx");
 
 	m_currentLevel = 1;
-	m_finalLevel = 2;
+	m_finalLevel = 3;
 }
 
 Game::~Game()
@@ -108,7 +108,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
 
 	TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
-	
+	TheTextManager::Instance()->registerFont("assets/Second.ttf", "second", 14);
+
 	//TheSoundManager::Instance()->playMusic("1", -1);
 
 	m_pGameStateMachine = new GameStateMachine();

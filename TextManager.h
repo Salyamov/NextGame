@@ -12,6 +12,7 @@ struct TextureParams
 	int w;
 	int h;
 	SDL_Color color;
+	std::string font;
 };
 
 class TextManager

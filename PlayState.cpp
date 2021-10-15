@@ -8,6 +8,7 @@
 #include "StateParser.h"
 #include "LevelParser.h"
 #include "BulletHandler.h"
+#include "TextManager.h"
 
 const std::string PlayState::s_playID = "PLAY";
 
@@ -32,8 +33,13 @@ void PlayState::update()
 		{
 			pLevel->update();
 		}
-	}
 
+		std::string msg;
+		msg = std::to_string(TheGame::Instance()->getGameScore());
+		TheTextManager::Instance()->updateTexture(msg, "score");
+
+
+	}
 
 }
 
@@ -53,6 +59,8 @@ void PlayState::render()
 		}
 
 		TheBulletHandler::Instance()->drawBullets();
+
+		TheTextManager::Instance()->drawTexture("score");
 		
 	}
 }
@@ -75,6 +83,12 @@ bool PlayState::onEnter()
 	{
 		m_loadingComplete = true;
 	}
+
+	std::string msg;
+	msg = std::to_string(TheGame::Instance()->getGameScore());
+	TheTextManager::Instance()->createTexture(msg, "score", TheGame::Instance()->getGameWidth() - 200,
+		0, 200, 50, "second", 200, 70, 120);
+
 
 	std::cout << "Entering PlayState\n";
 	return true;

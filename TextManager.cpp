@@ -25,6 +25,7 @@ void TextManager::createTexture(std::string msg, std::string name, int x, int y,
 	m_textureParamsList[name]->h = h;
 	m_textureParamsList[name]->msg = msg;
 	m_textureParamsList[name]->color = m_textColor;
+	m_textureParamsList[name]->font = font;
 	
 	SDL_FreeSurface(m_textSurface);
 	m_textSurface = NULL;
@@ -47,7 +48,27 @@ void TextManager::drawTexture(std::string name)
 
 void TextManager::updateTexture(std::string msg, std::string name)
 {
-	m_textureParamsList[name]->msg = msg;
+	/*
+	int x = m_textureParamsList[name]->x;
+	int y = m_textureParamsList[name]->y;
+	int w = m_textureParamsList[name]->w;
+	int h = m_textureParamsList[name]->h;
+	std::string message = msg;
+	SDL_Color color = m_textureParamsList[name]->color;
+	m_textureParamsList.erase(name);
+
+	m_textureParamsList[name] = new TextureParams;
+	m_textureParamsList[name]->x = x;
+	m_textureParamsList[name]->y = y;
+	m_textureParamsList[name]->w = w;
+	m_textureParamsList[name]->h = h;
+	m_textureParamsList[name]->msg = message;
+	m_textureParamsList[name]->color = color;
+	*/
+
+	//m_textureParamsList[name]->msg = msg;
+	m_textSurface = TTF_RenderText_Solid(m_fonts[m_textureParamsList[name]->font], msg.c_str(), m_textColor);
+	m_textures[name] = SDL_CreateTextureFromSurface(TheGame::Instance()->getRenderer(), m_textSurface);
 }
 
 void TextManager::registerFont(std::string file, std::string name, int size)
