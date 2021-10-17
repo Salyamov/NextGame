@@ -70,6 +70,24 @@ void BulletHandler::clearBullets()
 	m_enemyBullets.clear();
 }
 
+void BulletHandler::deleteBullet(PlayerBullet* bullet)
+{
+	for (std::vector<PlayerBullet*>::iterator p_it = m_playerBullets.begin(); p_it != m_playerBullets.end(); )
+	{
+		if ((*p_it) == bullet)
+		{
+			delete *p_it;
+			p_it = m_playerBullets.erase(p_it);
+		}
+		else
+		{
+			p_it++;
+		}
+	}
+	//m_playerBullets.erase()
+	//delete
+}
+
 BulletHandler::BulletHandler()
 {
 }

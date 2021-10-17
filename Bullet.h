@@ -35,6 +35,8 @@ public:
 		ShooterObject::clean();
 	}
 
+	virtual void collision();
+
 	virtual std::string type() { return "PlayerBullet"; }
 
 private:

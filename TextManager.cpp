@@ -65,10 +65,13 @@ void TextManager::updateTexture(std::string msg, std::string name)
 	m_textureParamsList[name]->msg = message;
 	m_textureParamsList[name]->color = color;
 	*/
-
+ 
 	//m_textureParamsList[name]->msg = msg;
 	m_textSurface = TTF_RenderText_Solid(m_fonts[m_textureParamsList[name]->font], msg.c_str(), m_textColor);
 	m_textures[name] = SDL_CreateTextureFromSurface(TheGame::Instance()->getRenderer(), m_textSurface);
+	SDL_FreeSurface(m_textSurface);
+	m_textSurface = NULL;
+
 }
 
 void TextManager::registerFont(std::string file, std::string name, int size)

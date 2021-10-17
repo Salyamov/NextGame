@@ -4,6 +4,7 @@
 #include "Bullet.h"
 #include "Vector2D.h"
 
+
 class BulletHandler
 {
 public:
@@ -15,6 +16,7 @@ public:
 	void drawBullets();
 	
 	void clearBullets();
+	void deleteBullet(PlayerBullet* bullet);
 
 	const std::vector<PlayerBullet*> getPlayerBullets() { return m_playerBullets; }
 	const std::vector<EnemyBullet*>  getEnemyBullets() { return m_enemyBullets; }

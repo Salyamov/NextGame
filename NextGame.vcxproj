@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClCompile Include="AnimatedGraphic.cpp" />
     <ClCompile Include="base64.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletHandler.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Enemy.cpp" />

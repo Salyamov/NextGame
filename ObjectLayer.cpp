@@ -57,7 +57,7 @@ void ObjectLayer::update(Level* pLevel)
 			//check if dead or off screen
 			//(*it)->getPosition().getX() > TheGame::Instance()->getGameWidth() || (*it)->getPosition().getY() < (0 - (*it)->getHeight())
 			
-			//если противник залетает за левую сторону или падает ниже нижней части экрана, то он уничтожается (больше не появляется в игре) 
+			//если противник залетает за левую сторону или падает ниже нижней части экрана, то он уничтожается
 			if ( (*it)->getPosition().getX() < ( 0 - (*it)->getWidth() ) || 
 				(*it)->getPosition().getY() > TheGame::Instance()->getGameHeight() ||
 				(*it)->dead() )
