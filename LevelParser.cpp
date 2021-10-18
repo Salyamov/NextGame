@@ -244,6 +244,7 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, std::vector<Lay
 			
 			if (type == "Player")
 			{
+				//инициализация синглтона Player
 				pLevel->setPlayer(dynamic_cast<Player*>(pGameObject));
 				pObjectLayer->getGameObjects()->push_back(pGameObject);
 

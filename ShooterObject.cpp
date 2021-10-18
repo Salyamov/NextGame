@@ -2,7 +2,7 @@
 #include "TextureManager.h"
 #include "Game.h"
 
-ShooterObject::ShooterObject() : GameObject(), 
+ShooterObject::ShooterObject() : GameObject(),
 								 m_bulletFiringSpeed(0), 
 	                             m_bulletCounter(0), 
 								 m_moveSpeed(0),
@@ -25,6 +25,11 @@ void ShooterObject::doDyingAnimation()
 	}
 	m_dyingCounter++;
 
+}
+
+void ShooterObject::changeColor(Uint8 r, Uint8 g, Uint8 b)
+{
+	TheTextureManager::Instance()->setColor(m_textureID, r, g, b);
 }
 
 void ShooterObject::load(std::unique_ptr<LoaderParams>const& pParams)

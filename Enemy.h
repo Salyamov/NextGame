@@ -10,6 +10,7 @@ public:
 
 protected:
 	int m_health;
+	int m_maxHealth;
 
 	Enemy();
 	virtual ~Enemy();

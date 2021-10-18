@@ -7,6 +7,7 @@ Turret::Turret()
 {
 	m_dyingTime = 100;
 	m_health = 10;
+	m_maxHealth = 10;
 	m_bulletFiringSpeed = 100;
 }
 
@@ -40,6 +41,9 @@ void Turret::collision()
 {
 	m_health -= 1;
 
+	//changeColor(10, 10, 10);
+	std::cout << "got collision! health: " << m_health << "\n";
+
 	if (m_health == 0)
 	{
 		if (!m_bPlayedDeathSound)
@@ -51,9 +55,10 @@ void Turret::collision()
 			m_width = 60;
 			m_height = 60;
 			m_bDying = true;
+			TheGame::Instance()->addToGameScore(200);
 
 		}
 	}
 
-	TheGame::Instance()->addToGameScore(200);
+	
 }

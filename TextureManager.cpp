@@ -77,3 +77,8 @@ void TextureManager::clearFromTextureMap(std::string id)
 {
 	m_textureMap.erase(id);
 }
+
+void TextureManager::setColor(std::string id, Uint8 r, Uint8 g, Uint8 b)
+{
+	SDL_SetTextureColorMod(m_textureMap[id], r, g, b);
+}
