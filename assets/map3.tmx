@@ -2,13 +2,13 @@
 <map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="450" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="13">
  <properties>
   <property name="city" value="assets/city.png"/>
-  <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
   <property name="explosion" value="assets/explosion.png"/>
-  <property name="glider" value="assets/enemies/glider.png"/>
-  <property name="helicopter" value="assets/helicopter.png"/>
-  <property name="largeexplosion" value="assets/largeexplosion.png"/>
-  <property name="shotglider" value="assets/enemies/shotglider.png"/>
   <property name="smallexplosion" value="assets/smallexplosion.png"/>
+  <property name="largeexplosion" value="assets/largeexplosion.png"/>
+  <property name="helicopter" value="assets/helicopter.png"/>
+  <property name="glider" value="assets/enemies/glider.png"/>
+  <property name="shotglider" value="assets/enemies/shotglider.png"/>
+  <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
   <property name="turret" value="assets/enemies/turret.png"/>
  </properties>
  <tileset firstgid="1" name="citytileset" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="1650" columns="66">

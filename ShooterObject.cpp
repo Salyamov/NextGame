@@ -39,11 +39,14 @@ void ShooterObject::load(std::unique_ptr<LoaderParams>const& pParams)
 	m_width = pParams->getWidth();
 	m_height = pParams->getHeight();
 	m_textureID = pParams->getTextureID();
+	m_textureID2 = m_textureID + "2"; //текстура красного цвета для смешения
 	m_numFrames = pParams->getNumFrames();
 }
 
 void ShooterObject::draw()
 {
+	TextureManager::Instance()->drawFrame(m_textureID2, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width,
+		m_height, m_currentRow, m_currentFrame, Game::Instance()->getRenderer(), m_angle, 255);
 	TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width,
 		m_height, m_currentRow, m_currentFrame, Game::Instance()->getRenderer(), m_angle, m_alpha);
 

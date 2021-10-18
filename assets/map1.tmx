@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="150" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="53">
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="150" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="54">
  <properties>
   <property name="clouds" value="assets/clouds.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
+  <property name="eskeletor2" value="assets/enemies/eskeletor2.png"/>
   <property name="explosion" value="assets/explosion.png"/>
   <property name="glider" value="assets/enemies/glider.png"/>
+  <property name="glider2" value="assets/enemies/glider2.png"/>
   <property name="helicopter" value="assets/helicopter.png"/>
   <property name="largeexplosion" value="assets/largeexplosion.png"/>
   <property name="shotglider" value="assets/enemies/shotglider.png"/>
+  <property name="shotglider2" value="assets/enemies/shotglider2.png"/>
   <property name="smallexplosion" value="assets/smallexplosion.png"/>
   <property name="turret" value="assets/enemies/turret.png"/>
+  <property name="turret2" value="assets/enemies/turret2.png"/>
  </properties>
  <tileset firstgid="1" name="blocks1" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
   <image source="blocks1.png" width="640" height="400"/>
@@ -181,7 +185,7 @@
     <property name="textureWidth" value="52"/>
    </properties>
   </object>
-  <object id="51" name="Turret" type="Turret" x="1057" y="244" width="32" height="32">
+  <object id="51" name="Turret" type="Turret" x="1038" y="225" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="56"/>
@@ -189,12 +193,20 @@
     <property name="textureWidth" value="52"/>
    </properties>
   </object>
-  <object id="52" name="Turret" type="Turret" x="1866" y="245" width="32" height="32">
+  <object id="52" name="Turret" type="Turret" x="1865" y="227" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="56"/>
     <property name="textureID" value="turret"/>
     <property name="textureWidth" value="52"/>
+   </properties>
+  </object>
+  <object id="53" name="Eskeletor" type="Eskeletor" x="479" y="99" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="34"/>
+    <property name="textureID" value="eskeletor"/>
+    <property name="textureWidth" value="34"/>
    </properties>
   </object>
  </objectgroup>

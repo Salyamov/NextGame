@@ -7,10 +7,11 @@ Eskeletor::Eskeletor() : Enemy()
 {
 	m_dyingTime = 50;
 	m_health = 3;
+	m_maxHealth = 3;
 	m_moveSpeed = 2;
 	m_bulletFiringSpeed = 50;
 
-	m_velocity.setY(4);
+	m_velocity.setY(2);
 }
 
 Eskeletor::~Eskeletor()
@@ -41,6 +42,7 @@ void Eskeletor::update()
 			m_bulletCounter = 0;
 		}
 		m_bulletCounter++;
+		m_currentFrame = int((SDL_GetTicks() / 100) % m_numFrames);
 	}
 	else
 	{
@@ -55,21 +57,27 @@ void Eskeletor::collision()
 	
 	m_health -= 1;
 
+	if (m_alpha > 0)
+	{
+		m_alpha = ((float)m_health / (float)m_maxHealth) * 255;
+	}
+
 	if (m_health == 0)
 	{
 		if (!m_bPlayedDeathSound)
 		{
 			TheSoundManager::Instance()->playSound("explode", 0);
 			m_textureID = "largeexplosion";
+			m_alpha = 255;
 			m_currentFrame = 0;
 			m_numFrames = 9;
 			m_width = 60;
 			m_height = 60;
 			m_bDying = true;
-
+			TheGame::Instance()->addToGameScore(400);
 		}
 	}
 
-	TheGame::Instance()->addToGameScore(400);
+
 	
 }

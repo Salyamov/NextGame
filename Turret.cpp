@@ -5,7 +5,7 @@
 
 Turret::Turret()
 {
-	m_dyingTime = 100;
+	m_dyingTime = 50;
 	m_health = 10;
 	m_maxHealth = 10;
 	m_bulletFiringSpeed = 100;
@@ -40,6 +40,12 @@ void Turret::update()
 void Turret::collision()
 {
 	m_health -= 1;
+	
+	if (m_alpha > 0)
+	{
+		m_alpha = ((float)m_health / (float)m_maxHealth) * 255;
+	}
+	
 
 	//changeColor(10, 10, 10);
 	std::cout << "got collision! health: " << m_health << "\n";
@@ -50,6 +56,7 @@ void Turret::collision()
 		{
 			TheSoundManager::Instance()->playSound("explode", 0);
 			m_textureID = "largeexplosion";
+			m_alpha = 255;
 			m_currentFrame = 0;
 			m_numFrames = 9;
 			m_width = 60;

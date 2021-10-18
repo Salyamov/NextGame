@@ -65,6 +65,7 @@ protected:
 	int m_currentFrame;
 	int m_numFrames;
 	std::string m_textureID;
+	std::string m_textureID2;
 
 	double m_angle;
 	int m_alpha; //blending
