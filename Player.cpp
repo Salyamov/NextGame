@@ -20,7 +20,7 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 
 	m_bulletCounter = m_bulletFiringSpeed;
 
-	m_dyingTime = 100;
+	m_dyingTime = 25;
 
 }
 

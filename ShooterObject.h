@@ -21,8 +21,6 @@ protected:
 
 	void doDyingAnimation();//обновляет анимацию и ставит флаг dead, чтобы можно было удалить объект из игры
 
-	void changeColor(Uint8 r, Uint8 g, Uint8 b);//color modulation
-
 	int m_bulletFiringSpeed;
 	int m_bulletCounter;
 	int m_moveSpeed;

@@ -17,9 +17,6 @@ public:
 		int width, int height, int currentRow, int currentFrame, SDL_Renderer* pRenderer);
 	void clearFromTextureMap(std::string id);
 
-	//изменение цвета при попадании(если сразу не исчезает)
-	void setColor(std::string id, Uint8 r, Uint8 g, Uint8 b);
-
 	static TextureManager* Instance()
 	{
 		if (s_pInstance == NULL)

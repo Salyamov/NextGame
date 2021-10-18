@@ -185,7 +185,7 @@
     <property name="textureWidth" value="52"/>
    </properties>
   </object>
-  <object id="51" name="Turret" type="Turret" x="1038" y="225" width="32" height="32">
+  <object id="51" name="Turret" type="Turret" x="1047" y="230" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="56"/>

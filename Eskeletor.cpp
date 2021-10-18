@@ -5,7 +5,7 @@
 
 Eskeletor::Eskeletor() : Enemy()
 {
-	m_dyingTime = 50;
+	m_dyingTime = 25;
 	m_health = 3;
 	m_maxHealth = 3;
 	m_moveSpeed = 2;
@@ -57,10 +57,7 @@ void Eskeletor::collision()
 	
 	m_health -= 1;
 
-	if (m_alpha > 0)
-	{
-		m_alpha = ((float)m_health / (float)m_maxHealth) * 255;
-	}
+	m_alpha = ((float)m_health / (float)m_maxHealth) * 255;	
 
 	if (m_health == 0)
 	{

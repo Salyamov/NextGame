@@ -5,7 +5,7 @@
 
 Turret::Turret()
 {
-	m_dyingTime = 50;
+	m_dyingTime = 25;
 	m_health = 10;
 	m_maxHealth = 10;
 	m_bulletFiringSpeed = 100;
@@ -46,9 +46,6 @@ void Turret::collision()
 		m_alpha = ((float)m_health / (float)m_maxHealth) * 255;
 	}
 	
-
-	//changeColor(10, 10, 10);
-	std::cout << "got collision! health: " << m_health << "\n";
 
 	if (m_health == 0)
 	{
