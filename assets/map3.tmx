@@ -2,17 +2,20 @@
 <map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="450" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="13">
  <properties>
   <property name="city" value="assets/city.png"/>
-  <property name="explosion" value="assets/explosion.png"/>
-  <property name="smallexplosion" value="assets/smallexplosion.png"/>
-  <property name="largeexplosion" value="assets/largeexplosion.png"/>
-  <property name="helicopter" value="assets/helicopter.png"/>
-  <property name="glider" value="assets/enemies/glider.png"/>
-  <property name="shotglider" value="assets/enemies/shotglider.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
+  <property name="explosion" value="assets/explosion.png"/>
+  <property name="glider" value="assets/enemies/glider.png"/>
+  <property name="helicopter" value="assets/helicopter.png"/>
+  <property name="largeexplosion" value="assets/largeexplosion.png"/>
+  <property name="shotglider" value="assets/enemies/shotglider.png"/>
+  <property name="smallexplosion" value="assets/smallexplosion.png"/>
   <property name="turret" value="assets/enemies/turret.png"/>
  </properties>
  <tileset firstgid="1" name="citytileset" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="1650" columns="66">
   <image source="citytileset.png" width="2264" height="878"/>
+ </tileset>
+ <tileset firstgid="1651" name="citytileset4" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="16" columns="4">
+  <image source="citytileset4.png" width="138" height="138"/>
  </tileset>
  <objectgroup id="4" name="Background">
   <object id="2" name="Background" type="ScrollingBackground" x="0" y="0" width="32" height="32">
@@ -48,7 +51,7 @@
    <property name="collidable" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1cEKQEAQgOFJ4f1fhBuvhRM3o7ZIjkrq++pvdtvL3iYCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5nqCPGrCv1padzFedsv/44ALxgzb22ZVM2Z0uZ1/tyeztmE3YhAP+3A6NxFho=
+   eJztnD1v00AAhi+OExBCdAJGhsJQJGjTZAFGBgT/AVCSUr6GUlIIIkVlZgPEhAAhaAUIWqCi/J7CgAQISAEpbLxWLrIvcuL4I7nEfh/pkc+N7Ts7vrzxuY4QZFioZJsuZHW3hBBCCBk81WzTG8xBQgghCaSWbbrIHCSEEJJAlrJNbzMHCSGEJJCKvB7k/UFCCCFJpCqvB3l/kBBCSC9MmEIcNHW3IjoqvD9ICCHEB5tpIT6ldbeCEDJsrKWEeANXU7pbQohK1M/GMQdJ0tltCLHH4V5Dd4v0cgj7fxhOOpyCuRgcl2fI9HNwltk+0kT9bBxz0OY0POPwrN7mkAFRN4W4mrH9GaP7BEHYQN7NwStwHn6QLutuWARcxH5cgpdjkOlJJup7X8xBmydC7f9P+1SP8/u23+/ZftcNU1dSYA6qNHCOvIPv4TqsS7/oblgElHAdWIYzvB4cGdzGQOM+LjoZsi3VEL+rtinU/v85XFM6chd98ISwve+jT/pdN0xdSYE5qGJdD/6Gf+Bf+FY6EYNzx5mDs9in8/CCoZa36W4kUXAbA437uOh8yLbUfPyu2kP4CD6W8+Mptf8f6FO/t7LpHnwgp35z0M+6YepKClYOzmVsk56DDUf2Of0x4udOMaXm4Avs00v4ylDLOZNZGIQN9J2PcFW6JnUrW8NSranXsXYbA416XHQc7/n+Lv3+VHRV9cR6yBxc8nhu4giO/VF4DC7CfaKpde5Pw7yplgtwBm9WEcuUYFm4l4su5U7zZZftlNv+3m6py2vd6uu2rTsxdDrj33xGzcFcgG3osNAnp0x3X6dHW+t/ZJ7DZbjikYNjglnolwbOnX/wF6zDLTl1zm+1vWZNrY9qQ7pDkzt7cNcA3d5Hb+KY12T+3YLHhW0F5/4CvGaq5etwxSMH3bKwl8zym19eudYpWzstfzJix4ZAZ54FsV/ZMkrGNQfzDgvwK/r1N/jdUMutHLQ0PGxd31hTP8sGXcdr+aD1BNlme3v+A+RucT4=
   </data>
  </layer>
  <layer id="1" name="Tile Layer 1" width="450" height="15">
