@@ -6,10 +6,10 @@
 
 enum border
 {
-	LEFT = 0,
-	RIGHT = 1,
-	TOP = 2, 
-	BOTTOM = 3
+	LEFTBORDER = 0,
+	RIGHTBORDER = 1,
+	TOPBORDER = 2, 
+	BOTTOMBORDER = 3
 };
 
 struct TextureParams
@@ -21,15 +21,17 @@ struct TextureParams
 	int h;
 	SDL_Color color;
 	std::string font;
+	border edge;
 };
 
 class TextManager
 {
 public:
-	void createTexture(std::string msg, std::string name, int x, int y, int w, int h, std::string font, Uint8 r, Uint8 g, Uint8 b);
+	void createTexture(std::string msg, std::string name, int x, int y, int w, int h, std::string font, Uint8 r, Uint8 g, Uint8 b, border edge);
 	void drawTexture(std::string name);
 	void updateTexture(std::string msg, std::string name);
 	void registerFont(std::string file, std::string name, int size);
+	void clearParams(std::string name);
 
 	static TextManager* Instance()
 	{

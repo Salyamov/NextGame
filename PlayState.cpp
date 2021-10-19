@@ -86,8 +86,8 @@ bool PlayState::onEnter()
 
 	std::string msg;
 	msg = std::to_string(TheGame::Instance()->getGameScore());
-	TheTextManager::Instance()->createTexture(msg, "score", TheGame::Instance()->getGameWidth() - 80,
-		5, 200, 100, "second", 200, 70, 120);
+	TheTextManager::Instance()->createTexture(msg, "score", TheGame::Instance()->getGameWidth(),
+		5, 200, 100, "second", 200, 70, 120, border::RIGHTBORDER);
 
 
 	std::cout << "Entering PlayState\n";
@@ -100,6 +100,8 @@ bool PlayState::onExit()
 
 	TheInputHandler::Instance()->reset();
 	TheBulletHandler::Instance()->clearBullets();
+
+	TheTextManager::Instance()->clearParams("score");
 
 
 	std::cout << "Exiting PlayState\n";

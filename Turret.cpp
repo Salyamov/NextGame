@@ -59,7 +59,7 @@ void Turret::collision()
 			m_width = 60;
 			m_height = 60;
 			m_bDying = true;
-			TheGame::Instance()->addToGameScore(200);
+			TheGame::Instance()->addToGameScore(400000);
 
 		}
 	}

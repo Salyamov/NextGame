@@ -8,10 +8,10 @@ Eskeletor::Eskeletor() : Enemy()
 	m_dyingTime = 25;
 	m_health = 3;
 	m_maxHealth = 3;
-	m_moveSpeed = 2;
-	m_bulletFiringSpeed = 50;
+	m_moveSpeed = 1;
+	m_bulletFiringSpeed = 100;
 
-	m_velocity.setY(2);
+	m_velocity.setY(1);
 }
 
 Eskeletor::~Eskeletor()

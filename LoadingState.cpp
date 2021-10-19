@@ -71,7 +71,7 @@ bool LoadingState::onEnter()
 
 	std::string msg = "Level: ";
 	msg += std::to_string(TheGame::Instance()->getCurrentLevel());
-	TheTextManager::Instance()->createTexture(msg, "level", 200, 250, 200, 50, "silver", 150, 150, 255);
+	TheTextManager::Instance()->createTexture(msg, "level", 200, 250, 200, 50, "silver", 150, 150, 255, border::LEFTBORDER);
 	/*
 		(msg, name, x, y, w, h, font, r, g, b); name - имя по которой можно получить доступ к созданной текстуре
 	*/

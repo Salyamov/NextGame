@@ -29,7 +29,7 @@ bool FinalState::onEnter()
 
     std::string msg;
     msg = std::to_string(TheGame::Instance()->getGameScore());
-    TheTextManager::Instance()->createTexture(msg, "finalscore", 225, 300, 250, 50, "silver", 120, 170, 255);
+    TheTextManager::Instance()->createTexture(msg, "finalscore", 225, 300, 250, 50, "silver", 120, 170, 255, LEFTBORDER);
 
 
     std::cout << "Entering FinalState\n";
