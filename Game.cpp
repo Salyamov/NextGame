@@ -30,7 +30,7 @@ Game::Game() : m_pWindow(0),
 			   m_playerLives(3),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
-			   m_scrollSpeed(3), //скорость прокрутки
+			   m_scrollSpeed(0.5), //скорость прокрутки
 			   m_gameScore(0),
 			   m_width(0),
 			   m_height(0)
@@ -108,7 +108,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
 
 	TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
-	TheTextManager::Instance()->registerFont("assets/Second.ttf", "second", 18);
+	TheTextManager::Instance()->registerFont("assets/Second.ttf", "second", 22);
 
 	//TheSoundManager::Instance()->playMusic("1", -1);
 

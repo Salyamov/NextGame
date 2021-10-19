@@ -7,9 +7,7 @@
 enum border
 {
 	LEFTBORDER = 0,
-	RIGHTBORDER = 1,
-	TOPBORDER = 2, 
-	BOTTOMBORDER = 3
+	RIGHTBORDER = 1
 };
 
 struct TextureParams
@@ -31,7 +29,6 @@ public:
 	void drawTexture(std::string name);
 	void updateTexture(std::string msg, std::string name);
 	void registerFont(std::string file, std::string name, int size);
-	void clearParams(std::string name);
 
 	static TextManager* Instance()
 	{

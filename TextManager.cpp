@@ -28,7 +28,8 @@ void TextManager::createTexture(std::string msg, std::string name, int x, int y,
 	}
 	else if (edge == RIGHTBORDER)
 	{
-		m_textureParamsList[name]->x = x - m_textureParamsList[name]->w;//тут проблема (после второго захода в PLaystate
+		//m_textureParamsList[name]->x = x - m_textureParamsList[name]->w;//тут проблема (после второго захода в PLaystate
+		m_textureParamsList[name]->x = x;
 		m_textureParamsList[name]->y = y;                               // текст сдвигается влево на свою длину)
 	}
 
@@ -94,10 +95,5 @@ void TextManager::registerFont(std::string file, std::string name, int size)
 	{
 		std::cout << "font from: " << file << " is registered as: " << name << "\n";
 	}
-}
-
-void TextManager::clearParams(std::string name)
-{
-
 }
 
