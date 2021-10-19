@@ -86,8 +86,8 @@ bool PlayState::onEnter()
 
 	std::string msg;
 	msg = std::to_string(TheGame::Instance()->getGameScore());
-	TheTextManager::Instance()->createTexture(msg, "score", TheGame::Instance()->getGameWidth() - 200,
-		0, 200, 50, "second", 200, 70, 120);
+	TheTextManager::Instance()->createTexture(msg, "score", TheGame::Instance()->getGameWidth() - 100,
+		10, 200, 50, "second", 200, 70, 120);
 
 
 	std::cout << "Entering PlayState\n";

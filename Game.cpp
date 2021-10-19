@@ -108,7 +108,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
 
 	TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
-	TheTextManager::Instance()->registerFont("assets/Second.ttf", "second", 14);
+	TheTextManager::Instance()->registerFont("assets/Second.ttf", "second", 18);
 
 	//TheSoundManager::Instance()->playMusic("1", -1);
 
