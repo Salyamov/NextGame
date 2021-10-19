@@ -4,6 +4,14 @@
 #include <string>
 #include <map>
 
+enum border
+{
+	LEFT = 0,
+	RIGHT = 1,
+	TOP = 2, 
+	BOTTOM = 3
+};
+
 struct TextureParams
 {
 	std::string msg;
