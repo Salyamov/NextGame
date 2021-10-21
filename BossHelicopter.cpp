@@ -24,11 +24,20 @@ void BossHelicopter::update()
 		m_currentFrame = int((SDL_GetTicks() / 100) % m_numFrames);
 		ShooterObject::update();
 
-		//если уровень закончен, то финальный бой
+		if (m_bHitted == true)
+		{
+			m_alpha = 100;
+			m_bHitted = false;
+		}
+		else
+		{
+			m_alpha = 255;
+		}
+
+		//если уровень не закончен, то скроллим
 		if (!TheGame::Instance()->getLevelComplete())
 		{
 			scroll(TheGame::Instance()->getScrollSpeed());
-
 		}
 	}
 	else
@@ -41,6 +50,7 @@ void BossHelicopter::update()
 			ThePlayer::Instance()->setBossIsDead(true);
 		}
 		m_dyingCounter++;
+
 	}
 
 }
@@ -48,6 +58,8 @@ void BossHelicopter::update()
 void BossHelicopter::collision()
 {
 	m_health -= 1;
+
+	m_bHitted = true;
 
 	if (m_health == 0)
 	{

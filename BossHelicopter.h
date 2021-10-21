@@ -16,7 +16,7 @@ public:
 
 private:
 
-
+	bool m_bHitted;
 
 };
 
