@@ -6,7 +6,7 @@
 
 Player* Player::s_pInstance = NULL;
 
-Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(50), m_invulnerableCounter(0)
+Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(50), m_invulnerableCounter(0), m_bBossIsDead(false)
 {
 
 }
@@ -36,21 +36,36 @@ void Player::update()
 {
 	if (TheGame::Instance()->getLevelComplete())
 	{
-		//если долетает до края экрана и начинается новый уровень
-		if (m_position.getX() >= TheGame::Instance()->getGameWidth())
-		{			
-			TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
-			//TheGame::Instance()->setCurrentLevel(1);
+		if (m_bBossIsDead)
+		{
+			//если долетает до края экрана и начинается новый уровень
+			if (m_position.getX() >= TheGame::Instance()->getGameWidth())
+			{
+				TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
+			}
+			//долетает до экрана без управления	
+			else
+			{
+				m_velocity.setY(0);
+				m_velocity.setX(3);
+				ShooterObject::update();
+				handleAnimation();
+			}
 		}
-		//долетает до экрана без управления	
 		else
 		{
+			//battle with boss
+
+			//reset velocity
+			m_velocity.setX(0);
 			m_velocity.setY(0);
-			m_velocity.setX(3);
+
+			//get input
+			handleInput();
 			ShooterObject::update();
 			handleAnimation();
-		}
-		
+
+		}	
 	}
 	else
 	{

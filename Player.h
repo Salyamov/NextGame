@@ -26,6 +26,11 @@ public:
 		s_pInstance = player;
 	}
 
+	void setBossIsDead(bool dead)
+	{
+		m_bBossIsDead = true;
+	}
+
 private:
 	static Player* s_pInstance;
 
@@ -39,6 +44,8 @@ private:
 	int m_invulnerable;
 	int m_invulnerableTime;
 	int m_invulnerableCounter;
+
+	bool m_bBossIsDead;
 
 };
 

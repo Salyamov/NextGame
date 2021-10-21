@@ -13,6 +13,7 @@
 #include "Eskeletor.h"
 #include "Turret.h"
 #include "RoofTurret.h"
+#include "BossHelicopter.h"
 #include "GameOverState.h"
 #include "ScrollingBackground.h"
 #include "LoadingState.h"
@@ -106,6 +107,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("Turret", new TurretCreator());
 	TheGameObjectFactory::Instance()->registerType("RoofTurret", new RoofTurretCreator());
 	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
+	TheGameObjectFactory::Instance()->registerType("BossHelicopter", new BossHelicopterCreator());
 
 	TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
 	TheTextManager::Instance()->registerFont("assets/Second.ttf", "second", 22);

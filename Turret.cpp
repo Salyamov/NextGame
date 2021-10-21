@@ -19,7 +19,7 @@ void Turret::update()
 {
 	if (!m_bDying)
 	{
-		scroll(TheGame::Instance()->getScrollSpeed());
+		scroll(TheGame::Instance()->getScrollSpeed()); //двигается вместо со всей картой
 
 		if (m_bulletCounter == m_bulletFiringSpeed)
 		{
@@ -32,7 +32,6 @@ void Turret::update()
 	}
 	else
 	{
-		//scroll(TheGame::Instance()->getScrollSpeed());
 		doDyingAnimation();
 	}
 }
