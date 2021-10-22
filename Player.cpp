@@ -21,6 +21,7 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 	m_bulletCounter = m_bulletFiringSpeed;
 
 	m_dyingTime = 25;
+	m_bShot = false;
 
 }
 
@@ -155,17 +156,17 @@ void Player::handleInput()
 		m_velocity.setX(m_moveSpeed);
 	}
 
-	/*
+	
 	//ускорение для теста
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LSHIFT))
 	{
-		TheGame::Instance()->setScrollSpeed(8);
+		TheGame::Instance()->setScrollSpeed(12);
 	}
 	else 
 	{
-		TheGame::Instance()->setScrollSpeed(2);
+		TheGame::Instance()->setScrollSpeed(1);
 	}
-	*/
+	
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
 	{
@@ -174,12 +175,14 @@ void Player::handleInput()
 			TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + 30, 11, 11, "bullet1", 1, Vector2D(20, 0));
 			TheSoundManager::Instance()->playSound("shoot", 0);
 			m_bulletCounter = 0;
+			m_bShot = true;
 		}
 		m_bulletCounter++;
 	}
 	else
 	{
 		m_bulletCounter = m_bulletFiringSpeed;
+		m_bShot = false;
 	}
 
 

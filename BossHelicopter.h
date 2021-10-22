@@ -17,6 +17,7 @@ public:
 private:
 
 	bool m_bHitted;
+	int m_hitTimer;
 
 };
 

@@ -6,6 +6,7 @@ BossHelicopter::BossHelicopter()
 {
 	m_health = 20;
 	m_dyingTime = 50;
+	m_hitTimer = 0;
 }
 
 BossHelicopter::~BossHelicopter()
@@ -21,17 +22,39 @@ void BossHelicopter::update()
 {
 	if (!m_bDying)
 	{
+		//если находится на линии огня игрока и игрок стреляет
+		if (ThePlayer::Instance()->getPlayerShot() && 
+			(m_position.getY() > ThePlayer::Instance()->getPosition().getY() &&
+				m_position.getY() < ThePlayer::Instance()->getPosition().getY() + ThePlayer::Instance()->getHeight()))
+		{
+		//тут надо добавить уворот вверх или вниз
+
+
+
+		}
+		else
+		{
+			m_velocity.setX(0);
+			m_velocity.setY(0);
+		}
+
 		m_currentFrame = int((SDL_GetTicks() / 100) % m_numFrames);
 		ShooterObject::update();
 
+		//отображение попаданий
 		if (m_bHitted == true)
 		{
 			m_alpha = 100;
 			m_bHitted = false;
+			m_hitTimer = 0;
 		}
 		else
 		{
-			m_alpha = 255;
+			if (m_hitTimer == 5)
+			{
+				m_alpha = 255;
+			}
+			m_hitTimer++;
 		}
 
 		//если уровень не закончен, то скроллим

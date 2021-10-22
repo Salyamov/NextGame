@@ -31,6 +31,8 @@ public:
 		m_bBossIsDead = true;
 	}
 
+	bool getPlayerShot() { return m_bShot; }
+
 private:
 	static Player* s_pInstance;
 
@@ -46,6 +48,7 @@ private:
 	int m_invulnerableCounter;
 
 	bool m_bBossIsDead;
+	bool m_bShot;
 
 };
 
