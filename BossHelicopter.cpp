@@ -51,43 +51,15 @@ void BossHelicopter::update()
 			if (std::abs(playerCenter - bossTopY) > std::abs(playerCenter - bossBotY))
 			{
 				//вверх
-				m_velocity.setY(-10);
+				m_velocity.setY(-m_moveSpeed);
 			}
 			else
 			{
 				//вниз
-				m_velocity.setY(10);
+				m_velocity.setY(m_moveSpeed);
 			}
 
 
-			/*
-			//если пуля в нижний бок, стараемся увернутся вверх
-			if (m_position.getY() > ThePlayer::Instance()->getPosition().getY() + (ThePlayer::Instance()->getHeight() / 2))
-			{
-				//проверяем можем ли туда сходить
-				if (m_position.getY() + (m_moveSpeed * m_maxTicks) > TheGame::Instance()->getGameHeight())
-				{
-					m_velocity.setY(10);
-				}
-				else
-				{
-					m_velocity.setY(-10);
-				}
-			}
-			//если пуля в вверний бок, то стараемя увернутся вниз
-			else
-			{
-				//проверяем можем ли туда сходить
-				if (m_position.getY() - (m_moveSpeed * m_maxTicks) < 0)
-				{
-					m_velocity.setY(-10);
-				}
-				else
-				{
-					m_velocity.setY(10);
-				}
-			}
-			*/
 			/*
 			m_tickCounter++;
 			if (m_tickCounter == m_maxTicks)
