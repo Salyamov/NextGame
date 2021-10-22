@@ -19,6 +19,11 @@ private:
 	bool m_bHitted;
 	int m_hitTimer;
 
+	int m_tickCounter;
+	int m_maxTicks;
+
+	bool m_bMooving;
+
 };
 
 class BossHelicopterCreator : public BaseCreator

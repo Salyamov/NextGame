@@ -7,6 +7,10 @@ BossHelicopter::BossHelicopter()
 	m_health = 20;
 	m_dyingTime = 50;
 	m_hitTimer = 0;
+	m_tickCounter = 0;
+	m_maxTicks = 5;
+	m_moveSpeed = 1;
+	m_bMooving = false;
 }
 
 BossHelicopter::~BossHelicopter()
@@ -22,15 +26,75 @@ void BossHelicopter::update()
 {
 	if (!m_bDying)
 	{
+		int playerTopY = ThePlayer::Instance()->getPosition().getY();
+		int playerBotY = ThePlayer::Instance()->getPosition().getY() + ThePlayer::Instance()->getHeight();
+		int bossTopY = m_position.getY();
+		int bossBotY = m_position.getY() + m_height;
+		int playerHeight = ThePlayer::Instance()->getHeight();
+		int playerCenter = playerTopY + playerHeight / 2;
+
 		//если находится на линии огня игрока и игрок стреляет
 		if (ThePlayer::Instance()->getPlayerShot() && 
-			(m_position.getY() > ThePlayer::Instance()->getPosition().getY() &&
-				m_position.getY() < ThePlayer::Instance()->getPosition().getY() + ThePlayer::Instance()->getHeight()))
+			((bossTopY < playerTopY && bossBotY > playerTopY ) || (bossTopY < playerBotY && bossBotY > playerBotY ))
+			)
+			/*
+			((m_position.getY() > ThePlayer::Instance()->getPosition().getY() &&
+				m_position.getY() + m_height < ThePlayer::Instance()->getPosition().getY()) ||
+				(m_position.getY() + m_height > ThePlayer::Instance()->getPosition().getY() + ThePlayer::Instance()->getHeight() &&
+					m_position.getY() < ThePlayer::Instance()->getPosition().getY() + ThePlayer::Instance()->getHeight()
+					)))
+			*/
 		{
-		//тут надо добавить уворот вверх или вниз
+			//тут надо добавить уворот вверх или вниз
+			
+			//определяем в какую сторону ближе
+			if (std::abs(playerCenter - bossTopY) > std::abs(playerCenter - bossBotY))
+			{
+				//вверх
+				m_velocity.setY(-10);
+			}
+			else
+			{
+				//вниз
+				m_velocity.setY(10);
+			}
 
 
-
+			/*
+			//если пуля в нижний бок, стараемся увернутся вверх
+			if (m_position.getY() > ThePlayer::Instance()->getPosition().getY() + (ThePlayer::Instance()->getHeight() / 2))
+			{
+				//проверяем можем ли туда сходить
+				if (m_position.getY() + (m_moveSpeed * m_maxTicks) > TheGame::Instance()->getGameHeight())
+				{
+					m_velocity.setY(10);
+				}
+				else
+				{
+					m_velocity.setY(-10);
+				}
+			}
+			//если пуля в вверний бок, то стараемя увернутся вниз
+			else
+			{
+				//проверяем можем ли туда сходить
+				if (m_position.getY() - (m_moveSpeed * m_maxTicks) < 0)
+				{
+					m_velocity.setY(-10);
+				}
+				else
+				{
+					m_velocity.setY(10);
+				}
+			}
+			*/
+			/*
+			m_tickCounter++;
+			if (m_tickCounter == m_maxTicks)
+			{
+				m_tickCounter = 0;
+			}
+			*/
 		}
 		else
 		{
