@@ -22,7 +22,8 @@ private:
 	int m_tickCounter;
 	int m_maxTicks;
 
-	bool m_bMooving;
+	bool m_bMoovingUp;
+	bool m_bMoovingDown;
 
 };
 

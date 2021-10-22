@@ -8,9 +8,10 @@ BossHelicopter::BossHelicopter()
 	m_dyingTime = 50;
 	m_hitTimer = 0;
 	m_tickCounter = 0;
-	m_maxTicks = 5;
-	m_moveSpeed = 1;
-	m_bMooving = false;
+	m_maxTicks = 20;
+	m_moveSpeed = 2;
+	m_bMoovingUp = false;
+	m_bMoovingDown = false;
 }
 
 BossHelicopter::~BossHelicopter()
@@ -35,15 +36,7 @@ void BossHelicopter::update()
 
 		//если находитс€ на линии огн€ игрока и игрок стрел€ет
 		if (ThePlayer::Instance()->getPlayerShot() && 
-			((bossTopY < playerTopY && bossBotY > playerTopY ) || (bossTopY < playerBotY && bossBotY > playerBotY ))
-			)
-			/*
-			((m_position.getY() > ThePlayer::Instance()->getPosition().getY() &&
-				m_position.getY() + m_height < ThePlayer::Instance()->getPosition().getY()) ||
-				(m_position.getY() + m_height > ThePlayer::Instance()->getPosition().getY() + ThePlayer::Instance()->getHeight() &&
-					m_position.getY() < ThePlayer::Instance()->getPosition().getY() + ThePlayer::Instance()->getHeight()
-					)))
-			*/
+			((bossTopY < playerTopY && bossBotY > playerTopY ) || (bossTopY < playerBotY && bossBotY > playerBotY )))
 		{
 			//тут надо добавить уворот вверх или вниз
 			
@@ -51,22 +44,36 @@ void BossHelicopter::update()
 			if (std::abs(playerCenter - bossTopY) > std::abs(playerCenter - bossBotY))
 			{
 				//вверх
-				m_velocity.setY(-m_moveSpeed);
+				//m_velocity.setY(-m_moveSpeed);
+				m_bMoovingUp = true;
 			}
 			else
 			{
 				//вниз
-				m_velocity.setY(m_moveSpeed);
+				//m_velocity.setY(m_moveSpeed);
+				m_bMoovingDown = true;
 			}
-
-
-			/*
+			
+		}
+		else if (m_bMoovingUp == true)
+		{
+			m_velocity.setY(-m_moveSpeed);
 			m_tickCounter++;
-			if (m_tickCounter == m_maxTicks)
+			if (m_tickCounter >= m_maxTicks)
 			{
+				m_bMoovingUp = false;
 				m_tickCounter = 0;
 			}
-			*/
+		}
+		else if (m_bMoovingDown == true)
+		{
+			m_velocity.setY(m_moveSpeed);
+			m_tickCounter++;
+			if (m_tickCounter >= m_maxTicks)
+			{
+				m_bMoovingDown = false;
+				m_tickCounter = 0;
+			}
 		}
 		else
 		{
