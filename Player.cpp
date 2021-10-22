@@ -36,7 +36,7 @@ void Player::update()
 {
 	if (TheGame::Instance()->getLevelComplete())
 	{
-		if (m_bBossIsDead)
+		if (m_bBossIsDead == true)
 		{
 			//если долетает до края экрана и начинается новый уровень
 			if (m_position.getX() >= TheGame::Instance()->getGameWidth())
@@ -56,14 +56,28 @@ void Player::update()
 		{
 			//battle with boss
 
-			//reset velocity
-			m_velocity.setX(0);
-			m_velocity.setY(0);
+			if (!m_bDying)
+			{
+				//reset velocity
+				m_velocity.setX(0);
+				m_velocity.setY(0);
 
-			//get input
-			handleInput();
-			ShooterObject::update();
-			handleAnimation();
+				//get input
+				handleInput();
+				ShooterObject::update();
+				handleAnimation();
+			}
+			else
+			{
+				m_currentFrame = int((SDL_GetTicks() / 100) % m_numFrames);
+				//if death animation is completed
+				if (m_dyingCounter == m_dyingTime)
+				{
+					//ressurect the player
+					ressurect();
+				}
+				m_dyingCounter++;
+			}
 
 		}	
 	}
@@ -103,7 +117,9 @@ void Player::clean()
 
 void Player::collision()
 {
-	if (!m_invulnerable && !TheGame::Instance()->getLevelComplete())
+	//if (!m_invulnerable && !TheGame::Instance()->getLevelComplete())
+
+	if (!m_invulnerable)
 	{
 		m_textureID = "largeexplosion";
 		m_currentFrame = 0;
