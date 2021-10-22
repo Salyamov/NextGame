@@ -44,13 +44,11 @@ void BossHelicopter::update()
 			if (std::abs(playerCenter - bossTopY) > std::abs(playerCenter - bossBotY))
 			{
 				//вверх
-				//m_velocity.setY(-m_moveSpeed);
 				m_bMoovingUp = true;
 			}
 			else
 			{
 				//вниз
-				//m_velocity.setY(m_moveSpeed);
 				m_bMoovingDown = true;
 			}
 			
