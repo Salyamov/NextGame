@@ -163,7 +163,7 @@
     <property name="textureWidth" value="52"/>
    </properties>
   </object>
-  <object id="56" name="BossHelicopter" type="BossHelicopter" x="4671" y="62" width="32" height="32">
+  <object id="56" name="BossHelicopter" type="BossHelicopter" x="4638" y="65" width="32" height="32">
    <properties>
     <property name="numFrames" value="5"/>
     <property name="textureHeight" value="50"/>

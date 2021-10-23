@@ -1,6 +1,7 @@
 #include "BossHelicopter.h"
 #include "Game.h"
 #include "SoundManger.h"
+#include "BulletHandler.h"
 
 BossHelicopter::BossHelicopter()
 {
@@ -12,6 +13,8 @@ BossHelicopter::BossHelicopter()
 	m_moveSpeed = 2;
 	m_bMoovingUp = false;
 	m_bMoovingDown = false;
+	m_bulletCounter = 0;
+	m_bulletFiringSpeed = 50;
 }
 
 BossHelicopter::~BossHelicopter()
@@ -27,27 +30,55 @@ void BossHelicopter::update()
 {
 	if (!m_bDying)
 	{
-		int playerTopY = ThePlayer::Instance()->getPosition().getY();
-		int playerBotY = ThePlayer::Instance()->getPosition().getY() + ThePlayer::Instance()->getHeight();
-		int bossTopY = m_position.getY();
-		int bossBotY = m_position.getY() + m_height;
+
+		int playerTop = ThePlayer::Instance()->getPosition().getY();
+		int playerBot = ThePlayer::Instance()->getPosition().getY() + ThePlayer::Instance()->getHeight();
+		int playerFront = ThePlayer::Instance()->getPosition().getX() + ThePlayer::Instance()->getWidth();
+		int bossFront = m_position.getX();
+		int bossTop = m_position.getY();
+		int bossBot = m_position.getY() + m_height;
 		int playerHeight = ThePlayer::Instance()->getHeight();
-		int playerCenter = playerTopY + playerHeight / 2;
+		int playerCenter = playerTop + playerHeight / 2;
+		int bossCenter = bossTop + m_height / 2;
+
+		//выстрел
+
+		
+		float x = playerFront - bossFront;
+		float y = playerCenter - bossCenter;
+
+		//x = -6.5;
+		//y = -1;
+		x /= 100;
+		y /= 100;
+		Vector2D heading(x, y);
+
+		if (m_bulletCounter == m_bulletFiringSpeed)
+		{
+			TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + m_height / 2, 16, 16, "bullet2", 1,
+				//ThePlayer::Instance()->getPosition());
+				heading);
+			TheSoundManager::Instance()->playSound("enemyshoot", 0);
+			m_bulletCounter = 0;
+		}
+		m_bulletCounter++;
+
+		//уворот от выстрела
 
 		//если находится на линии огня игрока и игрок стреляет
 		if (ThePlayer::Instance()->getPlayerShot() && 
-			((bossTopY < playerTopY && bossBotY > playerTopY ) || (bossTopY < playerBotY && bossBotY > playerBotY )) &&
+			((bossTop < playerTop && bossBot > playerTop ) || (bossTop < playerBot && bossBot > playerBot )) &&
 			!m_bMoovingDown && !m_bMoovingUp)
 		{
 			//тут надо добавить уворот вверх или вниз
 			
 			//определяем в какую сторону ближе
-			if (std::abs(playerCenter - bossTopY) > std::abs(playerCenter - bossBotY))
+			if (std::abs(playerCenter - bossTop) > std::abs(playerCenter - bossBot))
 			{
 				//вверх
 				
 				//если достаточно места вверху
-				if (bossTopY - m_moveSpeed * m_maxTicks > 0)
+				if (bossTop - m_moveSpeed * m_maxTicks > 0)
 				{
 					m_bMoovingUp = true;
 				}
@@ -61,7 +92,7 @@ void BossHelicopter::update()
 				//вниз
 
 				//если достаточно места внизу
-				if (bossBotY + m_moveSpeed * m_maxTicks < TheGame::Instance()->getGameHeight() - 32)
+				if (bossBot + m_moveSpeed * m_maxTicks < TheGame::Instance()->getGameHeight() - 32)
 				{
 					m_bMoovingDown = true;
 				}
