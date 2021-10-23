@@ -23,7 +23,7 @@
  <tileset firstgid="199" name="blocks2" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
   <image source="blocks2.png" width="614" height="376"/>
  </tileset>
- <objectgroup id="2" name="Background">
+ <objectgroup id="2" name="Background" visible="0">
   <object id="6" name="Background" type="ScrollingBackground" x="0" y="0" width="32" height="32">
    <properties>
     <property name="animSpeed" value="2"/>
@@ -107,14 +107,6 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="25" name="ShotGlider" type="ShotGlider" x="2639" y="172" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
   <object id="27" name="Glider" type="Glider" x="773" y="156" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
@@ -131,7 +123,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="38" name="Turret" type="Turret" x="3808" y="334" width="32" height="32">
+  <object id="38" name="Turret" type="Turret" x="3586" y="331" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="56"/>
@@ -139,7 +131,7 @@
     <property name="textureWidth" value="52"/>
    </properties>
   </object>
-  <object id="42" name="Eskeletor" type="Eskeletor" x="3040" y="35" width="32" height="32">
+  <object id="42" name="Eskeletor" type="Eskeletor" x="2781" y="65" width="32" height="32">
    <properties>
     <property name="numFrames" value="3"/>
     <property name="textureHeight" value="34"/>
@@ -147,7 +139,7 @@
     <property name="textureWidth" value="34"/>
    </properties>
   </object>
-  <object id="43" name="Eskeletor" type="Eskeletor" x="3425" y="256" width="32" height="32">
+  <object id="43" name="Eskeletor" type="Eskeletor" x="3072" y="162" width="32" height="32">
    <properties>
     <property name="numFrames" value="3"/>
     <property name="textureHeight" value="34"/>
@@ -155,7 +147,7 @@
     <property name="textureWidth" value="34"/>
    </properties>
   </object>
-  <object id="45" name="Turret" type="Turret" x="4064" y="332" width="32" height="32">
+  <object id="45" name="Turret" type="Turret" x="3377" y="334" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="56"/>
@@ -171,7 +163,7 @@
     <property name="textureWidth" value="52"/>
    </properties>
   </object>
-  <object id="56" name="BossHelicopter" type="BossHelicopter" x="4640" y="96" width="32" height="32">
+  <object id="56" name="BossHelicopter" type="BossHelicopter" x="4671" y="62" width="32" height="32">
    <properties>
     <property name="numFrames" value="5"/>
     <property name="textureHeight" value="50"/>
@@ -185,12 +177,12 @@
    <property name="collidable" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztlU9OwkAYxWcSFyRoZFlEQTgBG9csUHTlRfQKcgo5EzbcAj0CuObNosmXOv9SM3Zs3i/5pdOvpTzCy1QpQgghhBBCCCGEEEKIiz38hF9tByFW+lqpc3ih207yE193DvAIvxNn2EW4hR+wFGt5tF0vE+duA9mlGziGE51fx0LdGf5Bzne4cRyrteQFmV51eNZFZJcMc22f54CvO231qj6TvCHTWodnXWWuw+scyK1Xtr1L8t/3qyV8gCv4CO8d56657bx+7alBrgIO4RUcweuI5xS/zBnzmSa/xeDbp7rYqwF8Tuyl5/vvHM5gr+bUc7/xFp7BRSLNsyeBDC5j3oPy/uqdF5rlqvn/UvfK14cTvPN3QQ==
+   eJztlUsKwjAURRtwIKjo0P9vBU4cO/A7ciO6BV2FrknFXahLUMfeIIVQmqZUY1O5Bw5NX9Py0l5SzyOEEEIIIYQQQgghhOi4wCu8pd3IH1MQnleEJZF2J98lKjt3+IBPyz2cY3iAR3hSxuox7PrJct9JUbPUgm3YEf+VMVN2aj9Y4w7uNUd/rLJCT2thrrmKmiXJQITXs05UdtLKVbCmskFPW2GuucxAmMdZx7Vche1dKi7sV2M4hTM4hxPNua4edh68tvjZat5UYQ3WYQM2Y/Qg7/lkjXHuSfoeovYpV3NVgUvLli31PtTYh/mAvYj50i7MwZEl5bM7hh50xvkPqvP9f56pZlP5DWznyvRNk/oCMIp3QQ==
   </data>
  </layer>
  <layer id="4" name="Tile Layer 1" width="150" height="15">
   <data encoding="base64" compression="zlib">
-   eJztz8EJgDAMQNHk4gSKY7j/QjpCrwpeKohUQXp5Dz69JJBGAAAAAAC9jRkx/9CUvX8GALTYqmprx1veWPL6Ps3cKUdDnpXGHQD4YgfLBgpJ
+   eJztz8EJgDAMBdDm4gSKY7j/QjpCrwpeKhQVRXrwPfjkkkB+SgAAAABAa32kNH6QIVo3A4D/WIqU5ga/vFHrcGWK4zzbqclbutiTb94AwBMro2kKSQ==
   </data>
  </layer>
 </map>

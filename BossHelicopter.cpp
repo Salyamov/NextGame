@@ -8,7 +8,7 @@ BossHelicopter::BossHelicopter()
 	m_dyingTime = 50;
 	m_hitTimer = 0;
 	m_tickCounter = 0;
-	m_maxTicks = 20;
+	m_maxTicks = 25;
 	m_moveSpeed = 2;
 	m_bMoovingUp = false;
 	m_bMoovingDown = false;
@@ -36,7 +36,8 @@ void BossHelicopter::update()
 
 		//если находится на линии огня игрока и игрок стреляет
 		if (ThePlayer::Instance()->getPlayerShot() && 
-			((bossTopY < playerTopY && bossBotY > playerTopY ) || (bossTopY < playerBotY && bossBotY > playerBotY )))
+			((bossTopY < playerTopY && bossBotY > playerTopY ) || (bossTopY < playerBotY && bossBotY > playerBotY )) &&
+			!m_bMoovingDown && !m_bMoovingUp)
 		{
 			//тут надо добавить уворот вверх или вниз
 			
@@ -44,12 +45,30 @@ void BossHelicopter::update()
 			if (std::abs(playerCenter - bossTopY) > std::abs(playerCenter - bossBotY))
 			{
 				//вверх
-				m_bMoovingUp = true;
+				
+				//если достаточно места вверху
+				if (bossTopY - m_moveSpeed * m_maxTicks > 0)
+				{
+					m_bMoovingUp = true;
+				}
+				else
+				{
+					m_bMoovingDown = true;
+				}
 			}
 			else
 			{
 				//вниз
-				m_bMoovingDown = true;
+
+				//если достаточно места внизу
+				if (bossBotY + m_moveSpeed * m_maxTicks < TheGame::Instance()->getGameHeight() - 32)
+				{
+					m_bMoovingDown = true;
+				}
+				else
+				{
+					m_bMoovingUp = true;
+				}
 			}
 			
 		}
