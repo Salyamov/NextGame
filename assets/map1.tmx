@@ -166,9 +166,9 @@
   <object id="56" name="BossHelicopter" type="BossHelicopter" x="4638" y="65" width="32" height="32">
    <properties>
     <property name="numFrames" value="5"/>
-    <property name="textureHeight" value="50"/>
+    <property name="textureHeight" value="75"/>
     <property name="textureID" value="bosshelicopter"/>
-    <property name="textureWidth" value="108"/>
+    <property name="textureWidth" value="162"/>
    </properties>
   </object>
  </objectgroup>
