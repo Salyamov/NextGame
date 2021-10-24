@@ -15,6 +15,7 @@ BossHelicopter::BossHelicopter()
 	m_bMoovingDown = false;
 	m_bulletCounter = 0;
 	m_bulletFiringSpeed = 50;
+	m_bulletSpeed = 4;
 }
 
 BossHelicopter::~BossHelicopter()
@@ -47,10 +48,10 @@ void BossHelicopter::update()
 		float x = playerFront - bossFront;
 		float y = playerCenter - bossCenter;
 
-		//x = -6.5;
-		//y = -1;
-		x /= 100;
-		y /= 100;
+		float delta = std::sqrt(x*x + y*y) * (1/m_bulletSpeed);
+
+		x /= delta;
+		y /= delta;
 		Vector2D heading(x, y);
 
 		if (m_bulletCounter == m_bulletFiringSpeed)

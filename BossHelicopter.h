@@ -25,6 +25,8 @@ private:
 	bool m_bMoovingUp;
 	bool m_bMoovingDown;
 
+	float m_bulletSpeed;
+
 };
 
 class BossHelicopterCreator : public BaseCreator
