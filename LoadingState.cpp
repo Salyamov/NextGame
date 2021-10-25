@@ -46,7 +46,7 @@ void LoadingState::render()
 bool LoadingState::onEnter()
 {
 	StateParser stateParser;
-	stateParser.parseState("test.xml", s_loadingID, &m_gameObjects, &m_textureIDList);
+	stateParser.parseState("assets/test.xml", s_loadingID, &m_gameObjects, &m_textureIDList);
 
 	TheSoundManager::Instance()->stopMusic();
 

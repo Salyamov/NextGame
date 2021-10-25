@@ -40,8 +40,8 @@ Game::Game() : m_pWindow(0),
 	m_levelFiles.push_back("assets/map2.tmx");
 	m_levelFiles.push_back("assets/map3.tmx");
 
-	m_currentLevel = 1;
-	m_finalLevel = 4;
+	m_currentLevel = 2;
+	m_finalLevel = 4; //4
 }
 
 Game::~Game()

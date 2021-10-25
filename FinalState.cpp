@@ -25,7 +25,7 @@ void FinalState::render()
 bool FinalState::onEnter()
 {
     StateParser stateParser;
-    stateParser.parseState("test.xml", s_finalID, &m_gameObjects, &m_textureIDList);
+    stateParser.parseState("assets/test.xml", s_finalID, &m_gameObjects, &m_textureIDList);
 
     std::string msg;
     msg = std::to_string(TheGame::Instance()->getGameScore());
