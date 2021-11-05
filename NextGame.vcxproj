@@ -83,6 +83,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>C:\vclib\SDL2_image-2.0.5\lib\x64;C:\vclib\SDL2_mixer-2.0.4\lib\x64;C:\vclib\SDL2_ttf-2.0.15\lib\x64;C:\vclib\SDL2-2.0.16\lib\x64;C:\vclib\zlib\contrib\vstudio\vc14\x64\ZlibStatRelease;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\vclib\SDL2_image-2.0.5\include;C:\vclib\SDL2_mixer-2.0.4\include;C:\vclib\SDL2_ttf-2.0.15\include;C:\vclib\SDL2-2.0.16\include;C:\vclib\zlib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -142,6 +144,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;zlibstat.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
