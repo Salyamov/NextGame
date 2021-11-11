@@ -46,9 +46,11 @@ private:
 	int m_invulnerable;
 	int m_invulnerableTime;
 	int m_invulnerableCounter;
+	int m_invulnerableBlinkTime;
 
 	bool m_bBossIsDead;
 	bool m_bShot;
+	bool m_bBlink;
 
 };
 

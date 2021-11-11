@@ -28,7 +28,7 @@ Game::Game() : m_pWindow(0),
 			   m_pRenderer(0),
 			   m_bRunning(false),
 			   m_pGameStateMachine(0),
-			   m_playerLives(3),
+			   m_playerLives(5),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
 			   m_scrollSpeed(8), //скорость прокрутки

@@ -15,7 +15,7 @@ BossHelicopter::BossHelicopter()
 	m_bMoovingDown = false;
 	m_bulletCounter = 0;
 	m_bulletFiringSpeed = 50;
-	m_bulletSpeed = 4;
+	m_bulletSpeed = 7;
 }
 
 BossHelicopter::~BossHelicopter()

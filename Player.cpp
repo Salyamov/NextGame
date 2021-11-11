@@ -6,7 +6,14 @@
 
 Player* Player::s_pInstance = NULL;
 
-Player::Player() : ShooterObject(), m_invulnerable(false), m_invulnerableTime(50), m_invulnerableCounter(0), m_bBossIsDead(false)
+Player::Player() :
+	ShooterObject(),
+	m_invulnerable(false),
+	m_invulnerableTime(100),
+	m_invulnerableCounter(0),
+	m_invulnerableBlinkTime(0),
+	m_bBossIsDead(false),
+	m_bBlink(true)
 {
 
 }
@@ -16,7 +23,7 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 	ShooterObject::load(std::move(pParams));
 
 	m_bulletFiringSpeed = 50;
-	m_moveSpeed = 5;
+	m_moveSpeed = 3;
 
 	m_bulletCounter = m_bulletFiringSpeed;
 
@@ -42,11 +49,16 @@ void Player::update()
 			//если долетает до кра€ экрана и начинаетс€ новый уровень
 			if (m_position.getX() >= TheGame::Instance()->getGameWidth())
 			{
+				m_invulnerable = false;
+				m_bBlink = true;
 				TheGame::Instance()->setCurrentLevel(TheGame::Instance()->getCurrentLevel() + 1);
 			}
 			//долетает до экрана без управлени€	
 			else
 			{
+				m_invulnerable = true;
+				m_bBlink = false;
+
 				m_velocity.setY(0);
 				m_velocity.setX(3);
 				ShooterObject::update();
@@ -235,8 +247,9 @@ void Player::ressurect()
 
 void Player::handleAnimation()
 {
+
 	//если вертолет неу€звимый, то он мигает
-	if (m_invulnerable)
+	if (m_invulnerable && m_bBlink == true)
 	{
 		//если неу€звимость закончилась
 		if (m_invulnerableCounter == m_invulnerableTime)
@@ -247,22 +260,19 @@ void Player::handleAnimation()
 		}
 		else
 		{
-			if (m_alpha == 255)
+			m_invulnerableBlinkTime++;
+			if (m_alpha == 255 && m_invulnerableBlinkTime == 5)
 			{
 				m_alpha = 0;
+				m_invulnerableBlinkTime = 0;
 			}
-			else
+			else if(m_alpha == 0 && m_invulnerableBlinkTime == 5)
 			{
 				m_alpha = 255;
+				m_invulnerableBlinkTime = 0;
 			}
 		}
 		m_invulnerableCounter++;
-	}
-
-	
-	if (!m_bDead)
-	{
-		//
 	}
 
 	//анимаци€ пропеллеров
