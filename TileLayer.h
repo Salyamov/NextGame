@@ -11,22 +11,10 @@ public:
 	TileLayer(int tileSize, const std::vector<Tileset> &tilesets);
 	virtual void update(Level* pLevel);
 	virtual void render();
-	virtual void collision();
 
-	void setTileIDs(const std::vector< std::vector<int> >& data)
-	{
-		m_tileIDs = data;
-	}
-
-	void setTileSize(int tileSize)
-	{
-		m_tileSize = tileSize;
-	}
-
-	void setMapWidth(int mapWidth)
-	{
-		m_mapWidth = mapWidth;
-	}
+	void setTileIDs(const std::vector< std::vector<int> >& data) { m_tileIDs = data; }
+	void setTileSize(int tileSize) { m_tileSize = tileSize; }
+	void setMapWidth(int mapWidth) { m_mapWidth = mapWidth; }
 
 	Tileset getTilesetByID(int tileID);
 

@@ -15,16 +15,6 @@ TileLayer::TileLayer(int tileSize, const std::vector<Tileset>& tilesets) :
 	std::cout << "rows: " << m_numRows << "\n";
 	std::cout << "tileIDs size: "<< m_tileIDs.size() << "\n";
 	
-	/*
-	for (int i = 0; i < m_tileIDs.size(); i++)
-	{
-		for (int j = 0; j < m_tileIDs[i].size(); j++)
-		{
-			std::cout << m_tileIDs[i][j];
-		}
-	}
-	*/
-	
 }
 
 void TileLayer::update(Level* pLevel)
@@ -48,7 +38,7 @@ void TileLayer::update(Level* pLevel)
 
 void TileLayer::render()
 {
-	int x, y, x2, y2;
+	int x, y, x2, y2 = 0;
 
 	//получаем смещение в тайлах
 	x = m_position.getX() / m_tileSize;
@@ -83,10 +73,6 @@ void TileLayer::render()
 				TheGame::Instance()->getRenderer());
 		}
 	}
-}
-
-void TileLayer::collision()
-{
 }
 
 Tileset TileLayer::getTilesetByID(int tileID)

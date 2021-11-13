@@ -36,7 +36,7 @@ void PlayState::update()
 
 		std::string msg;
 		msg = std::to_string(TheGame::Instance()->getGameScore());
-		TheTextManager::Instance()->updateTexture(msg, "score");
+		//TheTextManager::Instance()->updateTexture(msg, "score");
 
 
 	}
@@ -67,11 +67,9 @@ void PlayState::render()
 
 bool PlayState::onEnter()
 {
-	//TheGame::Instance()->setPlayerLives(5);
 
 	LevelParser levelParser;
 	pLevel = levelParser.parseLevel(TheGame::Instance()->getLevelFiles()[TheGame::Instance()->getCurrentLevel() - 1].c_str());
-	//pLevel = levelParser.parseLevel(TheGame::Instance()->getLevelFiles()[2].c_str());
 
 	TheTextureManager::Instance()->load("assets/bullet1.png", "bullet1", TheGame::Instance()->getRenderer());
 	TheTextureManager::Instance()->load("assets/bullet2.png", "bullet2", TheGame::Instance()->getRenderer());
@@ -97,6 +95,9 @@ bool PlayState::onEnter()
 bool PlayState::onExit()
 {
 	m_exiting = true;
+
+	//delete pLevel;
+	//pLevel = NULL;
 
 	TheInputHandler::Instance()->reset();
 	TheBulletHandler::Instance()->clearBullets();
