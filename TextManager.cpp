@@ -77,6 +77,9 @@ void TextManager::updateTexture(std::string msg, std::string name)
 	//new changes
 	TTF_SizeText(m_fonts[m_textureParamsList[name]->font], msg.c_str(), &m_textureParamsList[name]->w, &m_textureParamsList[name]->h);
 
+	//Destroy earlier texture
+	SDL_DestroyTexture(m_textures[name]);
+
 	m_textSurface = TTF_RenderText_Solid(m_fonts[m_textureParamsList[name]->font], msg.c_str(), m_textColor);
 	m_textures[name] = SDL_CreateTextureFromSurface(TheGame::Instance()->getRenderer(), m_textSurface);
 	SDL_FreeSurface(m_textSurface);

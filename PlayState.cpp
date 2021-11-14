@@ -36,7 +36,7 @@ void PlayState::update()
 
 		std::string msg;
 		msg = std::to_string(TheGame::Instance()->getGameScore());
-		//TheTextManager::Instance()->updateTexture(msg, "score");
+		TheTextManager::Instance()->updateTexture(msg, "score");
 
 
 	}
