@@ -6,12 +6,14 @@
 class PowerUp : public ShooterObject
 {
 public:
-	PowerUp() {}
+	PowerUp();
 	~PowerUp() {}
 
 	virtual void load(std::unique_ptr<LoaderParams> const& pParams);
 	virtual void update();
+	virtual void draw();
 	virtual void collision();
+	virtual std::string type() { return "PowerUp"; }
 
 private:
 

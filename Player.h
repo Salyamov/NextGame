@@ -3,6 +3,12 @@
 #include "ShooterObject.h"
 #include "GameObjectFactory.h"
 
+enum FireMode
+{
+	SINGLE,
+	TRIPLE
+};
+
 class Player : public ShooterObject
 {
 public:
@@ -31,6 +37,11 @@ public:
 		m_bBossIsDead = true;
 	}
 
+	void setFireMode(FireMode mode)
+	{
+		m_fireMode = mode;
+	}
+
 	bool getPlayerShot() { return m_bShot; }
 
 private:
@@ -51,6 +62,8 @@ private:
 	bool m_bBossIsDead;
 	bool m_bShot;
 	bool m_bBlink;
+
+	int m_fireMode;
 
 };
 

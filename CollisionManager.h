@@ -16,6 +16,8 @@ public:
 	void checkPlayerEnemyCollision(Player* pPlayer, const std::vector<GameObject*>& objects);
 	void checkPlayerTileCollision(Player* pPlayer, const std::vector<TileLayer*>& collisionLayers);
 
+	void checkPlayerPowerUpCollision(Player* pPlayer, const std::vector<GameObject*>& objects);
+
 private:
 
 };

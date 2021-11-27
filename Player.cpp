@@ -13,7 +13,8 @@ Player::Player() :
 	m_invulnerableCounter(0),
 	m_invulnerableBlinkTime(0),
 	m_bBossIsDead(false),
-	m_bBlink(true)
+	m_bBlink(true),
+	m_fireMode(SINGLE)
 {
 
 }
@@ -184,7 +185,17 @@ void Player::handleInput()
 	{
 		if (m_bulletCounter == m_bulletFiringSpeed)
 		{
-			TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(20, 0));
+			if (m_fireMode == SINGLE)
+			{
+				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(20, 0));
+			}
+			else if(m_fireMode == TRIPLE)
+			{
+				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(20, 0));
+				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(20, -6));
+				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(20, 6));
+			}
+
 			TheSoundManager::Instance()->playSound("shoot", 0);
 			m_bulletCounter = 0;
 			m_bShot = true;
