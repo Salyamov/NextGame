@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="300" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="61">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="200" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="61">
  <properties>
   <property name="cave" value="assets/cave.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
@@ -137,7 +137,7 @@
     <property name="textureWidth" value="52"/>
    </properties>
   </object>
-  <object id="26" name="RoofTurret" type="RoofTurret" x="5157.33" y="205.333" width="32" height="32">
+  <object id="26" name="RoofTurret" type="RoofTurret" x="5184" y="192" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="56"/>
@@ -145,31 +145,7 @@
     <property name="textureWidth" value="52"/>
    </properties>
   </object>
-  <object id="27" name="RoofTurret" type="RoofTurret" x="5472" y="209.334" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="56"/>
-    <property name="textureID" value="turret"/>
-    <property name="textureWidth" value="52"/>
-   </properties>
-  </object>
-  <object id="28" name="RoofTurret" type="RoofTurret" x="5769.33" y="58.667" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="56"/>
-    <property name="textureID" value="turret"/>
-    <property name="textureWidth" value="52"/>
-   </properties>
-  </object>
-  <object id="29" name="RoofTurret" type="RoofTurret" x="6061.33" y="206.667" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="56"/>
-    <property name="textureID" value="turret"/>
-    <property name="textureWidth" value="52"/>
-   </properties>
-  </object>
-  <object id="30" name="RoofTurret" type="RoofTurret" x="6196" y="208" width="32" height="32">
+  <object id="27" name="RoofTurret" type="RoofTurret" x="5472" y="192.001" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="56"/>
@@ -185,15 +161,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="32" name="ShotGlider" type="ShotGlider" x="2065.33" y="249.333" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="33" name="ShotGlider" type="ShotGlider" x="2198.67" y="189.333" width="32" height="32">
+  <object id="33" name="ShotGlider" type="ShotGlider" x="2144" y="149.333" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -209,7 +177,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="35" name="ShotGlider" type="ShotGlider" x="2352" y="248" width="32" height="32">
+  <object id="36" name="ShotGlider" type="ShotGlider" x="2430.67" y="130.666" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -217,7 +185,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="36" name="ShotGlider" type="ShotGlider" x="2416" y="109.333" width="32" height="32">
+  <object id="38" name="ShotGlider" type="ShotGlider" x="2545.33" y="280" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -225,7 +193,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="37" name="ShotGlider" type="ShotGlider" x="2484" y="160" width="32" height="32">
+  <object id="39" name="ShotGlider" type="ShotGlider" x="2598.66" y="117.333" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -233,39 +201,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="38" name="ShotGlider" type="ShotGlider" x="2533.33" y="281.333" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="39" name="ShotGlider" type="ShotGlider" x="2629.33" y="144" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="40" name="ShotGlider" type="ShotGlider" x="2650.67" y="301.333" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="41" name="ShotGlider" type="ShotGlider" x="2709.33" y="273.333" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="42" name="ShotGlider" type="ShotGlider" x="2758.67" y="180" width="32" height="32">
+  <object id="42" name="ShotGlider" type="ShotGlider" x="2780" y="204" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -281,31 +217,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="44" name="ShotGlider" type="ShotGlider" x="2880" y="124" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="45" name="ShotGlider" type="ShotGlider" x="2941.33" y="308" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="46" name="ShotGlider" type="ShotGlider" x="2828" y="236" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="47" name="ShotGlider" type="ShotGlider" x="2757.33" y="364" width="32" height="32">
+  <object id="47" name="ShotGlider" type="ShotGlider" x="2722.66" y="337.333" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -329,14 +241,6 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="50" name="ShotGlider" type="ShotGlider" x="2088" y="90.6667" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
   <object id="51" name="ShotGlider" type="ShotGlider" x="1977.33" y="122.667" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
@@ -353,7 +257,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="53" name="ShotGlider" type="ShotGlider" x="3036" y="180" width="32" height="32">
+  <object id="55" name="ShotGlider" type="ShotGlider" x="3124" y="148" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -361,23 +265,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="54" name="ShotGlider" type="ShotGlider" x="3145.33" y="268" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="55" name="ShotGlider" type="ShotGlider" x="3166.67" y="102.667" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="56" name="ShotGlider" type="ShotGlider" x="2926.67" y="200" width="32" height="32">
+  <object id="56" name="ShotGlider" type="ShotGlider" x="2924" y="236" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -393,15 +281,7 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="58" name="ShotGlider" type="ShotGlider" x="3038.67" y="244" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="59" name="ShotGlider" type="ShotGlider" x="3244" y="182.667" width="32" height="32">
+  <object id="59" name="ShotGlider" type="ShotGlider" x="3312" y="153.334" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -418,17 +298,17 @@
    </properties>
   </object>
  </objectgroup>
- <layer id="2" name="Collision" width="300" height="15">
+ <layer id="2" name="Collision" width="200" height="15">
   <properties>
    <property name="collidable" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt3EsOwVAAhtHbIUuwYctTj13YhAEdGJTe5L57TvLNREnkTytqDiHMjXcdrIe+Ok5xHTIV+zpUvq3m7Q9NovTxqCfXZ3bN2l719B6AOkbYK2Af7BXQC3sF9CL2+/lcxwMAACCE0/QOoHXnTwCts1dACfcELXuV4rn+BexXinvplr16ZszvnmA8secr9qo89w+Wcemg22DV2J+W96rENefWav//gH73AsdIirA=
+   eJzt2ksKgzAUheE41IEL6IZdXlN1FboFBxJqBkUl3ub6SPg/OKMEL0iOIGqNMfbh+WSWnvykKmQpT8rWrKPs8a0qrp6H/wyR6460H0Aqpsh1h34gV3XgvIbWHfoB7KMfwD7p+zwAAECKXsU3ANaaJQDW6Ady1SnE90PjWqEAV9L4F8n3YzwxfhYQQ/o8ph963gmkzSx3nPcn90N6P6Tf22MyA1gEbRo=
   </data>
  </layer>
- <layer id="1" name="Tile Layer 1" width="300" height="15">
+ <layer id="1" name="Tile Layer 1" width="200" height="15">
   <data encoding="base64" compression="zlib">
-   eJzt2rsKwjAUBuB2cXRS9C18/zfRyeskim7iZbBuRZqGBC/Qfh/8kJzTnpZCthYFAPAL88zety0ie6B/9pk9gBynlt4xcu8jo3eorc+R+QCfMizzegAAAAAAANBVt8R6yDWzBwAA9M+oLIpJQ8YZ//FdIvm0acI7hq5tm5Eyv2/q3+Zf32nW8NymWpNFYB2zrLKqso7UXjZVtlV2b/V7YHboLLYl5ZwOyrQ9QJc9AYOMJDI=
+   eJzt0TEKgDAMBdD2DorewvsfShxFJ1cHW6kUFX0PsjTlE5IQAACAr5kyvfG2KQAAAAAA3mctfE9ZLvYAgHqaGEJ3UG0sz5pPqra+YMbU31xGSf7f7Hfz1J4G94GsDXLHDuQ=
   </data>
  </layer>
 </map>
