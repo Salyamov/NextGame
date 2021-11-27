@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="450" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="13">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="250" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="13">
  <properties>
   <property name="city" value="assets/city.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
@@ -46,17 +46,17 @@
    </properties>
   </object>
  </objectgroup>
- <layer id="2" name="Collision" width="450" height="15">
+ <layer id="2" name="Collision" width="250" height="15">
   <properties>
    <property name="collidable" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztnD1v00AAhi+OExBCdAJGhsJQJGjTZAFGBgT/AVCSUr6GUlIIIkVlZgPEhAAhaAUIWqCi/J7CgAQISAEpbLxWLrIvcuL4I7nEfh/pkc+N7Ts7vrzxuY4QZFioZJsuZHW3hBBCCBk81WzTG8xBQgghCaSWbbrIHCSEEJJAlrJNbzMHCSGEJJCKvB7k/UFCCCFJpCqvB3l/kBBCSC9MmEIcNHW3IjoqvD9ICCHEB5tpIT6ldbeCEDJsrKWEeANXU7pbQohK1M/GMQdJ0tltCLHH4V5Dd4v0cgj7fxhOOpyCuRgcl2fI9HNwltk+0kT9bBxz0OY0POPwrN7mkAFRN4W4mrH9GaP7BEHYQN7NwStwHn6QLutuWARcxH5cgpdjkOlJJup7X8xBmydC7f9P+1SP8/u23+/ZftcNU1dSYA6qNHCOvIPv4TqsS7/oblgElHAdWIYzvB4cGdzGQOM+LjoZsi3VEL+rtinU/v85XFM6chd98ISwve+jT/pdN0xdSYE5qGJdD/6Gf+Bf+FY6EYNzx5mDs9in8/CCoZa36W4kUXAbA437uOh8yLbUfPyu2kP4CD6W8+Mptf8f6FO/t7LpHnwgp35z0M+6YepKClYOzmVsk56DDUf2Of0x4udOMaXm4Avs00v4ylDLOZNZGIQN9J2PcFW6JnUrW8NSranXsXYbA416XHQc7/n+Lv3+VHRV9cR6yBxc8nhu4giO/VF4DC7CfaKpde5Pw7yplgtwBm9WEcuUYFm4l4su5U7zZZftlNv+3m6py2vd6uu2rTsxdDrj33xGzcFcgG3osNAnp0x3X6dHW+t/ZJ7DZbjikYNjglnolwbOnX/wF6zDLTl1zm+1vWZNrY9qQ7pDkzt7cNcA3d5Hb+KY12T+3YLHhW0F5/4CvGaq5etwxSMH3bKwl8zym19eudYpWzstfzJix4ZAZ54FsV/ZMkrGNQfzDgvwK/r1N/jdUMutHLQ0PGxd31hTP8sGXcdr+aD1BNlme3v+A+RucT4=
+   eJztmk0vA0Ecxv/a7RIRPoIDDiTeXXB0EL4DonVHiooSzm6IkyAujoQmfB58Aa8JN0+zI9vWdNtmdru1nl/yy8y2uzOTbZ/sTGZFSKOQth3X7LBHQggJioztuMmcExJZsrbjNnNOSGTZtR33mHNCIktaPc+5PickumTU85zrc0Jcei2RPivsUfhHmutzQn7xEBd5jIc9CkJIIX7vDTPnhDQefu8NM+cuc3C+wIVwh0P+MX6vPZlzl3O4HBNZgavwIqB++tH2AByEQ3A4Fty1Jn2R+qCbo0d93j5oOJaMwXuvD/AGObiFOfhkNpSyHDSJTIvrUVNw15r0ReqDbo4e9Xn7quFYsjW893oCT+GZOu5CBt6Q73f4AXsCykQ+e4fwWJW15ryWa036IsXcJUTu4ZXyWqmr56dNP2VzhXZ1c3S/5+1dlki3x77arH9dVUXOMOe7FfbVxnHvJ+Ak3Iad4jiMezACR63i+hhcwo+1iHOSMCX6+qKmXu44pWknVfJ5qUmP77z682pL5/4fdyQRnJ/wCz7DF/iqysLj15Lv8mX+rxhTtoZkWxW219GWAN3CPc+qfO/AKXFNI89rcN0qrm/Aywo512W9mkzWms9qcqvLcbnzZ3y2owFcTpg55uE3siXBCQ==
   </data>
  </layer>
- <layer id="1" name="Tile Layer 1" width="450" height="15">
+ <layer id="1" name="Tile Layer 1" width="250" height="15">
   <data encoding="base64" compression="zlib">
-   eJztzDEKADAIA0AXf1v7/7EdnAp9gHAHwUDACAAAAAAAAAAAAAAAAAAAAAAAAAAAYLqVEXWz+67u7175/wEAAAAAMMEBeIsEAg==
+   eJztzDEKACAMA8Au/a31/6MOnQRHweEOQgOBRgAAAAAAAAAAAAAAwD9GRtTO7Du6n3vl/QcAAPDGAr4RBAI=
   </data>
  </layer>
 </map>
