@@ -20,6 +20,7 @@
 #include "FinalState.h"
 #include "SoundManger.h"
 #include "TextManager.h"
+#include "PowerUp.h"
 
 
 Game* Game::s_pInstance = NULL;
@@ -40,7 +41,7 @@ Game::Game() : m_pWindow(0),
 	m_levelFiles.push_back("assets/map2.tmx");
 	m_levelFiles.push_back("assets/map3.tmx");
 
-	m_currentLevel = 3;
+	m_currentLevel = 2;
 	m_finalLevel = 4; //4
 }
 
@@ -108,6 +109,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("RoofTurret", new RoofTurretCreator());
 	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
 	TheGameObjectFactory::Instance()->registerType("BossHelicopter", new BossHelicopterCreator());
+	TheGameObjectFactory::Instance()->registerType("PowerUp", new PowerUpCreator());
 
 	TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
 	TheTextManager::Instance()->registerFont("assets/Second.ttf", "second", 22);
