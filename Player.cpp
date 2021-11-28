@@ -192,8 +192,8 @@ void Player::handleInput()
 			else if(m_fireMode == TRIPLE)
 			{
 				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(20, 0));
-				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(20, -6));
-				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(20, 6));
+				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(17, -6));
+				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(17, 6));
 			}
 
 			TheSoundManager::Instance()->playSound("shoot", 0);

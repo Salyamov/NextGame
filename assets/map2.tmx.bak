@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="200" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="66">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="200" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="70">
  <properties>
+  <property name="butterfly" value="assets/enemies/butterfly.png"/>
   <property name="cave" value="assets/cave.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
   <property name="eskeletor2" value="assets/enemies/eskeletor2.png"/>
@@ -59,14 +60,6 @@
    </properties>
   </object>
   <object id="9" name="ShotGlider" type="ShotGlider" x="1078.67" y="249.333" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="11" name="ShotGlider" type="ShotGlider" x="596" y="288" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
@@ -298,14 +291,23 @@
     <property name="textureWidth" value="38"/>
    </properties>
   </object>
-  <object id="61" name="PowerUp" type="PowerUp" x="382.667" y="197.334" width="32" height="32">
+  <object id="61" name="PowerUp" type="PowerUp" x="382.667" y="356.001" width="32" height="32">
    <properties>
     <property name="numFrames" value="3"/>
-    <property name="textureHeight" value="135"/>
+    <property name="textureHeight" value="34"/>
     <property name="textureID" value="powerup"/>
-    <property name="textureWidth" value="148"/>
+    <property name="textureWidth" value="37"/>
    </properties>
   </object>
+  <object id="67" name="Butterfly" type="Butterfly" x="510.667" y="160" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="8"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="butterfly"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="68" x="401.333" y="-246.667"/>
  </objectgroup>
  <layer id="2" name="Collision" width="200" height="15">
   <properties>

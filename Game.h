@@ -40,6 +40,7 @@ public:
 
 	void setScrollSpeed(float speed) { m_scrollSpeed = speed; }
 	float getScrollSpeed() { return m_scrollSpeed; }
+	void setCurrentLevelVariable(int level) { m_currentLevel = level; }
 
 	std::vector<std::string> getLevelFiles() { return m_levelFiles; }
 

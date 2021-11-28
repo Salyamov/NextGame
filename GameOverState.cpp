@@ -36,6 +36,8 @@ bool GameOverState::onEnter()
 
 	setCallbacks(m_callbacks);
 
+	TheGame::Instance()->setPlayerLives(1);
+
 	std::cout << "Entering GameOverState\n";
 
 	return true;
@@ -73,6 +75,7 @@ void GameOverState::setCallbacks(const std::vector<Callback>& callbacks)
 void GameOverState::s_gameOverToMain()
 {
 	TheGame::Instance()->getStateMachine()->changeState(new MainMenuState());
+	TheGame::Instance()->setCurrentLevelVariable(1);
 }
 
 void GameOverState::s_restartPlay()

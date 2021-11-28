@@ -21,6 +21,7 @@
 #include "SoundManger.h"
 #include "TextManager.h"
 #include "PowerUp.h"
+#include "Butterfly.h"
 
 
 Game* Game::s_pInstance = NULL;
@@ -29,7 +30,7 @@ Game::Game() : m_pWindow(0),
 			   m_pRenderer(0),
 			   m_bRunning(false),
 			   m_pGameStateMachine(0),
-			   m_playerLives(5),
+			   m_playerLives(1),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
 			   m_scrollSpeed(8), //скорость прокрутки
@@ -98,6 +99,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheSoundManager::Instance()->load("assets/laser.wav", "enemyshoot", SOUND_SFX);
 	TheSoundManager::Instance()->load("assets/explosion.wav", "explode", SOUND_SFX);
 	TheSoundManager::Instance()->load("assets/boom.wav", "enemyexplode", SOUND_SFX);
+	TheSoundManager::Instance()->load("assets/butterfly.ogg", "butterflydead", SOUND_SFX);
 
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
@@ -110,6 +112,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
 	TheGameObjectFactory::Instance()->registerType("BossHelicopter", new BossHelicopterCreator());
 	TheGameObjectFactory::Instance()->registerType("PowerUp", new PowerUpCreator());
+	TheGameObjectFactory::Instance()->registerType("Butterfly", new ButterflyCreator());
 
 	TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
 	TheTextManager::Instance()->registerFont("assets/Second.ttf", "second", 22);

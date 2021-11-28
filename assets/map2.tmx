@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="200" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="66">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="200" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="77">
  <properties>
+  <property name="butterfly" value="assets/enemies/butterfly.png"/>
   <property name="cave" value="assets/cave.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
   <property name="eskeletor2" value="assets/enemies/eskeletor2.png"/>
@@ -42,44 +43,12 @@
     <property name="textureWidth" value="101"/>
    </properties>
   </object>
-  <object id="6" name="ShotGlider" type="ShotGlider" x="832" y="164" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
   <object id="8" name="ShotGlider" type="ShotGlider" x="1288" y="161.334" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="36"/>
     <property name="textureID" value="shotglider"/>
     <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="9" name="ShotGlider" type="ShotGlider" x="1078.67" y="249.333" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="11" name="ShotGlider" type="ShotGlider" x="596" y="288" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="shotglider"/>
-    <property name="textureWidth" value="38"/>
-   </properties>
-  </object>
-  <object id="14" name="RoofTurret" type="RoofTurret" x="306.667" y="60" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="56"/>
-    <property name="textureID" value="turret"/>
-    <property name="textureWidth" value="52"/>
    </properties>
   </object>
   <object id="15" name="RoofTurret" type="RoofTurret" x="1202.66" y="61.3333" width="32" height="32">
@@ -304,6 +273,70 @@
     <property name="textureHeight" value="34"/>
     <property name="textureID" value="powerup"/>
     <property name="textureWidth" value="37"/>
+   </properties>
+  </object>
+  <object id="67" name="Butterfly" type="Butterfly" x="606.667" y="196" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="8"/>
+    <property name="textureHeight" value="64"/>
+    <property name="textureID" value="butterfly"/>
+    <property name="textureWidth" value="64"/>
+   </properties>
+  </object>
+  <object id="70" name="Butterfly" type="Butterfly" x="696" y="76" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="8"/>
+    <property name="textureHeight" value="64"/>
+    <property name="textureID" value="butterfly"/>
+    <property name="textureWidth" value="64"/>
+   </properties>
+  </object>
+  <object id="71" name="Butterfly" type="Butterfly" x="821.333" y="120" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="8"/>
+    <property name="textureHeight" value="64"/>
+    <property name="textureID" value="butterfly"/>
+    <property name="textureWidth" value="64"/>
+   </properties>
+  </object>
+  <object id="72" name="Butterfly" type="Butterfly" x="742.667" y="226.667" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="8"/>
+    <property name="textureHeight" value="64"/>
+    <property name="textureID" value="butterfly"/>
+    <property name="textureWidth" value="64"/>
+   </properties>
+  </object>
+  <object id="73" name="Butterfly" type="Butterfly" x="992" y="66.6667" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="8"/>
+    <property name="textureHeight" value="64"/>
+    <property name="textureID" value="butterfly"/>
+    <property name="textureWidth" value="64"/>
+   </properties>
+  </object>
+  <object id="74" name="Butterfly" type="Butterfly" x="936" y="169.333" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="8"/>
+    <property name="textureHeight" value="64"/>
+    <property name="textureID" value="butterfly"/>
+    <property name="textureWidth" value="64"/>
+   </properties>
+  </object>
+  <object id="75" name="Butterfly" type="Butterfly" x="1089.33" y="280" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="8"/>
+    <property name="textureHeight" value="64"/>
+    <property name="textureID" value="butterfly"/>
+    <property name="textureWidth" value="64"/>
+   </properties>
+  </object>
+  <object id="76" name="Butterfly" type="Butterfly" x="920" y="273.333" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="8"/>
+    <property name="textureHeight" value="64"/>
+    <property name="textureID" value="butterfly"/>
+    <property name="textureWidth" value="64"/>
    </properties>
   </object>
  </objectgroup>

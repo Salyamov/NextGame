@@ -7,7 +7,7 @@ class PowerUp : public ShooterObject
 {
 public:
 	PowerUp();
-	~PowerUp() {}
+	virtual ~PowerUp() {}
 
 	virtual void load(std::unique_ptr<LoaderParams> const& pParams);
 	virtual void update();

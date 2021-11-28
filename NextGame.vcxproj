@@ -154,6 +154,7 @@
     <ClCompile Include="BossHelicopter.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletHandler.cpp" />
+    <ClCompile Include="Butterfly.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Eskeletor.cpp" />
@@ -198,6 +199,7 @@
     <ClInclude Include="BossHelicopter.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletHandler.h" />
+    <ClInclude Include="Butterfly.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Enemy.h" />
