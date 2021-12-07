@@ -14,6 +14,7 @@
 #include "Turret.h"
 #include "RoofTurret.h"
 #include "BossHelicopter.h"
+#include "BossDragon.h"
 #include "GameOverState.h"
 #include "ScrollingBackground.h"
 #include "LoadingState.h"
@@ -31,7 +32,7 @@ Game::Game() : m_pWindow(0),
 			   m_pRenderer(0),
 			   m_bRunning(false),
 			   m_pGameStateMachine(0),
-			   m_playerLives(3),
+			   m_playerLives(5),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
 			   m_scrollSpeed(8), //скорость прокрутки
@@ -112,6 +113,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("RoofTurret", new RoofTurretCreator());
 	TheGameObjectFactory::Instance()->registerType("ScrollingBackground", new ScrollingBackgroundCreator());
 	TheGameObjectFactory::Instance()->registerType("BossHelicopter", new BossHelicopterCreator());
+	TheGameObjectFactory::Instance()->registerType("BossDragon", new BossDragonCreator());
 	TheGameObjectFactory::Instance()->registerType("PowerUp", new PowerUpCreator());
 	TheGameObjectFactory::Instance()->registerType("SpeedUp", new SpeedUpCreator());
 	TheGameObjectFactory::Instance()->registerType("Butterfly", new ButterflyCreator());

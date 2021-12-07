@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="200" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="104">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="200" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="105">
  <properties>
+  <property name="bossdragon" value="assets/enemies/bossdragon.png"/>
   <property name="butterfly" value="assets/enemies/butterfly.png"/>
   <property name="cave" value="assets/cave.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
@@ -313,6 +314,14 @@
     <property name="textureHeight" value="34"/>
     <property name="textureID" value="eskeletor"/>
     <property name="textureWidth" value="34"/>
+   </properties>
+  </object>
+  <object id="104" name="BossDragon" type="BossDragon" x="6204" y="129.334" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="4"/>
+    <property name="textureHeight" value="240"/>
+    <property name="textureID" value="bossdragon"/>
+    <property name="textureWidth" value="180"/>
    </properties>
   </object>
  </objectgroup>
