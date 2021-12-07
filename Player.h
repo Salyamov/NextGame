@@ -43,6 +43,8 @@ public:
 	}
 
 	bool getPlayerShot() { return m_bShot; }
+	
+	void increaseMoveSpeed() { m_moveSpeed++; }
 
 private:
 	static Player* s_pInstance;

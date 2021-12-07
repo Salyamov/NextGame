@@ -36,7 +36,7 @@ bool GameOverState::onEnter()
 
 	setCallbacks(m_callbacks);
 
-	TheGame::Instance()->setPlayerLives(1);
+	TheGame::Instance()->setPlayerLives(3);
 
 	std::cout << "Entering GameOverState\n";
 

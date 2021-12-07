@@ -4,12 +4,7 @@
 
 PowerUp::PowerUp(): ShooterObject()
 {
-	/*
-	m_currentFrame = 0;
-	m_numFrames = 3;
-	m_width = 37;
-	m_height = 34;
-	*/
+
 }
 
 void PowerUp::load(std::unique_ptr<LoaderParams> const& pParams)

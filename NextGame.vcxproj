@@ -182,6 +182,7 @@
     <ClCompile Include="ShooterObject.cpp" />
     <ClCompile Include="ShotGlider.cpp" />
     <ClCompile Include="SoundManger.cpp" />
+    <ClCompile Include="SpeedUp.cpp" />
     <ClCompile Include="StateParser.cpp" />
     <ClCompile Include="TextManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -231,6 +232,7 @@
     <ClInclude Include="ShooterObject.h" />
     <ClInclude Include="ShotGlider.h" />
     <ClInclude Include="SoundManger.h" />
+    <ClInclude Include="SpeedUp.h" />
     <ClInclude Include="StateParser.h" />
     <ClInclude Include="TextManager.h" />
     <ClInclude Include="TextureManager.h" />

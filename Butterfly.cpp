@@ -47,12 +47,13 @@ void Butterfly::update()
 		m_velocity.setX(0);
 		m_velocity.setY(0);
 
+		
+
 		GameObject::scroll(TheGame::Instance()->getScrollSpeed());
 		m_currentFrame = int((SDL_GetTicks() / (1000 / 3)) % m_numFrames);
 		if (m_dyingCounter == m_dyingTime)
 		{
 			m_bDead = true;
-			TheSoundManager::Instance()->playSound("butterflydead", 0);
 		}
 		m_dyingCounter++;
 	}
@@ -67,6 +68,11 @@ void Butterfly::collision()
 {
 	m_currentRow = 1;
 	m_numFrames = 4;
+	
+	if (!m_bDying)
+	{
+		TheSoundManager::Instance()->playSound("enemyexplode", 0);
+	}
 	m_bDying = true;
 	
 	TheGame::Instance()->addToGameScore(200);
