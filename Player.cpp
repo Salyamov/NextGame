@@ -173,7 +173,7 @@ void Player::handleInput()
 	//ускорение для теста
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LSHIFT))
 	{
-		TheGame::Instance()->setScrollSpeed(12);
+		TheGame::Instance()->setScrollSpeed(20);
 	}
 	else 
 	{

@@ -5,7 +5,7 @@
 
 BossHelicopter::BossHelicopter()
 {
-	m_health = 1;
+	m_health = 10;
 	m_dyingTime = 50;
 	m_hitTimer = 0;
 	m_tickCounter = 0;

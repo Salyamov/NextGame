@@ -15,8 +15,15 @@ public:
 	virtual void collision();
 
 private:
+	float m_bulletSpeed;
 
+	int m_firingDurationCounter;
+	int m_firingDuration; //продолжительность струи огня
 
+	int m_firingCountdownCounter;
+	int m_firingCountdown; //продолжительность передышки между атаками
+
+	bool m_bFiring;
 };
 
 class BossDragonCreator : public BaseCreator
