@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="250" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="14">
+ <properties>
+  <property name="city" value="assets/city.png"/>
+  <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
+  <property name="explosion" value="assets/explosion.png"/>
+  <property name="glider" value="assets/enemies/glider.png"/>
+  <property name="helicopter" value="assets/helicopter.png"/>
+  <property name="largeexplosion" value="assets/largeexplosion.png"/>
+  <property name="shotglider" value="assets/enemies/shotglider.png"/>
+  <property name="smallexplosion" value="assets/smallexplosion.png"/>
+  <property name="turret" value="assets/enemies/turret.png"/>
+ </properties>
+ <tileset firstgid="1" name="citytileset" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="1650" columns="66">
+  <image source="citytileset.png" width="2264" height="878"/>
+ </tileset>
+ <tileset firstgid="1651" name="citytileset4" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="16" columns="4">
+  <image source="citytileset4.png" width="138" height="138"/>
+ </tileset>
+ <objectgroup id="4" name="Background">
+  <object id="2" name="Background" type="ScrollingBackground" x="0" y="0" width="32" height="32">
+   <properties>
+    <property name="animSpeed" value="2"/>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="600"/>
+    <property name="textureID" value="city"/>
+    <property name="textureWidth" value="1200"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="Object Layer 1">
+  <object id="11" name="Helicopter1" type="Player" x="62" y="128" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="5"/>
+    <property name="textureHeight" value="46"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="101"/>
+   </properties>
+  </object>
+  <object id="12" name="Glider" type="Glider" x="513.333" y="224.667" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="34"/>
+    <property name="textureID" value="glider"/>
+    <property name="textureWidth" value="38"/>
+   </properties>
+  </object>
+  <object id="13" name="AA" type="AA" x="266.5" y="383" width="32" height="32"/>
+ </objectgroup>
+ <layer id="2" name="Collision" width="250" height="15">
+  <properties>
+   <property name="collidable" value=""/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztmk0vA0Ecxv/a7RIRPoIDDiTeXXB0EL4DonVHiooSzm6IkyAujoQmfB58Aa8JN0+zI9vWdNtmdru1nl/yy8y2uzOTbZ/sTGZFSKOQth3X7LBHQggJioztuMmcExJZsrbjNnNOSGTZtR33mHNCIktaPc+5PickumTU85zrc0Jcei2RPivsUfhHmutzQn7xEBd5jIc9CkJIIX7vDTPnhDQefu8NM+cuc3C+wIVwh0P+MX6vPZlzl3O4HBNZgavwIqB++tH2AByEQ3A4Fty1Jn2R+qCbo0d93j5oOJaMwXuvD/AGObiFOfhkNpSyHDSJTIvrUVNw15r0ReqDbo4e9Xn7quFYsjW893oCT+GZOu5CBt6Q73f4AXsCykQ+e4fwWJW15ryWa036IsXcJUTu4ZXyWqmr56dNP2VzhXZ1c3S/5+1dlki3x77arH9dVUXOMOe7FfbVxnHvJ+Ak3Iad4jiMezACR63i+hhcwo+1iHOSMCX6+qKmXu44pWknVfJ5qUmP77z682pL5/4fdyQRnJ/wCz7DF/iqysLj15Lv8mX+rxhTtoZkWxW219GWAN3CPc+qfO/AKXFNI89rcN0qrm/Aywo512W9mkzWms9qcqvLcbnzZ3y2owFcTpg55uE3siXBCQ==
+  </data>
+ </layer>
+ <layer id="1" name="Tile Layer 1" width="250" height="15">
+  <data encoding="base64" compression="zlib">
+   eJztzDEKACAMA8Au/a31/6MOnQRHweEOQgOBRgAAAAAAAAAAAAAAwD9GRtTO7Du6n3vl/QcAAPDGAr4RBAI=
+  </data>
+ </layer>
+</map>

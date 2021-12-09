@@ -149,8 +149,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AA.cpp" />
     <ClCompile Include="AnimatedGraphic.cpp" />
     <ClCompile Include="base64.cpp" />
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossDragon.cpp" />
     <ClCompile Include="BossHelicopter.cpp" />
     <ClCompile Include="Bullet.cpp" />
@@ -196,8 +198,10 @@
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AA.h" />
     <ClInclude Include="AnimatedGraphic.h" />
     <ClInclude Include="base64.h" />
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="BossDragon.h" />
     <ClInclude Include="BossHelicopter.h" />
     <ClInclude Include="Bullet.h" />
