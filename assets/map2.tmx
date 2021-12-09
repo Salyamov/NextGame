@@ -2,6 +2,7 @@
 <map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="200" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="105">
  <properties>
   <property name="bossdragon" value="assets/enemies/bossdragon.png"/>
+  <property name="bossdragon2" value="assets/enemies/bossdragon2.png"/>
   <property name="butterfly" value="assets/enemies/butterfly.png"/>
   <property name="cave" value="assets/cave.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>

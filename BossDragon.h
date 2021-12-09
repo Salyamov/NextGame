@@ -24,6 +24,8 @@ private:
 	int m_firingCountdown; //продолжительность передышки между атаками
 
 	bool m_bFiring;
+	bool m_bHitted;
+	int m_hitTimer;
 };
 
 class BossDragonCreator : public BaseCreator
