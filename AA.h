@@ -13,7 +13,7 @@ public:
 	virtual void collision();
 
 private:
-
+	float m_bulletSpeed;
 
 };
 

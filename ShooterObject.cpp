@@ -3,10 +3,10 @@
 #include "Game.h"
 
 ShooterObject::ShooterObject() : GameObject(),
-								 m_bulletFiringSpeed(0), 
+								 m_bulletFiringSpeed(70), 
 	                             m_bulletCounter(0), 
-								 m_moveSpeed(0),
-								 m_dyingTime(0), 
+								 m_moveSpeed(1),
+								 m_dyingTime(75), 
 								 m_dyingCounter(0), 
 								 m_bPlayedDeathSound(false)
 {

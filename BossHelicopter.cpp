@@ -56,9 +56,7 @@ void BossHelicopter::update()
 
 		if (m_bulletCounter == m_bulletFiringSpeed)
 		{
-			TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + m_height / 2, 16, 16, "bullet2", 1,
-				//ThePlayer::Instance()->getPosition());
-				heading);
+			TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + m_height / 2, 16, 16, "bullet2", 1, heading);
 			TheSoundManager::Instance()->playSound("enemyshoot", 0);
 			m_bulletCounter = 0;
 		}
