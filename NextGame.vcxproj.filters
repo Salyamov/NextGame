@@ -156,6 +156,9 @@
     <ClCompile Include="AA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BossAA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -303,6 +306,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BossAA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

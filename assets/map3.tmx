@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="250" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="56">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="250" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="57">
  <properties>
   <property name="aa" value="assets/enemies/aa.png"/>
+  <property name="bossaa" value="assets/enemies/bossaa.png"/>
   <property name="city" value="assets/city.png"/>
   <property name="eskeletor" value="assets/enemies/eskeletor.png"/>
   <property name="explosion" value="assets/explosion.png"/>
@@ -380,6 +381,14 @@
     <property name="textureHeight" value="36"/>
     <property name="textureID" value="shotglider"/>
     <property name="textureWidth" value="38"/>
+   </properties>
+  </object>
+  <object id="56" name="BossAA" type="BossAA" x="7715" y="272" width="252" height="142">
+   <properties>
+    <property name="numFrames" value="4"/>
+    <property name="textureHeight" value="142"/>
+    <property name="textureID" value="bossaa"/>
+    <property name="textureWidth" value="252"/>
    </properties>
   </object>
  </objectgroup>

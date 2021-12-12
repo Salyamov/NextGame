@@ -25,6 +25,7 @@
 #include "SpeedUp.h"
 #include "Butterfly.h"
 #include "AA.h"
+#include "BossAA.h"
 
 
 Game* Game::s_pInstance = NULL;
@@ -45,7 +46,7 @@ Game::Game() : m_pWindow(0),
 	m_levelFiles.push_back("assets/map2.tmx");
 	m_levelFiles.push_back("assets/map3.tmx");
 
-	m_currentLevel = 2;
+	m_currentLevel = 3;
 	m_finalLevel = 4; //4
 }
 
@@ -119,6 +120,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheGameObjectFactory::Instance()->registerType("SpeedUp", new SpeedUpCreator());
 	TheGameObjectFactory::Instance()->registerType("Butterfly", new ButterflyCreator());
 	TheGameObjectFactory::Instance()->registerType("AA", new AACreator());
+	TheGameObjectFactory::Instance()->registerType("BossAA", new BossAACreator());
 
 	TheTextManager::Instance()->registerFont("assets/Quicksilver.ttf", "silver", 24);
 	TheTextManager::Instance()->registerFont("assets/Second.ttf", "second", 22);
