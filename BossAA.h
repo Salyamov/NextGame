@@ -16,6 +16,10 @@ public:
 
 private:
 
+	float m_bulletSpeed;
+
+	bool m_bHitted;
+	int m_hitTimer;
 
 
 };

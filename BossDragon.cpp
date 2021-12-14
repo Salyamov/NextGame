@@ -8,7 +8,7 @@ BossDragon::BossDragon()
 	m_health = 20;
 	m_moveSpeed = 2;
 	m_bulletCounter = 0;
-	m_bulletSpeed = 4;
+	m_bulletSpeed = 6;
 	m_bulletFiringSpeed = 15;
 
 	m_firingCountdownCounter = 0;

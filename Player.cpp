@@ -174,10 +174,19 @@ void Player::handleInput()
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LSHIFT))
 	{
 		TheGame::Instance()->setScrollSpeed(20);
+		m_invulnerable = true;
+		m_invulnerableCounter = 0;
 	}
 	else 
 	{
 		TheGame::Instance()->setScrollSpeed(1);
+		m_invulnerable = false;
+		m_textureID = "helicopter";
+		m_width = 101;
+		m_height = 46;
+		m_numFrames = 5;
+		m_currentFrame = 0;
+
 	}
 	
 
