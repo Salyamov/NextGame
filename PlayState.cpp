@@ -9,6 +9,7 @@
 #include "LevelParser.h"
 #include "BulletHandler.h"
 #include "TextManager.h"
+#include "SoundManger.h"
 
 const std::string PlayState::s_playID = "PLAY";
 
@@ -67,6 +68,7 @@ void PlayState::render()
 
 bool PlayState::onEnter()
 {
+	TheSoundManager::Instance()->playMusic(std::to_string(TheGame::Instance()->getCurrentLevel()), -1);
 
 	LevelParser levelParser;
 	pLevel = levelParser.parseLevel(TheGame::Instance()->getLevelFiles()[TheGame::Instance()->getCurrentLevel() - 1].c_str());

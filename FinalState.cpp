@@ -2,6 +2,7 @@
 #include "StateParser.h"
 #include "TextManager.h"
 #include "Game.h"
+#include "SoundManger.h"
 
 const std::string FinalState::s_finalID = "FINAL";
 
@@ -24,6 +25,8 @@ void FinalState::render()
 
 bool FinalState::onEnter()
 {
+    TheSoundManager::Instance()->playMusic(std::to_string(TheGame::Instance()->getCurrentLevel()), -1);
+
     StateParser stateParser;
     stateParser.parseState("assets/test.xml", s_finalID, &m_gameObjects, &m_textureIDList);
 

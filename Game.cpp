@@ -98,6 +98,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheSoundManager::Instance()->load("assets/electrorock.ogg", "1", SOUND_MUSIC);
 	TheSoundManager::Instance()->load("assets/cave.mp3", "2", SOUND_MUSIC);
 	TheSoundManager::Instance()->load("assets/darkcity.mp3", "3", SOUND_MUSIC);
+	TheSoundManager::Instance()->load("assets/win.mp3", "4", SOUND_MUSIC);
 
 	TheSoundManager::Instance()->load("assets/phaser.wav", "shoot", SOUND_SFX);
 	TheSoundManager::Instance()->load("assets/laser.wav", "enemyshoot", SOUND_SFX);
