@@ -165,14 +165,6 @@
     <property name="textureWidth" value="64"/>
    </properties>
   </object>
-  <object id="79" name="PowerUp" type="PowerUp" x="4734.67" y="66.6667" width="32" height="32">
-   <properties>
-    <property name="numFrames" value="3"/>
-    <property name="textureHeight" value="34"/>
-    <property name="textureID" value="powerup"/>
-    <property name="textureWidth" value="37"/>
-   </properties>
-  </object>
   <object id="80" name="ShotGlider" type="ShotGlider" x="553.333" y="226.667" width="32" height="32">
    <properties>
     <property name="numFrames" value="1"/>

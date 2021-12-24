@@ -37,7 +37,7 @@ Game::Game() : m_pWindow(0),
 			   m_playerLives(5),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
-			   m_scrollSpeed(8), //скорость прокрутки
+			   m_scrollSpeed(1), //скорость прокрутки
 			   m_gameScore(0),
 			   m_width(0),
 			   m_height(0)

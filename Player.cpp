@@ -9,7 +9,7 @@ Player* Player::s_pInstance = NULL;
 Player::Player() :
 	ShooterObject(),
 	m_invulnerable(false),
-	m_invulnerableTime(100),
+	m_invulnerableTime(150),
 	m_invulnerableCounter(0),
 	m_invulnerableBlinkTime(0),
 	m_bBossIsDead(false),
@@ -23,7 +23,7 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 {
 	ShooterObject::load(std::move(pParams));
 
-	m_bulletFiringSpeed = 50;
+	m_bulletFiringSpeed = 20;
 	m_moveSpeed = 3;
 
 	m_bulletCounter = m_bulletFiringSpeed;
@@ -31,6 +31,7 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 	m_dyingTime = 25;
 	m_bShot = false;
 
+	m_bulletSpeed = 15;
 }
 
 
@@ -169,7 +170,7 @@ void Player::handleInput()
 		m_velocity.setX(m_moveSpeed);
 	}
 
-	
+	/*
 	//ускорение дл€ теста
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LSHIFT))
 	{
@@ -188,15 +189,16 @@ void Player::handleInput()
 		m_currentFrame = 0;
 
 	}
+	*/
 	
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
 	{
-		if (m_bulletCounter == m_bulletFiringSpeed)
+		if (m_bulletCounter >= m_bulletFiringSpeed)
 		{
 			if (m_fireMode == SINGLE)
 			{
-				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(20, 0));
+				TheBulletHandler::Instance()->addPlayerBullet(m_position.getX() + 90, m_position.getY() + m_height / 2, 11, 11, "bullet1", 1, Vector2D(m_bulletSpeed, 0));
 			}
 			else if(m_fireMode == TRIPLE)
 			{
@@ -213,7 +215,8 @@ void Player::handleInput()
 	}
 	else
 	{
-		m_bulletCounter = m_bulletFiringSpeed;
+		m_bulletCounter++;
+		//m_bulletCounter = m_bulletFiringSpeed;
 		m_bShot = false;
 	}
 
@@ -262,6 +265,7 @@ void Player::ressurect()
 
 	m_dyingCounter = 0;
 	m_invulnerable = true;
+	m_bBlink = false;
 
 }
 
@@ -269,7 +273,7 @@ void Player::handleAnimation()
 {
 
 	//если вертолет неу€звимый, то он мигает
-	if (m_invulnerable && m_bBlink == true)
+	if (m_invulnerable)
 	{
 		//если неу€звимость закончилась
 		if (m_invulnerableCounter == m_invulnerableTime)
@@ -278,7 +282,7 @@ void Player::handleAnimation()
 			m_invulnerableCounter = 0;
 			m_alpha = 255;
 		}
-		else
+		else if(m_bBlink == true)
 		{
 			m_invulnerableBlinkTime++;
 			if (m_alpha == 255 && m_invulnerableBlinkTime == 5)

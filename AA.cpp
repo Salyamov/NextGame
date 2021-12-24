@@ -8,7 +8,7 @@ AA::AA() : Enemy()
 {
 	m_health = 1;
 	m_bulletFiringSpeed = 70;
-	m_bulletSpeed = 2;
+	m_bulletSpeed = 4;
 	m_dyingTime = 25;
 }
 

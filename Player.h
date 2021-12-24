@@ -66,6 +66,7 @@ private:
 	bool m_bBlink;
 
 	int m_fireMode;
+	int m_bulletSpeed;
 
 };
 

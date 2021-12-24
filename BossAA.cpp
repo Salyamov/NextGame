@@ -8,7 +8,7 @@ BossAA::BossAA()
 	m_bulletFiringSpeed = 50;
 	m_bulletCounter = 0;
 	m_bulletSpeed = 10;
-	m_health = 10;
+	m_health = 7;
 	m_dyingTime = 50;
 	m_moveSpeed = 2;
 	m_bHitted = false;

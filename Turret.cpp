@@ -6,8 +6,8 @@
 Turret::Turret()
 {
 	m_dyingTime = 25;
-	m_health = 5;
-	m_maxHealth = 5;
+	m_health = 4;
+	m_maxHealth = 4;
 	m_bulletFiringSpeed = 100;
 }
 

@@ -5,7 +5,7 @@
 
 BossDragon::BossDragon()
 {
-	m_health = 20;
+	m_health = 7;
 	m_moveSpeed = 2;
 	m_bulletCounter = 0;
 	m_bulletSpeed = 6;

@@ -13,6 +13,8 @@ class ShooterObject;
 class PlayState : public GameState
 {
 public:
+	PlayState();
+
 	virtual void update();
 	virtual void render();
 
@@ -26,6 +28,8 @@ private:
 	static const std::string s_playID;
 	Level* pLevel;
 	CollisionManager m_collisionManager;
+	
+	int m_musicVolume;
 };
 
 

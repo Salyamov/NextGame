@@ -13,6 +13,10 @@
 
 const std::string PlayState::s_playID = "PLAY";
 
+PlayState::PlayState() : m_musicVolume(48)
+{
+}
+
 void PlayState::update()
 {
 	//тут проверка на флаг успешной загрузки и флаг выхода (m_loadingComplete и m_exiting)
@@ -42,6 +46,20 @@ void PlayState::update()
 
 	}
 
+	//настройка громкости
+	if ((TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_MINUS) || 
+		TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_KP_MINUS)) && m_musicVolume >= 2)
+	{
+		m_musicVolume -= 2;
+		Mix_VolumeMusic(m_musicVolume);
+	}
+
+	if ((TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_EQUALS) || 
+		TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_KP_PLUS))  && m_musicVolume <= 126)
+	{
+		m_musicVolume +=2;
+		Mix_VolumeMusic(m_musicVolume);
+	}
 }
 
 void PlayState::render()
@@ -89,6 +107,7 @@ bool PlayState::onEnter()
 	TheTextManager::Instance()->createTexture(msg, "score", TheGame::Instance()->getGameWidth() - 5,
 		5, 200, 100, "second", 160, 30, 60, border::RIGHTBORDER);
 
+	Mix_VolumeMusic(m_musicVolume);
 
 	std::cout << "Entering PlayState\n";
 	return true;
