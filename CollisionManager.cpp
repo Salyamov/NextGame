@@ -142,6 +142,11 @@ void CollisionManager::checkPlayerTileCollision(Player* pPlayer, const std::vect
 		if (tileid != 0)
 		{
 			pPlayer->collision();
+			if (pPlayer->getInvulnerableState())
+			{
+				pPlayer->setTileCollision(true);
+			}
+		
 			//std::cout << msg << std::endl;
 		}
 

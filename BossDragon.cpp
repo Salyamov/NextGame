@@ -60,7 +60,7 @@ void BossDragon::update()
 			if (m_bulletCounter == m_bulletFiringSpeed)
 			{
 				TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + m_height / 2, 32, 32, "bullet3", 1, heading);
-				//TheSoundManager::Instance()->playSound("enemyshoot", 0);
+				TheSoundManager::Instance()->playSound("dragonbreath", 0);
 				m_bulletCounter = 0;
 
 			}
@@ -155,6 +155,8 @@ void BossDragon::collision()
 
 		}
 		*/
+
+		TheSoundManager::Instance()->playSound("dragondeath", 0);
 
 		m_bDying = true;
 		TheGame::Instance()->addToGameScore(2000);

@@ -46,6 +46,9 @@ public:
 	
 	void increaseMoveSpeed() { m_moveSpeed++; }
 
+	void setTileCollision(bool collision) { m_bTileCollision = true; }
+	bool getInvulnerableState() { return m_invulnerable; }
+
 private:
 	static Player* s_pInstance;
 
@@ -67,6 +70,8 @@ private:
 
 	int m_fireMode;
 	int m_bulletSpeed;
+
+	bool m_bTileCollision;
 
 };
 

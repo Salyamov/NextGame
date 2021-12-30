@@ -14,7 +14,8 @@ Player::Player() :
 	m_invulnerableBlinkTime(0),
 	m_bBossIsDead(false),
 	m_bBlink(true),
-	m_fireMode(SINGLE)
+	m_fireMode(SINGLE),
+	m_bTileCollision(false)
 {
 
 }
@@ -146,7 +147,15 @@ void Player::collision()
 			TheSoundManager::Instance()->playSound("explode", 0);
 		}
 		m_bDying = true;
-	}		
+	}
+	else if(m_bTileCollision)
+	{
+		//не даем зайти в тайл, когда игрок неу€звим
+		std::cout << "go away!\n";
+		m_position.setX(10);
+		m_position.setY(200);
+		m_bTileCollision = false;
+	}
 }
 
 void Player::handleInput()
@@ -177,19 +186,22 @@ void Player::handleInput()
 		TheGame::Instance()->setScrollSpeed(20);
 		m_invulnerable = true;
 		m_invulnerableCounter = 0;
+		m_bBlink = false;
 	}
 	else 
 	{
 		TheGame::Instance()->setScrollSpeed(1);
-		m_invulnerable = false;
+		//m_invulnerable = false;
 		m_textureID = "helicopter";
 		m_width = 101;
 		m_height = 46;
 		m_numFrames = 5;
 		m_currentFrame = 0;
+		m_bBlink = true;
 
 	}
 	*/
+	
 	
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
@@ -265,7 +277,7 @@ void Player::ressurect()
 
 	m_dyingCounter = 0;
 	m_invulnerable = true;
-	m_bBlink = false;
+	m_bBlink = true;
 
 }
 

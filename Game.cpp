@@ -34,7 +34,7 @@ Game::Game() : m_pWindow(0),
 			   m_pRenderer(0),
 			   m_bRunning(false),
 			   m_pGameStateMachine(0),
-			   m_playerLives(5),
+			   m_playerLives(3),
 			   m_bLevelComplete(false),
 			   m_bChangingState(false),		   		   
 			   m_scrollSpeed(1), //скорость прокрутки
@@ -105,6 +105,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	TheSoundManager::Instance()->load("assets/explosion.wav", "explode", SOUND_SFX);
 	TheSoundManager::Instance()->load("assets/boom.wav", "enemyexplode", SOUND_SFX);
 	TheSoundManager::Instance()->load("assets/butterfly.wav", "butterflydead", SOUND_SFX);
+	TheSoundManager::Instance()->load("assets/dragonbreath.wav", "dragonbreath", SOUND_SFX);
+	TheSoundManager::Instance()->load("assets/dragondeath.wav", "dragondeath", SOUND_SFX);
+	TheSoundManager::Instance()->load("assets/bossaashot.ogg", "bossaashot", SOUND_SFX);
+	TheSoundManager::Instance()->load("bossaamove.wav", "bossaamove", SOUND_SFX);
 
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());

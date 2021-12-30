@@ -6,7 +6,7 @@
 BossAA::BossAA()
 {
 	m_bulletFiringSpeed = 50;
-	m_bulletCounter = 0;
+	m_bulletCounter = 50;
 	m_bulletSpeed = 10;
 	m_health = 7;
 	m_dyingTime = 50;
@@ -39,6 +39,7 @@ void BossAA::update()
 		int rocketPosX = 0;
 		int rocketPosY = 0;
 
+		bool fire = true;
 
 		//тут вычислить угол до игрока и в зависимости от угла поставить соответсвующий кадр
 
@@ -75,22 +76,24 @@ void BossAA::update()
 					rocketPosY = m_position.getY();
 				}
 			}
-
 		}
 		//справа
 		else
 		{
+			m_currentFrame = 3;
+			fire = false;
+			/*
 			if (fabs(atan(y / x) * 180) / 3.14 < 45)
 			{
 				if (fabs(tan(fabs(y / x)) * 180) / 3.14 < 20)
 				{
-					m_currentFrame = 4;
+					m_currentFrame = 3;
 					rocketPosX = m_position.getX() + m_width;
 					rocketPosY = m_position.getY() + m_height / 4;
 				}
 				else
 				{
-					m_currentFrame = 5;
+					m_currentFrame = 3;
 					rocketPosX = m_position.getX() + m_width;
 					rocketPosY = m_position.getY() + m_height / 8;
 
@@ -100,27 +103,31 @@ void BossAA::update()
 			{
 				if (fabs(atan(fabs(y / x)) * 180) / 3.14 < 60)
 				{
-					m_currentFrame = 6;
+					m_currentFrame = 3;
 					rocketPosX = m_position.getX() + m_width - m_width / 8;
 					rocketPosY = m_position.getY() + m_height / 16;
 				}
 				else
 				{
-					m_currentFrame = 7;
+					m_currentFrame = 3;
 					rocketPosX = m_position.getX() + m_width - m_width / 4;
 					rocketPosY = m_position.getY();
 				}
 			}
-
+			*/
 		}
 
-		if (m_bulletCounter == m_bulletFiringSpeed)
+		if (fire)
 		{
-			TheBulletHandler::Instance()->addEnemyBullet(rocketPosX, rocketPosY, 11, 11, "bullet1", 1, heading);
-			TheSoundManager::Instance()->playSound("enemyshoot", 0);
-			m_bulletCounter = 0;
+			if (m_bulletCounter == m_bulletFiringSpeed)
+			{
+				TheBulletHandler::Instance()->addEnemyBullet(rocketPosX, rocketPosY, 11, 11, "bullet1", 1, heading);
+				TheSoundManager::Instance()->playSound("bossaashot", 0);
+				m_bulletCounter = 0;
+			}
+			m_bulletCounter++;
 		}
-		m_bulletCounter++;
+
 
 
 		//m_currentFrame = int((SDL_GetTicks() / 100) % m_numFrames);

@@ -17,9 +17,10 @@ void ObjectLayer::update(Level* pLevel)
 	m_collisionManager.checkEnemyPlayerBulletCollision((const std::vector<GameObject*>&)m_gameObjects);
 	m_collisionManager.checkPlayerEnemyCollision(pLevel->getPlayer(), (const std::vector<GameObject*>&)m_gameObjects);
 
-	m_collisionManager.checkPlayerPowerUpCollision(pLevel->getPlayer(), (const std::vector<GameObject*>&)m_gameObjects);
+	//m_collisionManager.checkPlayerPowerUpCollision(pLevel->getPlayer(), (const std::vector<GameObject*>&)m_gameObjects);
 
-	if (pLevel->getPlayer()->getPosition().getX() + pLevel->getPlayer()->getWidth() < TheGame::Instance()->getGameWidth())
+	if (pLevel->getPlayer()->getPosition().getX() + pLevel->getPlayer()->getWidth() < TheGame::Instance()->getGameWidth()
+		&& pLevel->getPlayer()->getPosition().getY() + pLevel->getPlayer()->getHeight() < TheGame::Instance()->getGameHeight())
 	{
 		m_collisionManager.checkPlayerTileCollision(pLevel->getPlayer(), pLevel->getCollidableLayers());
 	}

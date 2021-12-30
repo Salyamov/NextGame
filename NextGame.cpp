@@ -10,9 +10,9 @@ Game* g_game = NULL;
 
 int main(int argc, char* args[])
 {
-	AllocConsole();
-	FILE* file;
-	file = freopen("CON", "w", stdout);
+	//AllocConsole();
+	//FILE* file;
+	//file = freopen("CON", "w", stdout);
 
 	Uint32 frameStart, frameTime;
 
