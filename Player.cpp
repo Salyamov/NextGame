@@ -24,15 +24,15 @@ void Player::load(std::unique_ptr<LoaderParams> const &pParams)
 {
 	ShooterObject::load(std::move(pParams));
 
-	m_bulletFiringSpeed = 20;
-	m_moveSpeed = 3;
+	m_bulletFiringSpeed = 12;
+	m_moveSpeed = 4;
 
 	m_bulletCounter = m_bulletFiringSpeed;
 
 	m_dyingTime = 25;
 	m_bShot = false;
 
-	m_bulletSpeed = 15;
+	m_bulletSpeed = 17;
 }
 
 

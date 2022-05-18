@@ -53,7 +53,7 @@ void ShotGlider::update()
 
 		if (m_bulletCounter == m_bulletFiringSpeed)
 		{
-			TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 10, 16, 16, "bullet2", 1, Vector2D(-7, 0));
+			TheBulletHandler::Instance()->addEnemyBullet(m_position.getX(), m_position.getY() + 10, 16, 16, "bullet2", 1, Vector2D(-6, 0));
 			TheSoundManager::Instance()->playSound("enemyshoot", 0);
 			m_bulletCounter = 0;
 		}

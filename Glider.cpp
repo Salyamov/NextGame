@@ -29,7 +29,7 @@ void Glider::update()
 {
 	if (!m_bDying)
 	{
-		if (m_position.getY() >= m_maxHeight)
+		if (m_position.getY() >= m_maxHeight )
 		{
 			m_velocity.setY(-m_moveSpeed / 2);
 		}
