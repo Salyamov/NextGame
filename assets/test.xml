@@ -3,12 +3,18 @@
 
 <MENU>
 <TEXTURES>
+	<texture filename="assets/logo.png" ID="logo" />
+	<texture filename="assets/title.png" ID="title" />
 	<texture filename="assets/play.png" ID="playbutton" />
+	<texture filename="assets/settings.png" ID="settingsbutton" />
 	<texture filename="assets/exit.png" ID="exitbutton" />
 </TEXTURES>
 <OBJECTS>
-	<object  type="MenuButton" x="100" y="100" width="400" height="100" textureID="playbutton" numFrames="0" callbackID="1" />
-	<object  type="MenuButton" x="100" y="300" width="400" height="100" textureID="exitbutton" numFrames="0" callbackID="2" />
+	<object type="AnimatedGraphic" x="20" y="150" width="480" height="270" textureID="logo" numFrames="1" />
+	<object type="AnimatedGraphic" x="120" y="20" width="400" height="120" textureID="title" numFrames="1" />
+	<object  type="MenuButton" x="400" y="150" width="200" height="80" textureID="playbutton" numFrames="0" callbackID="1" />
+	<object  type="MenuButton" x="400" y="250" width="200" height="80" textureID="settingsbutton" numFrames="0" callbackID="1" />
+	<object  type="MenuButton" x="400" y="350" width="200" height="80" textureID="exitbutton" numFrames="0" callbackID="2" />
 </OBJECTS>
 </MENU>
 
