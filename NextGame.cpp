@@ -1,74 +1,47 @@
-#include"Game.h"
+#define _CRT_SECURE_NO_WARNINGS
+#include <Windows.h>
+#include <iostream>
+#include "Game.h"
+
+const int FPS = 60;
+const int DELAY_TIME = 1000.f / FPS;
 
 Game* g_game = NULL;
 
-/*
-SDL_Renderer* g_pRenderer = NULL;
-SDL_Window* g_pWindow = NULL;
-bool g_bRunning;
-
-bool init(const char* title, int x, int y, int width, int height, int flags)
+int main(int argc, char* args[])
 {
-	if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
+	//AllocConsole();
+	//FILE* file;
+	//file = freopen("CON", "w", stdout);
+
+	Uint32 frameStart, frameTime;
+
+	if (TheGame::Instance()->init("NextGame", 100, 100, 640, 480, false))
 	{
-		g_pWindow = SDL_CreateWindow(title, x, y, width, height, flags);
-		if (g_pWindow == NULL)
-			return false;
-		else
+		//std::cout << "game init complete\n";
+		while (TheGame::Instance()->running())
 		{
-			g_pRenderer = SDL_CreateRenderer(g_pWindow, -1, 0);
-			if (g_pRenderer == NULL)
-				return false;
+			frameStart = SDL_GetTicks();
+
+			TheGame::Instance()->handleEvents();
+			TheGame::Instance()->update();
+			TheGame::Instance()->render();
+
+			frameTime = SDL_GetTicks() - frameStart; //сколько понадобилось времени на одну прорисовку
+
+			if (frameTime < DELAY_TIME)
+			{
+				SDL_Delay((int)DELAY_TIME - frameTime); //ждем оставшееся время
+			}
 		}
 	}
 	else
 	{
-		return false;
+		std::cout << "game init failed\n" << SDL_GetError() << "\n";
+		return -1;
 	}
-	return true;
-}
-
-void render()
-{
-	SDL_SetRenderDrawColor(g_pRenderer, 0, 0, 0, 255);
-	SDL_RenderClear(g_pRenderer);
-	SDL_RenderPresent(g_pRenderer);
-}
-
-void update()
-{
-
-}
-
-void handleEvents()
-{
-
-}
-
-void clean()
-{
-	SDL_DestroyRenderer(g_pRenderer);
-	SDL_DestroyWindow(g_pWindow);
-	SDL_Quit();
-}
-*/
-
-int main(int argc, char* args[])
-{
-	g_game = new Game();
-
-	g_game->init("NextGame", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
-	//g_game->init("NextGame", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
-	g_game->render();
-
-	while (g_game->running())
-	{
-		g_game->handleEvents();
-		g_game->update();
-		g_game->render();
-	}
-
-	g_game->clean();
+	std::cout << "game closing\n";
+	TheGame::Instance()->clean();
 
 	return 0;
 }
